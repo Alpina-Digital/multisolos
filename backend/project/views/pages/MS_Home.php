@@ -6,7 +6,7 @@
  * @package Alpina V4
  * @version 4.0
  */
-class SV_Home extends Alp_Page
+class MS_Home extends Alp_Page
 {
   use Alp_Banners_Home, SV_Section_Projetos;
 
@@ -54,20 +54,20 @@ class SV_Home extends Alp_Page
 
     $this
       ->add_render($this->render_section_banners())
-      ->add_render($avulsos->render_section_servicos_especializados())
-      ->add_render($avulsos->render_section_solucoes())
-      ->add_render($avulsos->render_section_big_numbers_associacoes())
+      // ->add_render($avulsos->render_section_servicos_especializados())
+      // ->add_render($avulsos->render_section_solucoes())
+      // ->add_render($avulsos->render_section_big_numbers_associacoes())
       // ->add_render($avulsos->render_block_glow_azul(837, 'esquerda'))
       // ->add_render($avulsos->render_block_glow_azul(2003, 'direita'))
-      ->add_render($avulsos->render_wrapper_branco_por_cima(
-        fn() => $this->render_section_nossos_projetos(),
-        fn() => $this->render_section_quem_somos_home(),
-        fn() => $avulsos->render_section_quem_ja_confiou(),
-      ))
-      ->add_render($avulsos->render_wrapper_cinza_por_cima(
-        fn() => $avulsos->render_section_depoimentos(true),
-        fn() => $avulsos->render_section_reconhecimentos(true)
-      ))
+      // ->add_render($avulsos->render_wrapper_branco_por_cima(
+      //   fn() => $this->render_section_nossos_projetos(),
+      //   fn() => $this->render_section_quem_somos_home(),
+      //   fn() => $avulsos->render_section_quem_ja_confiou(),
+      // ))
+      // ->add_render($avulsos->render_wrapper_cinza_por_cima(
+      //   fn() => $avulsos->render_section_depoimentos(true),
+      //   fn() => $avulsos->render_section_reconhecimentos(true)
+      // ))
       ->add_render($avulsos->render_section_blog())
       ->add_render($avulsos->render_section_newsletter())
       ->echo_render();
@@ -95,4 +95,4 @@ class SV_Home extends Alp_Page
 /**
  * Hooks
  */
-add_action('after_setup_theme', [new SV_Home(), 'setup']);
+add_action('after_setup_theme', [new MS_Home(), 'setup']);

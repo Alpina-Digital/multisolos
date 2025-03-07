@@ -10,5 +10,5 @@
  */
 
 get_header();
-(new SV_Home())->render();
+(new MS_Home())->render();
 get_footer();

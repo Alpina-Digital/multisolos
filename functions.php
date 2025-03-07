@@ -104,7 +104,7 @@ require_once get_template_directory() . "/backend/project/views/SV_Footer.php";
 require_once get_template_directory() . "/backend/project/views/SV_Avulsos.php";
 require_once get_template_directory() . "/backend/project/views/singles/SV_Post.php";
 
-require_once get_template_directory() . "/backend/project/views/pages/SV_Home.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Home.php";
 require_once get_template_directory() . "/backend/project/views/pages/SV_Como_Funciona.php";
 require_once get_template_directory() . "/backend/project/views/pages/SV_Quem_Somos.php";
 require_once get_template_directory() . "/backend/project/views/pages/SV_FAQ.php";
