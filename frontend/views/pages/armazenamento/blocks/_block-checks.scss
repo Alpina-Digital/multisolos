@@ -1,0 +1,16 @@
+@use 'cody/base' as *;
+
+.block-checks__item {
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.18px;
+  padding-bottom: var(--space-sm);
+  border-bottom: solid 1px rgba(154, 164, 172, .3);
+
+  @include breakpoint(md) {
+    font-size: 22px;
+    letter-spacing: -0.22px;
+  }
+}

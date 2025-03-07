@@ -1,0 +1,17 @@
+@use 'cody/base' as *;
+
+.section-banner-voolta__conteudo {
+  padding: var(--space-xxl) 72px;
+  border-radius: var(--space-md);
+  background: linear-gradient(0deg, rgba(0, 17, 68, 0.80) 0%, rgba(0, 17, 68, 0.80) 100%), var(--section-banner-voolta-imagem) lightgray 50% / cover no-repeat;
+}
+
+.section-banner-voolta__cta.btn.btn--accent {
+  background: var(--color-voolta-accent);
+  color: var(--color-white);
+
+  &:hover {
+    background: var(--color-voolta-accent2);
+    color: var(--color-white);
+  }
+}

@@ -1,0 +1,52 @@
+@use 'cody/base' as *;
+
+.section-onde-estamos {
+  position: relative;
+  border-radius: 1rem;
+  // overflow-x: hidden;
+
+  &__texto {
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+    opacity: .8;
+  }
+
+  &__mapa {
+    position: absolute;
+    z-index: 4;
+    height: auto;
+    transform: translateY(-100%) translateX(-50%);
+    left: 50%;
+
+    img {
+      height: auto;
+      max-width: 300px;
+
+      @include breakpoint(md) {
+        max-width: unset;
+      }
+    }
+
+    @include breakpoint(md) {
+      top: 0;
+      left: unset;
+      right: 0;
+      transform: translateY(calc(-50% + var(--space-xl)));
+    }
+  }
+
+  &__deco {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+
+    @include breakpoint(md) {
+      height: 100%;
+      top: 0;
+    }
+  }
+}

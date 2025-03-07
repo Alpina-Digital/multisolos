@@ -1,0 +1,13 @@
+@use 'cody/base' as *;
+
+.section-blog__pagination {
+
+
+  .swiper-pagination-bullet {
+    background: var(--color-cinza-fundo);
+
+    &.swiper-pagination-bullet-active {
+      background: var(--color-accent);
+    }
+  }
+}

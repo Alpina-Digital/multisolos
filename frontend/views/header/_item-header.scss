@@ -1,0 +1,17 @@
+@use 'cody/base' as *;
+
+.f-header__item--destaque>a {
+  @include breakpoint(md) {
+    background: var(--color-white);
+    color: var(--color-cinza-escuro-ultra);
+    padding: var(--space-xs);
+    border-radius: var(--space-xxs);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background: var(--color-accent);
+      color: var(--color-cinza-escuro-ultra);
+      opacity: 1;
+    }
+  }
+}

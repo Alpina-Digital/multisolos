@@ -1,0 +1,12 @@
+@use 'cody/base' as *;
+
+.section-subsecoes-multiplos-accordions {
+
+  &__texto {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+  }
+}

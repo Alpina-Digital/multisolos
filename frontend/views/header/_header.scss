@@ -1,0 +1,53 @@
+@use 'cody/base' as *;
+
+.f-header {
+  --f-header-width: 182px;
+  --color-bg: var(--color-primary);
+
+  &__link, &__dropdown-control {
+    color: var(--color-white);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.15px;
+
+    &:hover {
+      color: var(--color-white);
+      opacity: .5;
+    }
+  }
+
+  .f-header__nav-control {
+    color: var(--color-white);
+  }
+
+  &__logo {
+    width: var(--f-header-width);
+  }
+
+  .anim-menu-btn:not(.anim-menu-btn--state-b) {
+    .anim-menu-btn__icon {
+      &::after {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
+
+.f-header--expanded {
+  .f-header__dropdown-link, .f-header__dropdown-control {
+    @extend .f-header__link;
+  }
+
+  .f-header__link[href='#mais'] {
+    display: none;
+  }
+
+  .f-header__link[href='#mais']+.f-header__dropdown {
+    padding-left: 0;
+
+    li:not(:last-of-type) {
+      border-bottom: 1px solid var(--color-contrast-lower);
+    }
+  }
+}

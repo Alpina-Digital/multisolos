@@ -1,0 +1,46 @@
+@use 'cody/base' as *;
+
+.section-motivos-voolta {}
+
+.section-motivos-voolta__titulo.titulo-secao {
+  strong {
+    color: var(--color-voolta-accent);
+  }
+}
+
+.section-motivos-voolta__card {
+  padding: var(--space-md);
+  background: #001144;
+  border-radius: var(--space-xxs);
+
+  &-titulo {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.18px;
+
+    @include breakpoint(md) {
+      font-size: 22px;
+      letter-spacing: -0.22px;
+    }
+  }
+
+  &-texto {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+  }
+}
+
+.section-motivos-voolta__cta.btn.btn--accent {
+  background: var(--color-voolta-accent);
+  color: var(--color-white);
+
+  &:hover {
+    background: var(--color-voolta-accent2);
+    color: var(--color-white);
+  }
+}

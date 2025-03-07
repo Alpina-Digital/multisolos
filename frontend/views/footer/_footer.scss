@@ -1,0 +1,104 @@
+@use 'cody/base' as *;
+
+/* purgecss start ignore */
+.footer {
+  border-top: 1px solid rgba(76, 88, 97, 0.40);
+
+  &__title {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    /* 19.8px */
+    letter-spacing: -0.18px;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.80);
+    font-weight: 400;
+    line-height: 130%;
+    /* 20.8px */
+    letter-spacing: -0.16px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      opacity: .7;
+    }
+
+    &--small {
+      font-size: 14px;
+    }
+  }
+
+  &__copyright {
+    color: rgba(255, 255, 255, 0.60);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 120%;
+    /* 15.6px */
+    letter-spacing: -0.13px;
+
+    @include breakpoint(md, 'not all') {
+      order: 2;
+      text-align: center;
+    }
+  }
+
+  &__alpina {
+    svg {
+      width: 30px;
+      transition: all .5s ease-in-out;
+      opacity: .7;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    @include breakpoint(md, 'not all') {
+      order: 1;
+    }
+  }
+
+  &__menu-politicas {
+    @include breakpoint(md, 'not all') {
+      order: 3;
+    }
+  }
+
+  &__social {
+    background: var(--color-accent);
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: var(--space-xxxs);
+    color: var(--color-cinza-escuro-ultra);
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      background: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(76, 88, 97, 0.40);
+  }
+
+  &__decoration {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+/* purgecss end ignore */

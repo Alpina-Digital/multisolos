@@ -1,0 +1,82 @@
+@use 'cody/base' as *;
+
+.card-como-funciona {
+  overflow: hidden;
+  --stack-cards-item-ratio: 1/3;
+
+  @include breakpoint(xxxs) {
+    --stack-cards-item-ratio: 1/2.5;
+  }
+
+  @include breakpoint(xxs) {
+    --stack-cards-item-ratio: 1/2.2;
+  }
+
+  @include breakpoint(xs) {
+    --stack-cards-item-ratio: 3/5;
+  }
+
+  @include breakpoint(sm) {
+    --stack-cards-item-ratio: 3/4;
+  }
+
+  @include breakpoint(md) {
+    --stack-cards-item-ratio: 2/1.4;
+  }
+
+  @include breakpoint(lg) {
+    --stack-cards-item-ratio: 2/1;
+  }
+
+  &__info {
+
+    &-numero {
+      border-radius: 100px;
+      background: var(--color-accent);
+      padding: 8px var(--space-xs);
+
+      color: var(--color-black);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 90%;
+      text-transform: uppercase;
+    }
+
+    &-titulo {
+      color: var(--color-white);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 110%;
+
+      @include breakpoint(md) {
+        font-size: 22px;
+      }
+    }
+
+    &-texto {
+      color: alpha(var(--color-white), 0.8);
+      font-size: 14px;
+
+      @include breakpoint(xs) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__imagem {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+
+    @include breakpoint(md) {
+      width: calc(100% - var(--space-md) * 2);
+      height: calc(100% - var(--space-md) * 2);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

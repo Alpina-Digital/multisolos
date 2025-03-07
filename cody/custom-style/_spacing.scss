@@ -1,0 +1,54 @@
+@use '../base' as *;
+
+// --------------------------------
+
+// (START) Global editor code https://codyhouse.co/ds/globals/spacing
+
+// --------------------------------
+
+// 👇 uncomment to modify default spacing scale
+:root {
+  --space-unit: 0.8rem;
+}
+
+:root, * {
+  --space-xxxxs: calc(0.125 * var(--space-unit)); //2px
+  --space-xxxs: calc(0.25 * var(--space-unit)); //4px
+  --space-xxs: calc(0.5 * var(--space-unit)); //8px
+  --space-xs: calc(1 * var(--space-unit)); //16px
+  --space-sm: calc(1.5 * var(--space-unit)); //24px
+  --space-md: calc(2 * var(--space-unit)); //32px
+  --space-lg: calc(3 * var(--space-unit)); //48px
+  --space-xl: calc(4 * var(--space-unit)); //64
+  --space-xxl: calc(8 * var(--space-unit)); //128px
+  --space-xxxl: calc(15 * var(--space-unit)); //240px
+  --space-xxxxl: calc(20 * var(--space-unit)); //320px
+  --component-padding: var(--space-md);
+}
+
+@include breakpoint(md) {
+  :root {
+    --space-unit: 1rem;
+  }
+
+  :root, * {
+    --space-xxxxs: calc(0.125 * var(--space-unit)); //2px
+    --space-xxxs: calc(0.25 * var(--space-unit)); //4px
+    --space-xxs: calc(0.5 * var(--space-unit)); //8px
+    --space-xs: calc(1 * var(--space-unit)); //16px
+    --space-sm: calc(1.5 * var(--space-unit)); //24px
+    --space-md: calc(2 * var(--space-unit)); //32px
+    --space-lg: calc(3 * var(--space-unit)); //48px
+    --space-xl: calc(4 * var(--space-unit)); //64
+    --space-xxl: calc(6 * var(--space-unit)); //96px
+    --space-xxxl: calc(8 * var(--space-unit)); //128px
+    --space-xxxxl: calc(8 * var(--space-unit)); //160px
+    --space-xxxxxl: calc(15 * var(--space-unit)); //240px
+  }
+}
+
+// --------------------------------
+
+// (END) Global editor code
+
+// --------------------------------

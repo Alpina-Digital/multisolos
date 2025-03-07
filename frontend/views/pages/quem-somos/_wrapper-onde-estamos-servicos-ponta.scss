@@ -1,0 +1,21 @@
+@use 'cody/base' as *;
+
+.wrapper-onde-estamos-servicos-ponta {
+  position: relative;
+
+  &__brilho {
+    position: absolute;
+    width: 580px;
+    height: 1033px;
+    transform: translateX(-50%);
+    border-radius: 1033px;
+    opacity: 0.2;
+    background: #1382EC;
+    filter: blur(250px);
+
+    top: 284px;
+    left: 50%;
+    z-index: 0;
+    pointer-events: none;
+  }
+}

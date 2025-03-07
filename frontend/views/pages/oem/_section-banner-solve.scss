@@ -1,0 +1,16 @@
+@use 'cody/base' as *;
+
+.section-banner-solve__conteudo {
+  padding: var(--space-xxl) 72px;
+  border-radius: var(--space-md, 32px);
+  background: linear-gradient(0deg, rgba(0, 24, 113, 0.86) 0%, rgba(0, 24, 113, 0.86) 100%), var(--section-banner-solve-imagem) lightgray 50% / cover no-repeat;
+  // background: var(--color-solve-primary);
+}
+
+.section-banner-solve__cta.btn.btn--accent {
+  background: var(--color-solve-accent2);
+
+  &:hover {
+    background: var(--color-solve-accent);
+  }
+}

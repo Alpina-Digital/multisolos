@@ -1,0 +1,14 @@
+@use 'cody/base' with ($breakpoints: ('xs': 32rem, // ~512px
+    'sm': 48rem, // ~768px
+    'md': 67rem, // ~1072
+    'lg': 75rem, // ~1200px
+    'xl': 90rem // ~1440px
+  ),
+  $grid-columns: 12);
+
+/*! purgecss start ignore */
+@use 'cody/custom';
+@use 'cody/custom-style';
+@use 'cody/components/scss/*.scss';
+@use 'frontend/**/*.scss';
+/*! purgecss end ignore */

@@ -1,0 +1,102 @@
+@use 'cody/base' as *;
+
+.section-big-numbers-associacoes {
+
+  &__wrapper {
+    position: relative;
+    border-radius: .5rem;
+
+    @include breakpoint(md) {
+      background: var(--color-primary);
+      transform: translateX(-72px);
+    }
+  }
+
+  &__icone {
+    flex-shrink: 0;
+
+    svg, img {
+      width: 64px;
+      height: 64px;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
+
+  &__numero {
+    color: var(--color-white);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 95%;
+    letter-spacing: -0.52px;
+
+    @include breakpoint(sm) {
+      font-size: 2rem;
+      letter-spacing: -0.64px;
+    }
+  }
+
+  &__legenda {
+    color: var(--color-accent);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.18px;
+  }
+}
+
+.section-big-numbers-associacoes__associacoes {
+  position: relative;
+
+  &-wrapper {
+
+    background-color: var(--color-white);
+    border-radius: var(--space-xxs);
+    padding: var(--space-lg);
+
+    @include breakpoint(md) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% + var(--space-xl) + 72px * 2);
+      min-height: calc(100% + var(--space-xl) + 56px);
+    }
+  }
+}
+
+.section-big-numbers-associacoes__associacao-logo {
+  width: 100%;
+  height: 50px;
+
+  img, svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: top left;
+  }
+}
+
+.section-big-numbers-associacoes__associacao-descricao {
+  color: var(--color-cinza-medio);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.14px;
+
+  @include breakpoint(md) {
+    font-weight: 600;
+    line-height: 110%;
+  }
+}
+
+.section-big-numbers-associacoes__bigs {
+  @include breakpoint(md, 'not all') {
+    background: var(--color-primary);
+    padding: var(--space-lg);
+    margin-top: var(--space-lg);
+    border-radius: var(--space-xxs);
+  }
+}

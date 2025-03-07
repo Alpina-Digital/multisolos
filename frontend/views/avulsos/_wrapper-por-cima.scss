@@ -1,0 +1,21 @@
+@use 'cody/base' as *;
+
+/* purgecss start ignore*/
+.wrapper-por-cima {
+  position: relative;
+  border-radius: var(--space-xs);
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+
+  &.wrapper-por-cima--branco {
+    z-index: 3;
+    background: var(--color-white);
+  }
+
+  &.wrapper-por-cima--cinza {
+    z-index: 2;
+    background: var(--color-cinza-fundo);
+  }
+}
+
+/* purgecss end ignore*/

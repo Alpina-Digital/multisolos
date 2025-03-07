@@ -1,0 +1,44 @@
+@use 'cody/base' as *;
+
+.section-dna {
+  &__pilar {
+    background: var(--color-primary);
+    padding: var(--space-md);
+    border-radius: .5rem;
+    position: relative;
+    z-index: 1;
+
+    &-titulo {
+      color: var(--color-white);
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 110%;
+      letter-spacing: -0.18px;
+
+      @include breakpoint(md) {
+        font-size: 22px;
+        letter-spacing: -0.22px;
+      }
+    }
+
+    &-texto {
+      color: rgba(255, 255, 255, 0.80);
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: -0.16px;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        list-style-type: circle;
+        list-style-position: inside;
+        gap: var(--space-xxs);
+      }
+
+    }
+  }
+}

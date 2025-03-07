@@ -1,0 +1,23 @@
+@use 'cody/base' as *;
+
+.section-grid-cards-cinza__rodape {
+  padding: 32px;
+  border-radius: 8px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: -0.16px;
+}
+
+.section-grid-cards-cinza__video {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 520px;
+  border-radius: var(--space-xxs);
+  background: linear-gradient(0deg, rgba(18, 72, 124, 0.83) 0%, rgba(18, 72, 124, 0.83) 100%), var(--section-grid-cards-cinza-video-imagem) lightgray 50% / cover no-repeat;
+  background-blend-mode: multiply, normal;
+}

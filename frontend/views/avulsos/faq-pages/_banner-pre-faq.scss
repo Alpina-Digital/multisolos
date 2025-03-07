@@ -1,0 +1,38 @@
+@use 'cody/base' as *;
+
+.banner-pre-faq {
+  width: 100%;
+  // height: 838px;
+  padding-top: var(--space-xxl);
+  box-sizing: border-box;
+  border-radius: var(--space-xxs);
+  background: linear-gradient(90deg, rgba(18, 72, 124, 0.40) 0%, rgba(18, 72, 124, 0.10) 100%), radial-gradient(44.83% 50.92% at 35.73% 50.92%, rgba(18, 72, 124, 0.08) 0%, rgba(18, 72, 124, 0.30) 100%), linear-gradient(0deg, rgba(39, 46, 52, 0.60) 0%, rgba(39, 46, 52, 0.60) 100%), var(--banner-pre-faq-imagem) lightgray 50% / cover no-repeat;
+  background-blend-mode: multiply, normal, multiply, normal;
+
+  @include breakpoint(md) {
+    padding-top: var(--space-xxxl);
+  }
+
+  &__conteudo {
+    padding-bottom: 270px;
+
+    @include breakpoint(md) {
+      padding-bottom: 370px;
+    }
+  }
+
+  &__titulo {
+    text-align: center;
+    line-height: 100%;
+    letter-spacing: -0.46px;
+  }
+
+  &__texto {
+    color: rgba(255, 255, 255, 0.80);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+  }
+}

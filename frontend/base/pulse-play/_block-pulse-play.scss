@@ -1,0 +1,64 @@
+@use 'cody/base' as *;
+
+.block-pulse-play {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.block-pulse-play__pulse {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: block-pulse-play-animation 2s infinite;
+}
+
+.block-pulse-play__pulse:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.block-pulse-play__pulse:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.block-pulse-play__play-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96px;
+  height: 96px;
+  background: var(--color-white);
+  color: var(--color-accent);
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.block-pulse-play__play-icon {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid var(--color-primary);
+  position: relative;
+  transform: rotate(90deg);
+}
+
+@keyframes block-pulse-play-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,41 @@
+.texto-corrido {
+  color: var(--color-white);
+
+  a {
+    color: var(--color-accent);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-white);
+    margin: var(--space-xs) auto;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 22px;
+    letter-spacing: -0.22px;
+  }
+
+  h3 {
+    font-size: 20px;
+    letter-spacing: -0.2px;
+  }
+
+  h4 {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+  }
+
+  ul li, ol li {
+    margin-bottom: var(--space-xs);
+  }
+
+  ul, ol {
+    list-style-position: outside;
+    margin-left: 40px;
+  }
+}

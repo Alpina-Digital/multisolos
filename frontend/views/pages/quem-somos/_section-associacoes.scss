@@ -1,0 +1,36 @@
+@use 'cody/base' as *;
+
+.section-associacoes {}
+
+.section-associacoes__associacao {
+  background: var(--color-white);
+  padding: var(--space-lg);
+  border-radius: var(--space-xxs);
+
+  .section-associacoes__logo {
+    width: 100%;
+    height: 70px;
+
+    svg, img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .section-associacoes__leia-mais {
+    color: var(--color-primary);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.15px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    cursor: pointer;
+    text-align: center;
+  }
+}

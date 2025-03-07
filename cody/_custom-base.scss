@@ -1,0 +1,356 @@
+@use "./base" as *;
+
+//input ddate chrome icon color
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+:root,
+* {
+
+    //colors
+    --color-custom-black: #000;
+    --color-custom-white: #FAFAFA;
+    --color-custom-parafrafo: #3C4654;
+    --color-custom-parafrafo-dark: #CCD5DD;
+    --color-custom-fundo: #EEF1F2;
+
+    //shadow
+    --blue-box-shadow: 0px 20px 60px rgba(60, 231, 147, 0.6);
+
+    --max-width-bigger: 1216px;
+    --max-width-default: 1120px;
+    --max-width-small: 1074px;
+
+    // type scale
+    --text-custom-xxxs: 8px;
+    --text-custom-xxs: 10px;
+    --text-custom-xs: 13px;
+    --text-custom-sm: 14px;
+    --text-custom-md: 16px;
+    --text-custom-lg: 18px;
+    --text-custom-xl: 20px;
+    --text-custom-xxl: 26px;
+    --text-custom-xxxl: 30px;
+    --text-custom-xxxxl: 34px;
+    --text-custom-xxxxxl: 40px;
+    --text-custom-xxxxxxl: 46px;
+    --text-custom-xxxxxxxl: 50px;
+    --text-custom-xxxxxxxxl: 62px;
+    --text-custom-xxxxxxxxxl: 75px;
+
+    //radius
+    --radius-custom-xs: 4px;
+    --radius-custom-sm: 8px;
+    --radius-custom-md: 15px;
+    --radius-custom-lg: 24px;
+    --radius-custom-xl: 32px;
+    --radius-custom-xxxl: 72px;
+
+    //line height
+    --line-height-body: 24px;
+    --line-height-32: 32px;
+
+    //letter spacing
+    --letter-spacing-custom-xl: 0.6rem;
+    --letter-spacing-custom-xxl: 0.8rem;
+
+    //transition
+    --transition-primary: all 0.4s;
+
+    //btn size
+    --btn-default-height: 55.2px;
+}
+
+.max-width-bigger {
+    max-width: var(--max-width-bigger);
+}
+
+.max-width-default {
+    max-width: var(--max-width-default);
+}
+
+.max-width-small {
+    max-width: var(--max-width-small);
+}
+
+.text-custom-xxxs {
+    font-size: var(--text-custom-xxxs);
+}
+
+.text-custom-xxs {
+    font-size: var(--text-custom-xxs);
+}
+
+.text-custom-xs {
+    font-size: var(--text-custom-xs);
+}
+
+.text-custom-sm {
+    font-size: var(--text-custom-sm);
+}
+
+.text-custom-md {
+    font-size: var(--text-custom-md);
+}
+
+.text-custom-lg {
+    font-size: var(--text-custom-lg);
+}
+
+.text-custom-xl {
+    font-size: var(--text-custom-xl);
+}
+
+.text-custom-xl2 {
+    font-size: var(--text-custom-xl2);
+}
+
+.text-custom-xxl {
+    font-size: var(--text-custom-xxl);
+}
+
+.text-custom-xxxl {
+    font-size: var(--text-custom-xxxl);
+}
+
+.text-custom-xxxxl {
+    font-size: var(--text-custom-xxxxl);
+}
+
+.text-custom-xxxxxl {
+    font-size: var(--text-custom-xxxxxl);
+}
+
+.text-custom-xxxxxxl {
+    font-size: var(--text-custom-xxxxxxl);
+}
+
+.text-custom-xxxxxxxl {
+    font-size: var(--text-custom-xxxxxxxl);
+}
+
+.text-custom-xxxxxxxxl {
+    font-size: var(--text-custom-xxxxxxxxl);
+}
+
+@each $breakpoint, $value in $breakpoints {
+    @include breakpoint(#{$breakpoint}) {
+        .text-custom-xl\@#{$breakpoint} {
+            font-size: var(--text-custom-xl);
+        }
+
+        .text-custom-xl2\@#{$breakpoint} {
+            font-size: var(--text-custom-xl2);
+        }
+
+        .text-custom-xxl\@#{$breakpoint} {
+            font-size: var(--text-custom-xxl);
+        }
+
+        .text-custom-xxxl\@#{$breakpoint} {
+            font-size: var(--text-custom-xxxl);
+        }
+
+        .text-custom-xxxxl\@#{$breakpoint} {
+            font-size: var(--text-custom-xxxxl);
+        }
+
+        .text-custom-xxxxxl\@#{$breakpoint} {
+            font-size: var(--text-custom-xxxxxl);
+        }
+
+        .text-custom-xxxxxxl\@#{$breakpoint} {
+            font-size: var(--text-custom-xxxxxxl);
+        }
+
+        .text-custom-xxxxxxxl\@#{$breakpoint} {
+            font-size: var(--text-custom-xxxxxxxl);
+        }
+
+        .text-custom-xxxxxxxxl\@#{$breakpoint} {
+            font-size: var(--text-custom-xxxxxxxxl);
+        }
+
+        .text-nowrap\@#{$breakpoint} {
+            text-wrap: nowrap;
+        }
+
+        .container\@#{$breakpoint} {
+            width: calc(100% - 2 * var(--component-padding));
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+
+.short_description-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.short_description-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+
+/* custom checkbox styling for contact form 7 checkbox */
+
+.custom_checkbox {
+
+    span.wpcf7-list-item {
+        display: inline;
+        margin: 0;
+    }
+
+    .wpcf7 .wpcf7-list-item {
+        display: inline;
+        margin-bottom: 10px;
+    }
+
+    .wpcf7-checkbox label {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .wpcf7-checkbox input[type="checkbox"] {
+        /*position: relative;*/
+        position: absolute;
+        visibility: hidden;
+        width: 24px;
+        height: 24px;
+        top: 0;
+        left: 0;
+    }
+
+    .wpcf7-checkbox input[type="checkbox"]+span {
+        /* border: 3px solid red; */
+    }
+
+    .wpcf7-checkbox input[type="checkbox"]+span:before {
+        display: inline;
+        position: absolute;
+        content: "";
+        height: 24px;
+        width: 24px;
+        border-radius: 2px;
+        top: 0px;
+        left: 0px;
+        border: 1px solid var(--color-accent);
+    }
+
+    .wpcf7-checkbox input[type="checkbox"]+span:after {
+        display: inline;
+        position: absolute;
+        // content: "\2713";
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
+        background-size: var(--checkbox-marker-size);
+        background-repeat: no-repeat;
+        background-position: center center;
+        color: var(--color-white);
+        height: 24px;
+        width: 24px;
+        border-radius: 2px;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        font-size: 18px;
+        text-align: center;
+        line-height: 30px;
+        background-color: var(--color-accent);
+    }
+
+    .wpcf7-checkbox input[type="checkbox"]:checked+span:before {
+        background: transparent;
+    }
+
+    .wpcf7-checkbox input[type="checkbox"]:checked+span:after {
+        visibility: visible;
+    }
+
+    .wpcf7-list-item-label {
+        margin-left: 40px;
+        display: inline-block;
+    }
+
+    .wpcf7-not-valid-tip {
+        display: none;
+    }
+
+}
+
+//hide 
+.grecaptcha-badge {
+    visibility: hidden !important;
+}
+
+.otgs-development-site-front-end {
+    display: none;
+}
+
+//contact form 7
+
+.wpcf7-not-valid-tip {
+    font-size: var(--text-xs);
+    margin-top: var(--space-xxs);
+}
+
+// .wpcf7-form.invalid {
+//     .wpcf7-response-output {
+//         background-color: var(--color-primary-lighter);
+//         color: var(--color-white);
+//     }
+// }
+
+// .wpcf7-form.sent {
+//     .wpcf7-response-output {
+//         background-color: var(--color-primary-lighter);
+//         color: var(--color-white);
+//     }
+// }
+
+.wpcf7-response-output {
+    border: none !important;
+    text-align: center;
+    padding: var(--space-xxxxs) !important;
+}
+
+.wpcf7-list-item {
+    margin: 0;
+}
+
+// Scroller style
+/* width */
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--color-senary-light);
+    border-radius: 16px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 1);
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 16px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-darker);
+}

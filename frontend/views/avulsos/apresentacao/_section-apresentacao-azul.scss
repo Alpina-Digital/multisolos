@@ -1,0 +1,20 @@
+@use 'cody/base' as *;
+
+.section-apresentacao-azul {
+  text-align: center;
+
+  &__titulo {
+    color: var(--color-white);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90%;
+    letter-spacing: -0.96px;
+
+    @include breakpoint(md) {
+      font-size: 72px;
+      letter-spacing: -1.44px;
+
+    }
+  }
+}

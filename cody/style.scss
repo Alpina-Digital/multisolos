@@ -1,0 +1,14 @@
+@use 'base' with ($breakpoints: ('xxxxs': 20rem, // ~320px
+    'xxxs': 23rem, // ~368px
+    'xxs': 26rem, // ~416px 
+    'xs': 32rem, // ~512px
+    'sm': 48rem, // ~768px
+    'md': 64rem, // ~1072
+    'lg': 80rem, // ~1200px
+    'xl': 90rem // ~1440px
+  ),
+  $grid-columns: 12);
+
+@use 'custom';
+@use 'custom-style';
+@use 'components/scss/*.scss';

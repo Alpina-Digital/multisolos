@@ -1,0 +1,61 @@
+@use 'cody/base' as *;
+
+.section-hero-page {
+  padding-top: 74px;
+
+  background: linear-gradient(90deg, rgba(18, 72, 124, 0.40) 0%, rgba(18, 72, 124, 0.10) 100%), radial-gradient(44.83% 50.92% at 35.73% 50.92%, rgba(18, 72, 124, 0.08) 0%, rgba(18, 72, 124, 0.30) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0.70) 0%, rgba(0, 0, 0, 0.00) 31.39%), linear-gradient(0deg, rgba(39, 46, 52, 0.76) 0%, rgba(39, 46, 52, 0.76) 100%), var(--section-hero-page-imagem) lightgray 50% / cover no-repeat;
+  background-blend-mode: multiply, normal, multiply, multiply, normal;
+
+  &__subtitulo {
+    color: var(--color-accent);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 90%;
+    text-transform: uppercase;
+  }
+
+  &__titulo {
+    color: var(--color-white);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 90%;
+    letter-spacing: -0.64px;
+
+    br {
+      display: none;
+    }
+
+    @include breakpoint(xxs) {
+      font-size: 48px;
+      letter-spacing: -0.96px;
+    }
+
+    @include breakpoint(md) {
+      font-size: 72px;
+      letter-spacing: -1.44px;
+
+      br {
+        display: block;
+      }
+    }
+
+    strong {
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+  }
+
+  &__texto {
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.16px;
+    opacity: .8;
+
+    @include breakpoint(sm) {
+      font-size: 18px;
+      letter-spacing: -0.18px;
+    }
+  }
+}

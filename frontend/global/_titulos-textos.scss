@@ -1,0 +1,92 @@
+@use 'cody/base' as *;
+
+.titulo-secao, h1.titulo-secao, h2.titulo-secao, h3.titulo-secao, .titulo-secao, h5.titulo-secao, h6.titulo-secao {
+  color: var(--color-white);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 95%;
+  letter-spacing: -0.28px;
+  position: relative;
+  z-index: 1;
+
+  br {
+    display: none;
+  }
+
+  strong {
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  @include breakpoint(sm) {
+    font-size: 46px;
+    letter-spacing: -0.46px;
+
+    br {
+      display: block;
+    }
+  }
+
+  &.titulo-secao--dark {
+    color: var(--color-cinza-escuro-ultra);
+  }
+}
+
+.titulo-secao-mini, h1.titulo-secao-mini, h2.titulo-secao-mini, h3.titulo-secao-mini, .titulo-secao-mini, h5.titulo-secao-mini, h6.titulo-secao-mini {
+  color: var(--color-cinza-escuro-ultra);
+  font-weight: 600;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.18px;
+
+  @include breakpoint(md) {
+    max-width: 230px;
+    font-size: 22px;
+    letter-spacing: -0.22px;
+  }
+}
+
+.subtitulo-secao {
+  color: var(--color-accent);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 90%;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+:root {
+  --paragrafo-branco: rgba(255, 255, 255, 0.80);
+}
+
+%paragrafo {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: -0.14px;
+}
+
+.paragrafo-branco {
+  @extend %paragrafo;
+  color: var(--paragrafo-branco);
+
+  @include breakpoint(md) {
+    font-size: 16px;
+    letter-spacing: -0.16px;
+    line-height: 140%;
+  }
+}
+
+.paragrafo-branco-lg {
+  @extend %paragrafo;
+  color: var(--paragrafo-branco);
+
+  @include breakpoint(md) {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+  }
+}

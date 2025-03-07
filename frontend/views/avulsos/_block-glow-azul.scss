@@ -1,0 +1,47 @@
+@use 'cody/base' as *;
+
+.block-glow-azul {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  max-width: 100vw;
+  max-height: 100wh;
+
+  opacity: 0.2;
+  filter: blur(250px);
+
+  &--esquerda {
+    left: 0;
+
+    .block-glow-azul__glow {
+      left: -50%;
+    }
+  }
+
+  &--direita {
+    right: 0;
+
+    .block-glow-azul__glow {
+      right: -50%;
+    }
+  }
+
+  &__glow {
+    position: absolute;
+
+    width: 120%;
+    height: 120%;
+
+    max-width: 826px;
+    max-height: 1033px;
+
+    top: 0;
+    background: #1382EC;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 1033px;
+    filter: blur(250px);
+  }
+}

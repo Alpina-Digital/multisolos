@@ -1,0 +1,212 @@
+[
+  {
+    "distribuidora": "CEMIG",
+    "residencial": 0.97,
+    "empresa": 0.9,
+    "industria": 0.582,
+    "agronegocio": 0.582
+  },
+  {
+    "distribuidora": "RGE SUL",
+    "residencial": 0.78,
+    "empresa": 0.78,
+    "industria": 0.47,
+    "agronegocio": 0.47
+  },
+  {
+    "distribuidora": "AME",
+    "residencial": 0.74,
+    "empresa": 0.74,
+    "industria": 0.45,
+    "agronegocio": 0.45
+  },
+  {
+    "distribuidora": "ENEL-RJ",
+    "residencial": 1.01,
+    "empresa": 1.01,
+    "industria": 0.61,
+    "agronegocio": 0.61
+  },
+  {
+    "distribuidora": "EDP-SP",
+    "residencial": 0.8,
+    "empresa": 0.73,
+    "industria": 0.44,
+    "agronegocio": 0.44
+  },
+  {
+    "distribuidora": "BOA VISTA",
+    "residencial": 0.81,
+    "empresa": 0.81,
+    "industria": 0.49,
+    "agronegocio": 0.49
+  },
+  {
+    "distribuidora": "CEA",
+    "residencial": 0.6,
+    "empresa": 0.6,
+    "industria": 0.36,
+    "agronegocio": 0.36
+  },
+  {
+    "distribuidora": "CEAL",
+    "residencial": 0.76,
+    "empresa": 0.76,
+    "industria": 0.46,
+    "agronegocio": 0.46
+  },
+  {
+    "distribuidora": "CEB-DIS",
+    "residencial": 0.8,
+    "empresa": 0.75,
+    "industria": 0.45,
+    "agronegocio": 0.45
+  },
+  {
+    "distribuidora": "CEEE-D",
+    "residencial": 0.78,
+    "empresa": 0.78,
+    "industria": 0.47,
+    "agronegocio": 0.47
+  },
+  {
+    "distribuidora": "CELESC-DIS",
+    "residencial": 0.55,
+    "empresa": 0.55,
+    "industria": 0.33,
+    "agronegocio": 0.33
+  },
+  {
+    "distribuidora": "CELG-D",
+    "residencial": 0.85,
+    "empresa": 0.85,
+    "industria": 0.51,
+    "agronegocio": 0.51
+  },
+  {
+    "distribuidora": "CELPA",
+    "residencial": 0.96,
+    "empresa": 0.96,
+    "industria": 0.58,
+    "agronegocio": 0.58
+  },
+  {
+    "distribuidora": "CELPE",
+    "residencial": 0.78,
+    "empresa": 0.78,
+    "industria": 0.47,
+    "agronegocio": 0.47
+  },
+  {
+    "distribuidora": "CEMAR",
+    "residencial": 1.01,
+    "empresa": 1.01,
+    "industria": 0.61,
+    "agronegocio": 0.61
+  },
+  {
+    "distribuidora": "CEPISA",
+    "residencial": 0.88,
+    "empresa": 0.88,
+    "industria": 0.53,
+    "agronegocio": 0.53
+  },
+  {
+    "distribuidora": "CERON",
+    "residencial": 0.75,
+    "empresa": 0.75,
+    "industria": 0.45,
+    "agronegocio": 0.45
+  },
+  {
+    "distribuidora": "CHESP",
+    "residencial": 0.87,
+    "empresa": 0.87,
+    "industria": 0.52,
+    "agronegocio": 0.52
+  },
+  {
+    "distribuidora": "COCEL",
+    "residencial": 0.59,
+    "empresa": 0.59,
+    "industria": 0.35,
+    "agronegocio": 0.35
+  },
+  {
+    "distribuidora": "COELBA",
+    "residencial": 0.81,
+    "empresa": 0.81,
+    "industria": 0.49,
+    "agronegocio": 0.49
+  },
+  {
+    "distribuidora": "ENEL-CE",
+    "residencial": 0.78,
+    "empresa": 0.78,
+    "industria": 0.47,
+    "agronegocio": 0.47
+  },
+  {
+    "distribuidora": "COOPERALIANCA",
+    "residencial": 0.45,
+    "empresa": 0.45,
+    "industria": 0.27,
+    "agronegocio": 0.27
+  },
+  {
+    "distribuidora": "COPEL-DIS",
+    "residencial": 0.54,
+    "empresa": 0.54,
+    "industria": 0.33,
+    "agronegocio": 0.33
+  },
+  {
+    "distribuidora": "COSERN",
+    "residencial": 0.74,
+    "empresa": 0.74,
+    "industria": 0.45,
+    "agronegocio": 0.45
+  },
+  {
+    "distribuidora": "CPFL PAULISTA",
+    "residencial": 0.75,
+    "empresa": 0.68,
+    "industria": 0.41,
+    "agronegocio": 0.41
+  },
+  {
+    "distribuidora": "CPFL PIRATININGA",
+    "residencial": 0.79,
+    "empresa": 0.72,
+    "industria": 0.43,
+    "agronegocio": 0.43
+  },
+  {
+    "distribuidora": "CPFL Santa Cruz",
+    "residencial": 0.78,
+    "empresa": 0.71,
+    "industria": 0.43,
+    "agronegocio": 0.43
+  },
+  {
+    "distribuidora": "LIGHT",
+    "residencial": 0.95,
+    "empresa": 0.95,
+    "industria": 0.57,
+    "agronegocio": 0.57
+  },
+  {
+    "distribuidora": "RGE",
+    "residencial": 0.8,
+    "empresa": 0.8,
+    "industria": 0.48,
+    "agronegocio": 0.48
+  },
+  {
+    "distribuidora": "SULGIPE",
+    "residencial": 0.94,
+    "empresa": 0.94,
+    "industria": 0.56,
+    "agronegocio": 0.56
+  }
+]

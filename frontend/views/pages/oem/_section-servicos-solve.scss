@@ -1,0 +1,37 @@
+@use 'cody/base' as *;
+
+.section-servicos-solve__container {
+  background: var(--color-cinza-fundo);
+  padding: var(--space-lg) var(--space-xs);
+  border-radius: var(--space-md);
+
+  @include breakpoint(xxs) {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  @include breakpoint(md) {
+    padding: 72px;
+  }
+}
+
+.section-servicos-solve__titulo.titulo-secao {
+  color: var(--color-solve-primary);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 95%;
+  letter-spacing: -0.28px;
+
+  @include breakpoint(md) {
+    font-size: 46px;
+    letter-spacing: -0.46px;
+  }
+}
+
+.section-servicos-solve__btn.btn.btn--accent {
+  background: #647692;
+  color: var(--color-white);
+
+  &:hover {
+    background: var(--color-solve-accent);
+  }
+}

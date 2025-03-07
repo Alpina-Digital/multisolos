@@ -1,0 +1,10 @@
+@use 'cody/base' as *;
+
+a {
+  text-decoration: none;
+}
+
+a[href="#0"] {
+  cursor: default;
+  pointer-events: none;
+}

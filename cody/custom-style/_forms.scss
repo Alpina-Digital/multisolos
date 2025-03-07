@@ -1,0 +1,149 @@
+@use '../base' as *;
+
+// --------------------------------
+
+// (START) Global editor code https://codyhouse.co/ds/globals/forms
+
+// --------------------------------
+
+:root {
+  --form-control-font-size: var(--text-sm);
+  --form-control-padding-x: var(--space-xs);
+  --form-control-padding-y: var(--space-xxs);
+  --form-control-radius: 0;
+}
+
+.form-control {
+  background: var(--color-white);
+  line-height: 1.2;
+  box-shadow: inset 0px 0px 0px 1px alpha(var(--color-black), 0.15);
+  transition: all 0.2s ease;
+
+  color: var(--color-cinza-medio);
+  font-size: 16px;
+  font-weight: 400;
+
+  &::placeholder {
+    opacity: 1;
+    color: var(--color-cinza-medio);
+  }
+
+  &:focus,
+  &:focus-within {
+    background: var(--color-bg);
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+    outline: none;
+  }
+}
+
+.form-control--disabled,
+.form-control[disabled],
+.form-control[readonly] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-control[aria-invalid="true"],
+.form-control.form-control--error {
+  box-shadow: inset 0px 0px 0px 1px alpha(var(--color-contrast-lower), 0), 0px 0px 0px 2px var(--color-error);
+
+  &:focus,
+  &:focus-within {
+    box-shadow: inset 0px 0px 0px 1px alpha(var(--color-contrast-lower), 0), 0px 0px 0px 2px var(--color-error), var(--shadow-sm);
+  }
+}
+
+.form-legend {}
+
+.form-label {
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+// --------------------------------
+
+// (END) Global editor code
+
+// --------------------------------
+
+
+select.form-control,
+input.form-control {
+  height: 46px;
+}
+
+textarea.form-control {
+  min-height: 120px;
+}
+
+.form-control--btn {
+  height: 46px;
+}
+
+
+@include breakpoint(sm) {
+
+  select.form-control,
+  input.form-control {
+    height: 50px;
+  }
+
+  .form-control--btn {
+    height: 50px;
+  }
+}
+
+
+.form-control-select {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M10.3635%204.36377L5.99987%209.81832L1.63623%204.36377H10.3635Z%22%20fill%3D%22%23999999%22/%3E%3C/svg%3E");
+
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: right var(--space-sm) center;
+  transition: none;
+}
+
+.form-control-select:focus {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%226%22%20viewBox%3D%220%200%2012%206%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%3Cpath%20d%3D%22M1%201L6%205L11%201%22%20stroke%3D%22%23757679%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%0A%3C/svg%3E");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: right var(--space-sm) center;
+  transition: none;
+}
+
+.form-control-select--v2 {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2212%22%20height%3D%226%22%20viewBox%3D%220%200%2012%206%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%3Cpath%20d%3D%22M1%201L6%205L11%201%22%20stroke%3D%22%23757679%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%0A%3C/svg%3E");
+}
+
+select.form-control.form-control-select--v3 {
+  background-image: url("data:image/svg+xml,%0A%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%3Cpath%20d%3D%22M12%2016.5002L4.5%209.00019L5.55%207.95019L12%2014.4002L18.45%207.9502L19.5%209.00019L12%2016.5002Z%22%20fill%3D%22black%22/%3E%0A%3C/svg%3E%0A");
+  background-size: 24px;
+  background-position: right 18px center;
+  height: 44px;
+
+  color: var(--color-black);
+}
+
+.form-control-select--v3:focus {
+  background-image: url("data:image/svg+xml,%0A%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%0A%3Cpath%20d%3D%22M12%2016.5002L4.5%209.00019L5.55%207.95019L12%2014.4002L18.45%207.9502L19.5%209.00019L12%2016.5002Z%22%20fill%3D%22black%22/%3E%0A%3C/svg%3E%0A");
+  background-size: 24px;
+}
+
+.select2-container .select2-selection--single {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  box-shadow: inset 0px 0px 0px 1px alpha(var(--color-black), 0.15);
+  border: none;
+
+  & .select2-selection__rendered {
+    padding: var(--space-xs);
+    color: rgb(153, 153, 153)
+  }
+
+  & .select2-selection__arrow {
+    padding: var(--space-xs);
+    align-self: center;
+    transform: translateX(-25%) translateY(25%);
+  }
+}

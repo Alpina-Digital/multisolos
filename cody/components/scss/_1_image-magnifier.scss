@@ -1,0 +1,22 @@
+@use '../base' as *;
+
+/* -------------------------------- 
+
+File#: _1_image-magnifier
+Title: Image Magnifier
+Descr: Plugin to create a magnifying effect on an image
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.img-mag {
+  overflow: hidden;
+  height: 100%;
+}
+
+.img-mag__asset {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  transform-origin: left top;
+}

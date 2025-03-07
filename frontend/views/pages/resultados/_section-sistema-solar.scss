@@ -1,0 +1,20 @@
+@use 'cody/base' as *;
+@use './section-superior-resultados' as *;
+
+.section-sistema-solar {
+  &__info {
+    @extend .section-superior-resultados__info;
+  }
+
+  &__info-titulo {
+    @extend .section-superior-resultados__info-titulo;
+  }
+
+  &__info-valor {
+    @extend .section-superior-resultados__info-valor;
+  }
+
+  &__btn {
+    align-self: center;
+  }
+}

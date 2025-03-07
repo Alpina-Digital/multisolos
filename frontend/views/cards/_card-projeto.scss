@@ -1,0 +1,127 @@
+@use 'cody/base' as *;
+
+/* purgecss start ignore */
+
+.card-projeto {
+  position: relative;
+  border-radius: var(--space-xxs);
+  background: linear-gradient(180deg, rgba(5, 26, 46, 0.00) 30%, rgba(5, 26, 46, 0.40) 75%), linear-gradient(180deg, rgba(10, 67, 123, 0.00) 0%, rgba(10, 67, 123, 0.52) 45.24%, rgba(10, 67, 123, 0.80) 100%), var(--card-projeto-imagem) lightgray 50% / cover no-repeat;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all .2s ease-in-out;
+  padding: var(--space-lg);
+  text-decoration: none;
+  flex-grow: 1;
+
+  min-height: 200px;
+
+  &:hover {
+    background: linear-gradient(0deg, rgba(10, 67, 123, 0.90) 0%, rgba(10, 67, 123, 0.90) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), var(--card-projeto-imagem) lightgray 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .card-projeto__botao {
+      display: flex;
+    }
+  }
+
+  &__botao {
+    display: none;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    padding: var(--space-xxxxs);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: var(--space-xxxs);
+    background: var(--color-accent);
+
+    right: 16px;
+    top: 16px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &.card-projeto--archive {
+    min-height: 440px;
+  }
+
+  &.card-projeto--video {
+    @include breakpoint(md) {
+      min-height: 540px;
+    }
+
+    &:hover {
+      .card-projeto__texto {
+        display: block;
+      }
+
+      .card-projeto__botao-video {
+        display: flex;
+      }
+    }
+  }
+
+  &.card-projeto--central {
+    @include breakpoint(md) {
+      min-height: 258px;
+    }
+  }
+
+  &.card-projeto--ponta {
+    @include breakpoint(md) {
+      min-height: 370px;
+    }
+  }
+
+  &__categoria {
+    color: var(--color-accent);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.16px;
+  }
+
+  &__titulo {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.18px;
+
+    @include breakpoint(md) {
+      font-size: 22px;
+      letter-spacing: -0.22px;
+    }
+  }
+
+  &__texto {
+    display: none;
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+  }
+
+  &__botao-video {
+    display: none;
+    padding: var(--space-xs) var(--space-sm);
+    gap: var(--space-xs);
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(11px);
+    align-self: flex-start;
+
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.16px;
+  }
+}
+
+/* purgecss end ignore */

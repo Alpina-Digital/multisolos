@@ -1,0 +1,30 @@
+@use 'cody/base' as *;
+
+.section-reconhecimentos {
+
+  .swiper-slide, .ticker__item {
+    flex: 0 0 auto;
+    width: fit-content;
+
+    img {
+      width: auto;
+      object-fit: contain;
+    }
+  }
+
+  .swiper-slide img {
+    height: 140px;
+  }
+
+  .ticker__item img {
+    height: 120px;
+  }
+
+  &__texto {
+    color: var(--color-cinza-medio);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.16px;
+  }
+}

@@ -1,0 +1,17 @@
+/* purgecss ignore */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+body {
+  // position: relative;
+  text-size-adjust: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  clip-path: inset(0 0 0 0);
+  background: var(--color-cinza-escuro-ultra);
+}
+
+* {
+  // will-change: transform, opacity;
+}

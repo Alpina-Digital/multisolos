@@ -1,0 +1,134 @@
+@use 'cody/base' as *;
+
+/* purgecss start ignore */
+
+.section-banners-home {
+  position: relative;
+  width: 100vw;
+  height: 664px;
+  overflow: hidden;
+
+  @include breakpoint(md) {
+    height: 776px;
+    min-height: 100vh;
+  }
+
+  &__seta {
+    display: none;
+
+    @include breakpoint(md) {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      bottom: var(--space-md);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.section-banners-home .side-navigation {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  justify-content: center;
+  gap: 5px;
+  width: 100% !important;
+  height: 3px;
+
+  @include breakpoint(sm) {
+    top: 0;
+
+    flex-direction: column;
+    left: auto !important;
+    right: 50%;
+    transform: translateX(calc(var(--max-width-bigger) / 2));
+
+    width: 3px !important;
+    height: 80%;
+  }
+
+  @media (min-width: var(--max-width-bigger)) {
+    transform: translateX(0);
+    left: var(--component-padding);
+  }
+
+  @media (max-width: 1216px) {
+    transform: translateX(0);
+    right: var(--component-padding);
+  }
+
+  .swiper-pagination-bullet {
+    background-color: var(--color-white);
+    opacity: 0.3;
+    width: 20px;
+    height: 2px;
+    border-radius: 0;
+    transition: height 0.3s;
+    cursor: pointer;
+
+    @include breakpoint(sm) {
+      width: 3px;
+      height: 25px;
+    }
+  }
+
+  .swiper-pagination-bullet.actived {
+    background-color: var(--color-accent);
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: var(--color-white);
+    height: 2px;
+    width: 110px;
+    opacity: 1;
+    transition: width 0.3s;
+    position: relative;
+    cursor: normal;
+
+    @include breakpoint(sm) {
+      transition: height 0.3s;
+      height: 170px;
+      width: auto;
+    }
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active .progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-accent);
+    animation-name: bulletBannerHomefillAnimation;
+    animation-timing-function: linear;
+  }
+
+  @keyframes bulletBannerHomefillAnimation {
+    0% {
+      width: 0;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(sm) {
+    @keyframes bulletBannerHomefillAnimation {
+      0% {
+        height: 0;
+      }
+
+      100% {
+        height: 100%;
+      }
+    }
+  }
+}
+
+/* purgecss end ignore */

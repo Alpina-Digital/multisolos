@@ -1,0 +1,185 @@
+@use "../base" as *;
+
+// --------------------------------
+
+// How to create custom utility classes 👇
+
+// --------------------------------
+
+// 👇 your custom utility class
+// .my-util-class {
+//   property: value;
+// }
+
+// 👇 (optional) create responsive variations - edit only [my-util-class, property, value]
+// @each $breakpoint, $value in $breakpoints {
+//   @include breakpoint(#{$breakpoint}) {
+//     .my-util-class\@#{$breakpoint} {
+//       property: value;
+//     }
+//   }
+// }
+
+.divider {
+    width: 100%;
+    border-bottom: 1px solid rgba(117, 118, 121, 0.3);
+    position: relative;
+
+    .btn--ver-mais {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: fit-content;
+
+        font-size: var(--text-xxs);
+        font-weight: 700;
+        text-transform: uppercase;
+
+        box-shadow: 0 0 0 1px var(--color-cinza-claro);
+        color: var(--color-cinza);
+        background-color: var(--color-white);
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: calc(-1 * var(--space-md) - 1px);
+            width: var(--space-md);
+            height: 100%;
+            background-color: var(--color-white);
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            right: calc(-1 * var(--space-md) - 1px);
+            width: var(--space-md);
+            height: 100%;
+            background-color: var(--color-white);
+        }
+
+        &:hover {
+            color: var(--color-white);
+            background-color: var(--color-cinza-claro);
+        }
+    }
+}
+
+.offset-negativo {
+    margin: calc(-1 * var(--component-padding)) !important;
+    padding: var(--component-padding) !important;
+}
+
+.accept-area {
+    display: flex;
+    align-items: center;
+}
+
+.form-area input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--color-accent);
+    outline: 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.form-area input[type="checkbox"]:checked {
+    background-color: var(--color-accent);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10 45 L40 75 L90 25' fill='none' stroke='%23FFFFFF' stroke-width='10'/%3E%3C/svg%3E");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-color 0.2s;
+}
+
+.btn--share {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--color-cinza);
+    border-radius: var(--raio-cards, 5px);
+    background: var(--color-cinza-fundo);
+    transition: all 0.2;
+
+    &:hover {
+        color: var(--color-cinza-fundo);
+        background: var(--color-cinza);
+        transition: all 0.2;
+    }
+}
+
+.upDown {
+    animation: upDown 0.3s;
+}
+
+@keyframes upDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.short_description-2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.short_description-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.short_description-4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.short_description-5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+/* purgecss start ignore */
+.width-full {
+    width: 100%;
+}
+
+.z-index-0 {
+    z-index: 0;
+}
+
+/* purgecss end ignore */

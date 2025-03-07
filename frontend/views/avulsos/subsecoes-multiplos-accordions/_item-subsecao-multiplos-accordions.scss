@@ -1,0 +1,40 @@
+@use 'cody/base' as *;
+
+.item-subsecao-multiplos-accordions {
+  padding: var(--space-lg) 0;
+  border-top: solid 1px rgba(154, 164, 172, .3);
+
+  &:last-of-type {
+    border-bottom: solid 1px rgba(154, 164, 172, .3);
+  }
+
+  .accordion__item {
+    border-radius: var(--space-xxs);
+    background: rgba(10, 67, 123, 0.30);
+    color: var(--color-white);
+    border: none;
+  }
+}
+
+.item-subsecao-multiplos-accordions__titulo {
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.18px;
+
+  @include breakpoint(md) {
+    font-size: 22px;
+    letter-spacing: -0.22px;
+  }
+}
+
+.item-subsecao-multiplos-accordions__titulo-accordion {
+  color: var(--color-white);
+  font-family: "Plus Jakarta Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -0.18px;
+}

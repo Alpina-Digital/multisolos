@@ -1,0 +1,112 @@
+@use 'cody/base' as *;
+
+.section-faq-pages__container {
+  position: relative;
+  top: -195px;
+  background: var(--color-primary);
+  border-radius: var(--space-xxs);
+  margin-bottom: -195px;
+}
+
+.section-faq-pages__titulo {
+  color: var(--color-white);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 95%;
+  letter-spacing: -0.26px;
+
+  @include breakpoint(md) {
+    font-size: 32px;
+    letter-spacing: -0.32px;
+  }
+}
+
+.section-faq-pages__texto {
+  color: rgba(255, 255, 255, 0.80);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: -0.16px;
+}
+
+.section-faq-pages__item {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-top: solid 1px alpha(var(--color-cinza-claro), 0.3);
+
+  &-titulo {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    letter-spacing: -0.18px;
+
+    @include breakpoint(md) {
+      font-size: 22px;
+      letter-spacing: -0.22px;
+    }
+
+    strong {
+      color: var(--color-accent);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.section-faq-pages__item-seta {
+  width: 48px;
+  height: 48px;
+  border: solid 1px var(--color-white);
+  border-radius: 50%;
+  color: var(--color-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s ease-in-out;
+
+  .section-faq-pages__item:hover & {
+    transform: translateX(8px);
+    background: var(--color-white);
+    color: var(--color-primary)
+  }
+
+}
+
+.section-faq-pages__accordion {
+  border-color: rgba(154, 164, 172, .3);
+
+  &.accordion__item--is-open {
+    &, .block-accordions__accordion-titulo {
+      color: var(--color-accent);
+    }
+  }
+
+  &, &-titulo {
+    color: var(--color-white);
+  }
+
+  &-titulo {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+
+    @include breakpoint(md) {
+      font-size: 22px;
+    }
+  }
+
+  &-texto {
+    a {
+      color: var(--color-accent);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

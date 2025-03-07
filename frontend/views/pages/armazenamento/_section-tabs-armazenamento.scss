@@ -1,0 +1,59 @@
+@use 'cody/base' as *;
+
+.section-tabs-armazenamento__tabs {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-xs);
+  margin: var(--space-xs) auto;
+  box-sizing: border-box;
+
+  @include breakpoint(md) {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    height: 58px;
+    margin-bottom: -2px;
+    gap: 0;
+  }
+}
+
+.section-tabs-armazenamento__tab {
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+.section-tabs-armazenamento__tab>.tabs__control {
+  box-sizing: border-box;
+  font-size: 14px;
+  color: var(--color-white);
+  padding: var(--space-xxs) var(--space-xs);
+  border-radius: 50rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+  letter-spacing: -0.14px;
+
+  @include breakpoint(sm) {
+    font-size: 16px;
+    letter-spacing: -0.16px;
+  }
+
+  @include breakpoint(md) {
+    font-size: 18px;
+    letter-spacing: -0.18px;
+    padding: 0 var(--space-md) var(--space-md) var(--space-md);
+    border-bottom: 2px solid rgba(154, 164, 172, 0.40);
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  &[aria-selected="true"] {
+    text-decoration: none;
+    color: var(--color-black);
+    background-color: var(--color-accent);
+
+    @include breakpoint(md) {
+      color: var(--color-accent);
+      background-color: transparent;
+      border-bottom: 2px solid var(--color-accent);
+    }
+  }
+}
