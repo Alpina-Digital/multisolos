@@ -4,7 +4,7 @@
  * Footer
  */
 ?>
-<footer class="footer bg-cinza-escuro-ultra padding-top-xl padding-top-xxxl@md padding-bottom-xl position-relative overflow-hidden">
+<footer class="footer bg-primary padding-top-xl padding-top-xxxl@md padding-bottom-xl position-relative overflow-hidden">
 	<?php (new SV_Footer())->render(); ?>
 	<?= get_svg_content('footer/decoration.svg', 'footer__decoration'); ?>
 </footer>

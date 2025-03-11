@@ -46,7 +46,7 @@ class SV_Footer
    */
   private function get_col_logo(): string
   {
-    $logo = get_svg_content('logo/logo-footer.svg');
+    $logo = get_svg_content('logo/logo.svg');
     $args = compact('logo');
     return $this->html('frontend/views/footer/col-superior-logo.php', $args);
   }
