@@ -10,5 +10,5 @@
  */
 
 get_header();
-(new SV_Contato())->render();
+(new MS_Contato())->render();
 get_footer();

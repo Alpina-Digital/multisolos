@@ -8,7 +8,7 @@
  */
 class MS_Home extends Alp_Page
 {
-  use Alp_Banners_Home, SV_Section_Projetos;
+  use Alp_Banners_Home, MS_Section_Projetos;
 
   /**
    * Faz o setup da estrutura da página no backend.
@@ -50,7 +50,7 @@ class MS_Home extends Alp_Page
    */
   public function render(): void
   {
-    $avulsos = new SV_Avulsos();
+    $avulsos = new MS_Avulsos();
 
     $this
       ->add_render($this->render_section_banners())

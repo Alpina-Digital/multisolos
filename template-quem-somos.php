@@ -10,5 +10,5 @@
  */
 
 get_header();
-(new SV_Quem_Somos())->render();
+(new MS_Quem_Somos())->render();
 get_footer();

@@ -11,5 +11,5 @@
 
 
 get_header();
-(new SV_Solucoes())->render();
+(new MS_Solucoes())->render();
 get_footer();

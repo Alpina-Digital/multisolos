@@ -10,5 +10,5 @@
  */
 
 get_header();
-(new SV_Post())->render();
+(new MS_Post())->render();
 get_footer();

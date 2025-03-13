@@ -10,5 +10,5 @@
  */
 
 get_header();
-(new SV_Blog())->render();
+(new MS_Blog())->render();
 get_footer();

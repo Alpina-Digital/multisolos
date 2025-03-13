@@ -79,52 +79,33 @@ require_once get_template_directory() . "/backend/base/walkers/Alp_Walker_Megame
 ########## PROJECT ####################
 
 #TRAITS
-require_once get_template_directory() . "/backend/project/traits/SV_Banner_Topo.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Grid_Cards_Cinza.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Apresentacao.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Banner_Energia_Investimento.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Section_FAQ.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Tres_Passos.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Card_Azul_Solucao.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Etapas_Projeto.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Subsecoes_Multiplos_Accordions.php";
-require_once get_template_directory() . "/backend/project/traits/SV_Section_Projetos.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Banner_Topo.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Grid_Cards_Cinza.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Apresentacao.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Banner_Energia_Investimento.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Section_FAQ.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Tres_Passos.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Card_Azul_Solucao.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Etapas_Projeto.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Subsecoes_Multiplos_Accordions.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Section_Projetos.php";
 
 #ENTITIES
-require_once get_template_directory() . "/backend/project/entities/SV_Parceiro.php";
-require_once get_template_directory() . "/backend/project/entities/SV_Associacao.php";
-require_once get_template_directory() . "/backend/project/entities/SV_Reconhecimento.php";
-require_once get_template_directory() . "/backend/project/entities/SV_Projeto.php";
-require_once get_template_directory() . "/backend/project/entities/SV_Depoimento.php";
-require_once get_template_directory() . "/backend/project/entities/SV_Material.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Parceiro.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Associacao.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Reconhecimento.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Projeto.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Depoimento.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Material.php";
 
 #VIEWS
-require_once get_template_directory() . "/backend/project/views/SV_Header.php";
-require_once get_template_directory() . "/backend/project/views/SV_Footer.php";
-require_once get_template_directory() . "/backend/project/views/SV_Avulsos.php";
-require_once get_template_directory() . "/backend/project/views/singles/SV_Post.php";
+require_once get_template_directory() . "/backend/project/views/MS_Header.php";
+require_once get_template_directory() . "/backend/project/views/MS_Footer.php";
+require_once get_template_directory() . "/backend/project/views/MS_Avulsos.php";
+require_once get_template_directory() . "/backend/project/views/singles/MS_Post.php";
 
 require_once get_template_directory() . "/backend/project/views/pages/MS_Home.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Como_Funciona.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Quem_Somos.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_FAQ.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Projetos.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Blog.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Materiais.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Simulador.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Resultados_Simulador.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Orcamento.php";
-require_once get_template_directory() . "/backend/project/views/pages/SV_Contato.php";
-
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_Residencias.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_Agronegocio.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_Empresas.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_Autoproducao.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_Mobilidade.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_Operacao_Manutencao.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_Sistema_Armazenamento.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_GridZero.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_ESI.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_EPC.php";
-require_once get_template_directory() . "/backend/project/views/pages/solucoes/SV_Solucoes_Geracao_Centralizada.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Quem_Somos.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Projetos.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Blog.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Contato.php";

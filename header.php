@@ -45,4 +45,4 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <?= (new SV_Header())->render(); ?>
+  <?= (new MS_Header())->render(); ?>

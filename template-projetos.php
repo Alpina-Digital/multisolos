@@ -10,5 +10,5 @@
  */
 
 get_header();
-(new SV_Projetos())->render();
+(new MS_Projetos())->render();
 get_footer();
