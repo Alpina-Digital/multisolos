@@ -27,11 +27,7 @@ class MS_Quem_Somos extends Alp_Page
   {
     $this->template->create_metaboxes()
       //BANNER
-      ->add_metabox_box('banner', 'Banner no Topo')
-      ->add_metabox_field_biu('Subtítulo', 'subtitulo', 3)
-      ->add_metabox_field_biu('Título', 'titulo', 3)
-      ->add_metabox_field_biu('Texto', 'texto', 3)
-      ->add_metabox_field_image('Imagem de Fundo', 'imagem', 1, 3)
+      ->chain_from_callable([$this, 'chain_metaboxes_banner_topo'])
       //SEÇÃO COM DESTAQUES
       ->add_metabox_box('destaques', 'Seção de Destaques')
       ->add_metabox_field_biu('Título', 'titulo', 6)

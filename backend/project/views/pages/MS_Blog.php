@@ -8,6 +8,8 @@
  */
 class MS_Blog extends Alp_Page
 {
+  use MS_Banner_Topo;
+
   private string $pesquisa;
   private string $categoria;
   private int $posts_por_pagina = 7;
@@ -31,6 +33,9 @@ class MS_Blog extends Alp_Page
   public function create_metaboxes(): void
   {
     $this->template->create_metaboxes()
+      //BANNER
+      ->chain_from_callable([$this, 'chain_metaboxes_banner_topo'])
+
       ->add_metabox_box('', 'Informações do Blog')
       ->add_metabox_field_biu('Título', 'titulo', 12)
       ->add_metabox_box('ultimas', 'Seção de Blog em outras páginas')
@@ -53,6 +58,7 @@ class MS_Blog extends Alp_Page
     $this->categoria = $_GET['categoria'] ?? '';
 
     $this
+      ->add_render($this->render_banner_topo())
       ->add_render($this->render_section_principal())
       ->echo_render();
   }
