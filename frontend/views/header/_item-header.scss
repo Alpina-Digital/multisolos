@@ -9,9 +9,8 @@
     transition: all 0.2s ease-in-out;
 
     &:hover {
-      background: var(--color-white);
       color: var(--color-cinza-escuro-ultra);
-      opacity: 1;
+      opacity: 0.8;
     }
   }
 }
