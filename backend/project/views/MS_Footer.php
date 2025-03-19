@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Esta classe é responsável por gerenciar o footer da Morro dos Anjos.
+ * Esta classe é responsável por gerenciar o footer da Multisolos.
  */
 class MS_Footer
 {
@@ -23,11 +23,9 @@ class MS_Footer
    */
   public function render_row_superior(): string
   {
-    $titulo = 'O primeiro resort com águas termais e <br> <strong>uma praia com ondas no norte do Paraná</strong>';
-
     $sociais = $this->get_col_redes();
 
-    $args = compact('titulo', 'sociais');
+    $args = compact('sociais');
 
     return $this->html('frontend/views/footer/row-superior.php', $args);
   }

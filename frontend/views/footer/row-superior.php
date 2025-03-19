@@ -18,7 +18,6 @@
 extract($args);
 ?>
 <div class="footer__superior max-width-xxl container padding-top-xl flex flex-column justify-between items-center items-start@md gap-lg gap-sm@md">
-  <h2 class="footer__superior-titulo"><?= $titulo; ?></h2>
   <?= $sociais; ?>
 </div>
 <div class="container max-width-xxl footer__divider margin-y-lg"></div>
