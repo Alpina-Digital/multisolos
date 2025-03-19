@@ -17,7 +17,7 @@
 extract($args);
 ?>
 <div class="col-contato <?= $class; ?> flex-column gap-sm flex-shrink-0">
-
+<h3 class="footer__title"><?= $titulo; ?></h3>
   <a href="#mapa" aria-controls="modal-footer" data-url="<?= $endereco_url; ?>" target="_blank" class="footer__link flex gap-xxs">
     <div class="footer__icon flex-shrink-0"><?= $pin; ?></div>
     <div class="flex flex-column gap-xxs">

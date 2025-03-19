@@ -76,6 +76,7 @@ class MS_Footer
    */
   public function get_col_contatos(string $class = 'hide flex@lg'): string
   {
+    $titulo = 'Contatos';
     $telefone = Alp_Settings::get_telefone(1);
     $telefone_icone = get_svg_content('footer/telefone.svg', 'footer__icone color-accent', true);
 
@@ -88,7 +89,7 @@ class MS_Footer
     $endereco = apply_filters('the_content', Alp_Settings::get_option('endereco'));
     $endereco_url = Alp_Settings::get_maps_url();
 
-    $args = compact('telefone', 'whatsapp', 'telefone_icone', 'whatsapp_icone', 'endereco', 'pin', 'arrow', 'endereco_url', 'class');
+    $args = compact('titulo','telefone', 'whatsapp', 'telefone_icone', 'whatsapp_icone', 'endereco', 'pin', 'arrow', 'endereco_url', 'class');
     return $this->html('frontend/views/footer/col-central-contato.php', $args);
   }
 

@@ -4,6 +4,16 @@
   position: relative;
   color: var(--color-white);
   z-index: 1;
+
+  &__title {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 110%;
+    /* 19.8px */
+    letter-spacing: -0.18px;
+  }
 }
 
 .footer__superior-titulo {

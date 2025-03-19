@@ -17,5 +17,6 @@
 extract($args);
 ?>
 <div class="col-contato hide block@lg">
+<h3 class="footer__title"><?= $titulo; ?></h3>
   <?= $menu; ?>
 </div>
