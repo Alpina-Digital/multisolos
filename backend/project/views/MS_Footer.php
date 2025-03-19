@@ -24,8 +24,9 @@ class MS_Footer
   public function render_row_superior(): string
   {
     $sociais = $this->get_col_redes();
+    $logo = $this->get_col_logo();
 
-    $args = compact('sociais');
+    $args = compact('sociais', 'logo');
 
     return $this->html('frontend/views/footer/row-superior.php', $args);
   }
