@@ -18,7 +18,7 @@
  */
 extract($args);
 ?>
-<section class="section-principal-blog bg-cinza-escuro-ultra padding-top-xxl@md padding-bottom-lg">
+<section class="section-principal-blog bg-cinza-claro padding-top-xxl@md padding-bottom-lg">
   <div class="max-width-lg container flex flex-column gap-md gap-xl@md">
 
     <div class="flex flex-column flex-row@md gap-md justify-between@md items-center items-end@md">
