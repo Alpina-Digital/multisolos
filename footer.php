@@ -1,12 +1,18 @@
 <?php
 
 /**
- * Footer
+ * Template Part: Footer
+ * Description: Não esqueça de fechar o <body> e o <html> após renderizar o footer.
+ * 
+ * @author Alpina Digital
+ * @package Alpina V4
+ * @version 4.0
  */
 ?>
-<footer class="footer bg-cinza-escuro-ultra padding-top-xl padding-top-xxxl@md padding-bottom-xl position-relative overflow-hidden">
-	<?php (new MS_Footer())->render(); ?>
-	<?= get_svg_content('footer/decoration.svg', 'footer__decoration'); ?>
+<footer class="footer__wrapper">
+	<div class="footer bg-primary overflow-hidden">
+		<?php (new MS_Footer())->render(); ?>
+	</div>
 </footer>
 <?php
 echo Alp_Settings::print_modal();

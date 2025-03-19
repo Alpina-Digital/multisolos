@@ -11,14 +11,14 @@
  * @version 4.0
  * 
  * @var $args {
- * 	@var string $cols Renderização das colunas.
+ *  @var string $titulo Título no footer.
+ * 	@var array{nome:string,link:string,icone:string} $sociais Redes sociais.
  * }
  */
 extract($args);
 ?>
-<div class="container max-width-lg margin-bottom-md">
-  <div class="flex flex-column flex-row@md justify-between gap-lg gap-xxl@md">
-    <?= $cols; ?>
-  </div>
+<div class="footer__superior max-width-xxl container padding-top-xl flex flex-column justify-between items-center items-start@md gap-lg gap-sm@md">
+  <h2 class="footer__superior-titulo"><?= $titulo; ?></h2>
+  <?= $sociais; ?>
 </div>
-<div class="container max-width-lg footer__divider margin-y-lg"></div>
+<div class="container max-width-xxl footer__divider margin-y-lg"></div>

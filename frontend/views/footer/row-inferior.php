@@ -11,12 +11,11 @@
  * @since 2.0
  */
 ?>
-<div class="container max-width-lg position-relative">
+<div class="max-width-xxl container padding-bottom-xl position-relative">
   <div class="flex flex-column flex-row@sm items-center gap-y-sm justify-between">
 
     <div class="footer__copyright flex flex-column gap-xxxs">
-      <span> ©<?= date('Y'); ?>. Todos os direitos reservados.</span>
-      <span>SOLARVOLT SOLUÇÕES COMÉRCIO E INSTALAÇÃO PARA ENERGIA LTDA.</span>
+      <span> ©<?= date('Y'); ?> <?= get_bloginfo('title'); ?>.</span>
     </div>
 
     <a class="footer__alpina" href="<?= esc_url('http://alpina.digital') ?>" target="_blank" aria-label="Alpina Digital">
