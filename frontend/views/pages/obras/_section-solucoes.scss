@@ -1,0 +1,17 @@
+@use 'cody/base' as *;
+
+.section-solucoes {
+  &__titulo {
+    strong {
+      color: var(--color-accent);
+    }
+  }
+
+  &__texto {
+    color: var(--color-cinza-escuro);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+  }
+}

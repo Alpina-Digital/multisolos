@@ -49,6 +49,17 @@ class MS_Avulsos
   }
 
   /**
+   * Renderiza um card de feature.
+   * @param array $card Informações do card.
+   * @return string HTML do card.
+   */
+  public function render_card_feature(array $card, string $classes = ''): string
+  {
+    $args = array_merge($card, compact('classes'));
+    return $this->html("frontend/views/cards/card-feature.php", $args);
+  }
+
+  /**
    * Renderiza a seção de Quem Já Confiou.
    * @return string HTML renderizado.
    */

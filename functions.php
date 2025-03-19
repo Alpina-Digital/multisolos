@@ -89,6 +89,7 @@ require_once get_template_directory() . "/backend/project/traits/MS_Card_Azul_So
 require_once get_template_directory() . "/backend/project/traits/MS_Etapas_Projeto.php";
 require_once get_template_directory() . "/backend/project/traits/MS_Subsecoes_Multiplos_Accordions.php";
 require_once get_template_directory() . "/backend/project/traits/MS_Section_Projetos.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Carrossel.php";
 
 #ENTITIES
 require_once get_template_directory() . "/backend/project/entities/MS_Parceiro.php";
@@ -108,4 +109,6 @@ require_once get_template_directory() . "/backend/project/views/pages/MS_Home.ph
 require_once get_template_directory() . "/backend/project/views/pages/MS_Quem_Somos.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Projetos.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Blog.php";
-require_once get_template_directory() . "/backend/project/views/pages/MS_Contato.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Fale_Conosco.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Obras.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Servicos.php";
