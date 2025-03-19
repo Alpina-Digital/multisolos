@@ -18,8 +18,8 @@ class Alp_Menus
     register_nav_menus(
       [
         'menu-principal' => 'Menu Principal',
-        'footer-menu' => 'Rodapé - Menu',
-        'footer-solucoes' => 'Rodapé - Soluções',
+        'footer-1' => 'Rodapé - Menu 1',
+        'footer-2' => 'Rodapé - Menu 2',
         'footer-politicas' => 'Rodapé - Políticas'
       ]
     );

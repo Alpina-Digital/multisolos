@@ -37,12 +37,12 @@ class MS_Footer
   public function render_row_central(): string
   {
     $cols = implode(PHP_EOL, [
-      $this->get_col_logo(),
+      // $this->get_col_logo(),
       $this->get_col_contatos(),
-      $this->get_col_menu('footer-1'),
-      $this->get_col_menu('footer-2'),
+      $this->get_col_menu('Soluções','footer-1'),
+      $this->get_col_menu('Institucional', 'footer-2'),
       $this->get_col_accordions_mobile(),
-      $this->get_col_botoes(),
+      // $this->get_col_botoes(),
     ]);
 
     $args = compact('cols');
@@ -126,11 +126,11 @@ class MS_Footer
    * @param string $menu_id ID do menu a ser renderizado.
    * @return string HTML da coluna.
    */
-  private function get_col_menu(string $menu_id): string
+  private function get_col_menu(string $titulo, string $menu_id): string
   {
     $menu = Alp_Menus::linear($menu_id, 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
 
-    $args = compact('menu');
+    $args = compact('titulo', 'menu');
     return $this->html('frontend/views/footer/col-central-menu.php', $args);
   }
 

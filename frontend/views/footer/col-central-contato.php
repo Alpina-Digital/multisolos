@@ -29,10 +29,10 @@ extract($args);
     </div>
   </a>
 
-  <?php if (!empty($telefone1)): ?>
-    <a href="<?= $telefone1->url; ?>" target="_blank" class="footer__link flex gap-xxs">
+  <?php if (!empty($telefone)): ?>
+    <a href="<?= $telefone->url; ?>" target="_blank" class="footer__link flex gap-xxs">
       <div class="footer__icon"><?= $telefone_icone; ?></div>
-      <div class="footer__text"><?= $telefone1->texto; ?></div>
+      <div class="footer__text"><?= $telefone->texto; ?></div>
     </a>
   <?php endif; ?>
 
@@ -50,4 +50,5 @@ extract($args);
     </a>
   <?php endif; ?>
 
+ 
 </div>
