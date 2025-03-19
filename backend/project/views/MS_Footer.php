@@ -42,7 +42,6 @@ class MS_Footer
       $this->get_col_menu('Soluções','footer-1'),
       $this->get_col_menu('Institucional', 'footer-2'),
       $this->get_col_accordions_mobile(),
-      // $this->get_col_botoes(),
     ]);
 
     $args = compact('cols');
@@ -134,28 +133,7 @@ class MS_Footer
     return $this->html('frontend/views/footer/col-central-menu.php', $args);
   }
 
-  /**
-   * Renderiza a coluna com os botões.
-   * @return string HTML da coluna.
-   */
-  private function get_col_botoes(): string
-  {
-    $botoes = [
-      (object) [
-        'nome' => 'Fazer uma reserva',
-        'link' => '#reservas',
-        'class' => 'btn btn--accent-hover-dark footer__btn'
-      ],
-      (object) [
-        'nome' => 'Comprar um imóvel',
-        'link' => '/compre-seu-imovel',
-        'class' => 'btn btn--white footer__btn'
-      ]
-    ];
-
-    $args = compact('botoes');
-    return $this->html('frontend/views/footer/col-central-botoes.php', $args);
-  }
+ 
 
   /**
    * Renderiza a coluna de accordion para mobile.
