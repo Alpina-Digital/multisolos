@@ -84,6 +84,14 @@
   }
 
   adicionar_swiper('obras');
+  adicionar_swiper('quem-somos-sobre',
+    {
+      slidesPerView: 1,
+      spaceBetween: 24,
+      loop: false,
+      breakpoints: {}
+    }
+  );
 
   /**
    * Configurações do Swiper de galeria.

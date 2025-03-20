@@ -29,6 +29,16 @@ class MS_Quem_Somos extends Alp_Page
       //BANNER
       ->chain_from_callable([$this, 'chain_metaboxes_banner_topo'])
 
+      //SEÇÃO SOBRE
+      ->add_metabox_box('sobre', 'Seção Sobre')
+      ->add_metabox_field_text('Título', 'titulo', 4)
+      ->add_metabox_field_image('Selo', 'selo', 1, 3)
+      ->add_metabox_field_image('Foto principal', 'foto_principal', 1, 5)
+      ->add_metabox_group('Cards', 'cards', 'Card {#} - {titulo}')
+      ->add_metabox_field_text('Título', 'titulo', 6)
+      ->add_metabox_field_biu('Texto Superior', 'texto', 12)
+      ->close_metabox_group()
+
       ->render();
   }
 
@@ -36,11 +46,41 @@ class MS_Quem_Somos extends Alp_Page
   {
 
     $this->add_render($this->render_banner_topo())
+      ->add_render($this->render_section_sobre())
 
-    ->echo_render();
+      ->echo_render();
   }
 
+  /**
+   * Renderiza a seção Sobre.
+   * @return string HTML da seção.
+   */
+  private function render_section_sobre(): string
+  {
+    /**
+     * @var array{titulo:string,cards:array<int,array>} $args  Metaboxes da seção.
+     */
+    $args = $this->get_post_metas_values('sobre');
+    foreach ($args['cards'] as $key => $card) {
+      $args['cards'][$key] = $this->render_card_sobre($card);
+    }
+    $args['cards'] = implode(PHP_EOL, $args['cards']);
+    $args['swiper_class'] = 'quem-somos-sobre';
+    return $this->html('frontend/views/pages/quem-somos/section-sobre', $args);
+  }
 
+  /**
+   * Renderiza um card de Sobre.
+   * @param array{titulo?:string,texto?:string,} $card Card de sobre.
+   * 
+   * @return string HTML do card.
+   */
+  private function render_card_sobre(array $card): string
+  {
+    if (empty($card['itens']) || !is_array($card['itens'])) $card['itens'] = [];
+    $card['itens'] = array_map(fn($item) => $item['texto'] ?? '', $card['itens']);
+    return $this->html('frontend/views/cards/card-sobre', $card);
+  }
 }
 
 /**
