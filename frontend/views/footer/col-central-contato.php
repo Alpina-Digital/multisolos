@@ -17,7 +17,7 @@
 extract($args);
 ?>
 <div class="col-contato <?= $class; ?> flex-column gap-sm flex-shrink-0">
-<h3 class="footer__title"><?= $titulo; ?></h3>
+  <h3 class="footer__title"><?= $titulo; ?></h3>
   <a href="#mapa" aria-controls="modal-footer" data-url="<?= $endereco_url; ?>" target="_blank" class="footer__link flex gap-xxs">
     <div class="footer__icon flex-shrink-0"><?= $pin; ?></div>
     <div class="flex flex-column gap-xxs">
@@ -44,11 +44,16 @@ extract($args);
   <?php endif; ?>
 
   <?php if (!empty($whatsapp)): ?>
-    <a href="<?= $whatsapp->url; ?>" target="_blank" class="footer__link flex gap-xxs">
+    <span class="footer__link flex gap-xxs">
       <div class="footer__icon"><?= $whatsapp_icone; ?></div>
-      <div class="footer__text"><?= $whatsapp->texto; ?></div>
-    </a>
+      <div class="footer__text">
+        <a href="<?= $whatsapp->url; ?>" target="_blank"><?= $whatsapp->texto; ?></a>
+        <?php if (!empty($whatsapp2)): ?>
+          / <a href="<?= $whatsapp2->url; ?>" target="_blank"><?= $whatsapp2->texto; ?></a>
+        <?php endif; ?>
+      </div>
+    </span>
   <?php endif; ?>
 
- 
+
 </div>

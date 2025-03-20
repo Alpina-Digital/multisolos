@@ -123,6 +123,8 @@ class Alp_Settings_Pages extends Alp_Settings
     self::exibir_campo_texto('Telefone 1 é WhatsApp?', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'telefone1_whats', false, 'checkbox');
     self::exibir_campo_texto('Telefone 2', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'telefone2', false, 'tel');
     self::exibir_campo_texto('Telefone 2 é WhatsApp?', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'telefone2_whats', false, 'checkbox');
+    self::exibir_campo_texto('Telefone 3', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'telefone3', false, 'tel');
+    self::exibir_campo_texto('Telefone 3 é WhatsApp?', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'telefone3_whats', false, 'checkbox');
     self::exibir_campo_texto('E-mail', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'email', false, 'email');
 
     self::exibir_campo_texto('Endereço', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'endereco', true);

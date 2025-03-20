@@ -1,3 +1,11 @@
 @use 'cody/base' as *;
-      
-  .col-central-contato { }
+
+.col-contato {
+  .footer__link {
+    .footer__text {
+      a {
+        color: var(--color-white);
+      }
+    }
+  }
+}

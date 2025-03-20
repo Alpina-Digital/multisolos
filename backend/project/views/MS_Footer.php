@@ -84,13 +84,16 @@ class MS_Footer
     $whatsapp = Alp_Settings::get_telefone(2);
     $whatsapp_icone = get_svg_content('footer/whatsapp.svg', 'footer__icone color-accent', true);
 
+    $whatsapp2 = Alp_Settings::get_telefone(3);
+    $whatsapp_icone = get_svg_content('footer/whatsapp.svg', 'footer__icone color-accent', true);
+
     $pin = get_svg_content('footer/pin.svg', 'footer__icone color-accent', true);
     $arrow = get_svg_content('arrow-link.svg', 'footer__icone color-accent', true, [], 'stroke');
 
     $endereco = apply_filters('the_content', Alp_Settings::get_option('endereco'));
     $endereco_url = Alp_Settings::get_maps_url();
 
-    $args = compact('titulo','telefone', 'whatsapp', 'telefone_icone', 'whatsapp_icone', 'endereco', 'pin', 'arrow', 'endereco_url', 'class');
+    $args = compact('titulo','telefone', 'whatsapp', 'whatsapp2', 'telefone_icone', 'whatsapp_icone', 'endereco', 'pin', 'arrow', 'endereco_url', 'class');
     return $this->html('frontend/views/footer/col-central-contato.php', $args);
   }
 
