@@ -69,8 +69,19 @@ class MS_Blog extends Alp_Page
 
     $args['cards'] = '';
 
+    $avulsos = new MS_Avulsos();
+
+    $destaque = true;
     while ($posts->have_posts()) {
       $posts->the_post();
+
+      if ($destaque) {
+        $args['cards'] .= $this->render_card_blog_destaque(get_the_ID());
+        $args['cards'] .= $avulsos->render_card_blog(get_the_ID(), 'col-12 col-4@md hide@md');
+        $destaque = false;
+        continue;
+      }
+
       $args['cards'] .= $this->render_card_blog(get_the_ID(), 'col-12 col-4@md');
     }
 
