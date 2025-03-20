@@ -16,13 +16,9 @@ class MS_Post
    */
   public function render(): void
   {
-    $avulsos = new MS_Avulsos();
-
     $this
       ->add_render($this->render_section_cabecalho_post())
-      ->add_render($avulsos->render_wrapper_branco_por_cima(
-        fn() => $this->render_section_miolo_post()
-      ))
+      ->add_render($this->render_section_miolo_post())
       ->add_render($this->render_section_confira_tambem())
       ->echo_render();
   }
@@ -35,11 +31,12 @@ class MS_Post
   {
     $args = [
       'voltar' => home_url('blog'),
-      'voltar_seta' => get_svg_content('chevron.svg', 'color-accent', true),
+      'voltar_seta' => get_svg_content('chevron.svg', '', true),
       'titulo' => get_the_title(),
-      'relogio' => get_svg_content('clock.svg'),
+      'relogio' => get_svg_content('clock.svg', 'color-accent', true, [14, 14], 'stroke'),
       'tempo' => Alp_Blog::calcular_tempo_leitura(get_queried_object_id()) . ' min',
-      'categorias' => get_the_category(get_queried_object_id())
+      'categorias' => get_the_category(get_queried_object_id()),
+      'imagem' => get_the_post_thumbnail(get_queried_object_id(), 'full')
     ];
 
     return $this->html('frontend/views/singles/post/section-cabecalho-post.php', $args);
@@ -67,9 +64,7 @@ class MS_Post
       ];
     }
 
-    $imagem = get_the_post_thumbnail(get_queried_object_id(), 'full');
-
-    $args = compact('conteudo', 'shares', 'categorias', 'criado', 'modificado', 'imagem');
+    $args = compact('conteudo', 'shares', 'categorias', 'criado', 'modificado');
     return $this->html('frontend/views/singles/post/section-miolo-post.php', $args);
   }
 
@@ -79,7 +74,7 @@ class MS_Post
    */
   public function render_section_confira_tambem(): string
   {
-    $avulsos = new MS_Avulsos();
+    $blog = new MS_Blog();
 
     $posts = Alp_Blog::get_relacionadas(get_queried_object_id(), 10);
     if (!$posts->have_posts()) return '';
@@ -87,7 +82,7 @@ class MS_Post
     $cards = [];
     while ($posts->have_posts()) {
       $posts->the_post();
-      $cards[] = $avulsos->render_card_blog(get_the_ID(), 'swiper-slide');
+      $cards[] = $blog->render_card_blog(get_the_ID(), 'swiper-slide');
     }
 
     $titulo = 'Confira também';

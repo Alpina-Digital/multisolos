@@ -43,7 +43,7 @@ class MS_Fale_Conosco extends Alp_Page
   {
     $this
       ->add_render($this->render_banner_topo())
-      ->add_render($this->render_section_principal())
+      // ->add_render($this->render_section_principal())
       ->echo_render();
   }
 

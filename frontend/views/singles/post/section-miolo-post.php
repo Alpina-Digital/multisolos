@@ -16,14 +16,9 @@
  */
 extract($args);
 ?>
-<section class="section-miolo-post">
+<section class="section-miolo-post padding-top-xxl padding-bottom-md padding-bottom-xxl@md">
   <div class="max-width-lg container grid gap-md gap-xxl@md">
-
-    <figure class="section-miolo-post__destaque">
-      <?= $imagem; ?>
-    </figure>
-
-    <div class="col-12 col-9@md">
+    <div class="col-12 col-8@md">
       <article class="blog-content article text-component">
         <?= $conteudo; ?>
       </article>
@@ -35,7 +30,7 @@ extract($args);
       </div>
     </div>
 
-    <div class="col-12 col-3@md position-relative">
+    <div class="col-12 col-4@md position-relative">
       <aside class="blog-sidebar position-sticky top-sm">
         <div class="flex flex-column gap-lg">
 
@@ -44,7 +39,7 @@ extract($args);
               <h3>Navegue por categorias</h3>
               <ul class="flex flex-column gap-xs">
                 <?php foreach ($categorias as $categoria): ?>
-                  <li><a href="<?= home_url('blog'); ?>/?categoria=<?= $categoria->slug; ?>"><?= $categoria->name; ?></a></li>
+                  <li><a href="<?= home_url('blog'); ?>/?categoria=<?= $categoria->slug; ?>" class="blog-sidebar__link"><?= $categoria->name; ?></a></li>
                 <?php endforeach; ?>
               </ul>
             </div>

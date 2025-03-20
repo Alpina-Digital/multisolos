@@ -15,7 +15,7 @@
  * }
  */
 extract($args); ?>
-<section class="section-confira-tambem bg-cinza-escuro-ultra padding-y-xl padding-y-xxxl@md">
+<section class="section-confira-tambem bg-cinza-escuro padding-y-xl padding-y-xxl@md">
   <div class="section-confira-tambem__container max-width-lg container flex flex-column gap-lg overflow-hidden">
 
     <div class="flex gap-xl justify-between items-center">

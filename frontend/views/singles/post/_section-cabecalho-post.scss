@@ -1,13 +1,13 @@
 @use 'cody/base' as *;
 
-.section-cabecalho-post::before {
-  content: '';
-  display: block;
-  height: 100px;
+.section-cabecalho-post {
+  position: relative;
+  background: var(--color-cinza-escuro);
+}
 
-  @include breakpoint(md) {
-    height: 180px;
-  }
+.section-cabecalho-post__gradient {
+  // background: var(--color-white);
+  background: linear-gradient(to bottom, var(--color-cinza-escuro) 0%, var(--color-cinza-escuro) 30%, var(--color-white) 30%, var(--color-white) 100%);
 }
 
 .section-cabecalho-post__leitura {
@@ -24,8 +24,8 @@
 
 .section-cabecalho-post__categoria {
   border-radius: 100px;
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-black);
   font-size: 14px;
   font-weight: 600;
   line-height: 110%;
@@ -35,15 +35,33 @@
 
 .section-cabecalho-post__voltar {
   color: var(--color-accent);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 100%;
-  letter-spacing: -0.18px;
   text-decoration: none;
   transition: all .2s ease-in-out;
 
   &:hover {
     color: var(--color-accent-lighter);
     transform: translateX(-8px);
+  }
+}
+
+.section-cabecalho-post__destaque {
+  width: 100%;
+  height: 520px;
+  border-radius: var(--space-xs);
+  background: var(--color-cinza-claro);
+  overflow: hidden;
+
+  @include breakpoint(md, 'not all') {
+    height: auto;
+    aspect-ratio: 1216 / 520;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
