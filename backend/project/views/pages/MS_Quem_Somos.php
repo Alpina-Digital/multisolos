@@ -39,6 +39,13 @@ class MS_Quem_Somos extends Alp_Page
       ->add_metabox_field_biu('Texto Superior', 'texto', 12)
       ->close_metabox_group()
 
+      //SEÇÃO MISSAO VALORES
+      ->add_metabox_box('missao_visao', 'Missão Valores')
+      ->add_metabox_field_biu('Missão', 'missao', 6)
+      ->add_metabox_field_biu_list('Valores', 'valores', 6)
+
+
+
       ->render();
   }
 
@@ -47,6 +54,7 @@ class MS_Quem_Somos extends Alp_Page
 
     $this->add_render($this->render_banner_topo())
       ->add_render($this->render_section_sobre())
+      ->add_render($this->render_section_missao_valores())
 
       ->echo_render();
   }
@@ -80,6 +88,20 @@ class MS_Quem_Somos extends Alp_Page
     if (empty($card['itens']) || !is_array($card['itens'])) $card['itens'] = [];
     $card['itens'] = array_map(fn($item) => $item['texto'] ?? '', $card['itens']);
     return $this->html('frontend/views/cards/card-sobre', $card);
+  }
+
+  /**
+   * Renderiza a seção Missão Valores.
+   * @return string HTML da seção.
+   */
+  private function render_section_missao_valores(): string
+  {
+    /**
+     * @var array{missao:string,valores:string} $args Metaboxes da seção.
+     */
+    $args = $this->get_post_metas_values('missao_visao');
+
+    return $this->html('frontend/views/pages/quem-somos/section-missao-valores', $args);
   }
 }
 
