@@ -26,14 +26,14 @@ extract($args);
     </figure>
   </div>
 
-  <div class="col-6 padding-lg flex justify-center items-center">
+  <div class="col-6 padding-xl flex justify-center items-center">
     <div class="flex flex-column gap-md items-start">
-      <div class="flex flex-column gap-xs">
-        <div class="card-blog-destaque__categoria"><?= $categoria ?? ''; ?></div>
+      <div class="flex flex-column gap-md">
+        <!-- <div class="card-blog-destaque__categoria"><?= $categoria ?? ''; ?></div> -->
         <h3 class="card-blog-destaque__titulo"><?= $titulo ?? ''; ?></h3>
-        <div class="paragrafo-branco text-component line-clamp-3"><?= $resumo ?? ''; ?></div>
+        <div class="card-blog-destaque__texto"><?= $resumo ?? ''; ?></div>
       </div>
-      <a href="<?= $url; ?>" class="btn btn--accent">Ver mais</a>
+      <a href="<?= $url; ?>" class="btn btn--accent">LER MAIS</a>
     </div>
   </div>
 
