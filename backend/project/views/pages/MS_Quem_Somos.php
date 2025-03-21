@@ -46,7 +46,7 @@ class MS_Quem_Somos extends Alp_Page
 
       //SEÇÃO NOSSA EQUIPE
       ->add_metabox_box('nossa_equipe', 'Nossa equipe')
-      ->add_metabox_group('Cards', 'cards', 'Card {#} - {titulo}')
+      ->add_metabox_group('Cards', 'cards', 'Card {#} - {nome}')
       ->add_metabox_field_image('Foto', 'foto', 1, 12)
       ->add_metabox_field_text('Nome', 'nome', 6)
       ->add_metabox_field_text('Cargo', 'cargo', 6)
@@ -59,12 +59,18 @@ class MS_Quem_Somos extends Alp_Page
       ->render();
   }
 
+  /**
+   * Renderiza toda a página.
+   * @return void
+   */
   public function render(): void
   {
+    $avulsos = new MS_Avulsos();
 
     $this->add_render($this->render_banner_topo())
       ->add_render($this->render_section_sobre())
-      ->add_render($this->render_section_missao_valores())
+      // ->add_render($this->render_section_missao_valores())
+      ->add_render($avulsos->render_section_quem_ja_confiou())
 
       ->echo_render();
   }
