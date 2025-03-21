@@ -51,6 +51,7 @@ require_once get_template_directory() . "/backend/base/entities/Alp_Banner.php";
 require_once get_template_directory() . "/backend/base/entities/Alp_Blog.php";
 require_once get_template_directory() . "/backend/base/entities/Alp_FAQ.php";
 require_once get_template_directory() . "/backend/base/entities/Alp_Tutorial.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Timeline.php";
 
 #BASE/API
 require_once get_template_directory() . "/backend/base/api/Alp_API.php";
