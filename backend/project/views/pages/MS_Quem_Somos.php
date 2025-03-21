@@ -44,6 +44,16 @@ class MS_Quem_Somos extends Alp_Page
       ->add_metabox_field_biu('Missão', 'missao', 6)
       ->add_metabox_field_biu_list('Valores', 'valores', 6)
 
+      //SEÇÃO NOSSA EQUIPE
+      ->add_metabox_box('nossa_equipe', 'Nossa equipe')
+      ->add_metabox_group('Cards', 'cards', 'Card {#} - {titulo}')
+      ->add_metabox_field_image('Foto', 'foto', 1, 12)
+      ->add_metabox_field_text('Nome', 'nome', 6)
+      ->add_metabox_field_text('Cargo', 'cargo', 6)
+      ->add_metabox_field_text('Especialidade', 'especialidade', 6)
+      ->add_metabox_field_text('Link do currículo', 'link', 6)
+      ->close_metabox_group()
+
 
 
       ->render();
