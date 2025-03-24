@@ -33,7 +33,7 @@ extract($args);
         <h3 class="card-blog-destaque__titulo"><?= $titulo ?? ''; ?></h3>
         <div class="card-blog-destaque__texto"><?= $resumo ?? ''; ?></div>
       </div>
-      <a href="<?= $url; ?>" class="btn btn--accent">LER MAIS</a>
+      <a href="<?= $url; ?>" class="btn btn--accent">LER MAIS <?= get_svg_content('arrow-diagonal.svg', 'margin-left-xs'); ?></a>
     </div>
   </div>
 
