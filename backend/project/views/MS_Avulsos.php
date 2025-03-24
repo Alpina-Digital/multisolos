@@ -87,6 +87,80 @@ class MS_Avulsos
   }
 
   /**
+   * Renderiza a seção de Timemline.
+   * @return string HTML renderizado.
+   */
+  public function render_section_timeline(): string
+  {
+    $anos_timeline = [];
+
+    $timelines = new WP_Query([
+      'post_type' => 'timeline',
+      'posts_per_page' => -1,
+      'orderby' => 'meta_value',
+      'order' => 'ASC',
+      'meta_key' => 'timeline_data'
+    ]);
+
+    if (!$timelines->have_posts()) return false;
+
+    $conteudo = '';
+    while ($timelines->have_posts()) {
+      $timelines->the_post();
+      $conteudo .= $this->conteudo_item_timeline(get_the_ID(), $anos_timeline);
+    }
+
+    $anos = '';
+    foreach ($anos_timeline as $ano) {
+      $anos .= $this->conteudo_item_ano($ano);
+    }
+
+    $args = compact('conteudo', 'anos');
+
+
+    return $this->html('frontend/views/avulsos/section-timeline', $args);
+  }
+
+  /**
+   * Conteúdo de um item da seção Linha do Tempo
+   * @param mixed $post_id ID do post.
+   * @return string HTML.
+   */
+  private function conteudo_item_timeline($post_id, array &$anos_timeline): string
+  {
+    $ano = get_post_meta($post_id, 'timeline_data', true);
+    if ($ano) $ano = preg_replace("%^(\d+)?-.*%", "$1", $ano);
+
+    $anos_timeline[] = $ano;
+
+    $titulo = get_the_title($post_id);
+    $texto = get_post_meta($post_id, 'texto', true);
+
+    $fotos = get_post_meta($post_id, 'timeline_imagens', true);
+    if (!is_array($fotos) || empty($fotos)) $fotos = [0];
+    $fotos = array_map(fn($id) => wp_get_attachment_image($id, 'large'), $fotos);
+
+    $args = compact('titulo', 'ano', 'texto', 'fotos');
+
+    return $this->html('frontend/views/cards/card-timeline-slide', $args);
+  }
+
+  /**
+   * Conteúdo de um item para as tabs dos anos.
+   * @param mixed $ano O ano em questão.
+   * @return string HTML do item.
+   */
+  private function conteudo_item_ano($ano): string
+  {
+    $args = compact('ano');
+
+    return $this->html('frontend/views/cards/card-timeline-ano', $args);
+  }
+
+
+
+
+  /**
    * @param bool $white
    * @param string $class
    * 
@@ -167,7 +241,6 @@ class MS_Avulsos
    */
   public function render_section_servicos_especializados(): string
   {
-    $solucoes = new MS_Solucoes(false);
     $args = $solucoes->get_post_metas_values('especializados', ['metafields' => ['imagem' => 'src']]);
 
     if (!is_array($args['cards'])) $args['cards'] = [$args['cards']];
