@@ -1,8 +1,7 @@
 <?php
 class MS_Timeline
 {
-  private static Alp_Entity $entity;
-  private static Alp_Metabox $metaboxes;
+  use Alp_Entitable;
 
   /**
    * Faz o setup da Entidade.
@@ -27,10 +26,20 @@ class MS_Timeline
 
       ->add_metabox_box('timeline', 'Informações Gerais')
       ->add_metabox_field_biu('Texto', 'texto', 9)
-      ->add_metabox_field_image('Imagem', 'imagem', 1, 3)
+      ->add_metabox_field_image('Imagem', 'foto', 1, 3)
       ->add_metabox_field_datetime('Data do evento', 'timeline_data', 12, 'date')
       ->render();
   }
+
+   /**
+   * Retorna os valores dos metadados do post.
+   * @return array{timeline_texto:string,timeline_ano:string,timeline_foto:string} Valores dos metadados.
+   */
+  public function get_post_metas_values(): array
+  {
+    return self::$entity->get_metaboxes()->get_post_metas_values($this->id, 'timeline');
+  }
+
 }
 
 /**

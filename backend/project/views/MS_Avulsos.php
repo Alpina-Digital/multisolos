@@ -87,7 +87,7 @@ class MS_Avulsos
   }
 
   /**
-   * Renderiza a seção de Timemline.
+   * Renderiza a seção de Timeline.
    * @return string HTML renderizado.
    */
   public function render_section_timeline(): string
@@ -105,9 +105,10 @@ class MS_Avulsos
     if (!$timelines->have_posts()) return false;
 
     $conteudo = '';
+
     while ($timelines->have_posts()) {
       $timelines->the_post();
-      $conteudo .= $this->conteudo_item_timeline(get_the_ID(), $anos_timeline);
+      $conteudo .= $this->render_card_timeline(get_the_ID(), $anos_timeline);
     }
 
     $anos = '';
@@ -122,25 +123,24 @@ class MS_Avulsos
   }
 
   /**
-   * Conteúdo de um item da seção Linha do Tempo
+   * Renderiza um card da timeline
    * @param mixed $post_id ID do post.
    * @return string HTML.
    */
-  private function conteudo_item_timeline($post_id, array &$anos_timeline): string
+  private function render_card_timeline($post_id, array &$anos_timeline): string
   {
+
     $ano = get_post_meta($post_id, 'timeline_data', true);
+
     if ($ano) $ano = preg_replace("%^(\d+)?-.*%", "$1", $ano);
 
     $anos_timeline[] = $ano;
 
     $titulo = get_the_title($post_id);
-    $texto = get_post_meta($post_id, 'texto', true);
+    $texto = get_post_meta($post_id, 'timeline_timeline_texto', true);
+    $foto = wp_get_attachment_image_url(get_post_meta($post_id, 'timeline_timeline_foto', true));
 
-    $fotos = get_post_meta($post_id, 'timeline_imagens', true);
-    if (!is_array($fotos) || empty($fotos)) $fotos = [0];
-    $fotos = array_map(fn($id) => wp_get_attachment_image($id, 'large'), $fotos);
-
-    $args = compact('titulo', 'ano', 'texto', 'fotos');
+    $args = compact('titulo', 'ano', 'texto', 'foto');
 
     return $this->html('frontend/views/cards/card-timeline-slide', $args);
   }

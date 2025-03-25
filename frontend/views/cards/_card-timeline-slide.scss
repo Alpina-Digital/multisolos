@@ -1,3 +1,33 @@
 @use 'cody/base' as *;
       
-  .card-timeline-slide { }
+.slide {
+  position: relative;
+  border-color: #979b98 !important;
+
+  a {
+    color: #979b98;
+  }
+
+  &.slick-current,
+  &.is-active {
+    border-color: var(--color-verde-marca) !important;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      width: 19px;
+      height: 8px;
+      display: block;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE5IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgkJCQkJPHBhdGggZD0iTTkuMzMzNCAwTDE4LjYzODcgOEwwLjAyODA3NjIgOEw5LjMzMzQgMFoiIGZpbGw9IiM3RTgxMzQiIC8+CgkJCQk8L3N2Zz4=");
+      background-repeat: no-repeat;
+    }
+
+    a {
+      @extend .font-semibold;
+      color: var(--color-verde-marca);
+    }
+  }
+}
