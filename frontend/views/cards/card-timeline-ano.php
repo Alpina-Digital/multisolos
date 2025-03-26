@@ -15,6 +15,5 @@
  */
 extract($args);
 
-// echo $ano . ' - ' . $contador_ano;
 ?>
 <span class="timeline__date js-timeline-date <?= $visibleClass ?>" data-index="<?= $contador_ano ?>"><?= $ano ?></span>

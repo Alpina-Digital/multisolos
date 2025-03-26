@@ -1,3 +1,48 @@
 @use 'cody/base' as *;
-      
-  .card-timeline-slide { }
+
+.card-timeline-slide {
+  &__card {
+    display: none;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.4s ease;
+    background-color: var(--color-white);
+    padding: 0;
+  }
+
+  &__card.is-visible {
+    display: block;
+    opacity: 1;
+    // transform: translateX(0);
+  }
+
+  &__ano {
+    font-weight: 900;
+    font-size: 2.5rem; // 40px
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+  }
+
+  &__titulo {
+    font-weight: 700;
+    font-size: 2rem; // 32px
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--color-black);
+  }
+
+  &__texto {
+    font-weight: 400;
+    font-size: 1rem; // 16px
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--color-contrast-medium);
+  }
+
+  &__bg{
+    background-size: cover;
+  }
+
+}

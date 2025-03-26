@@ -22,13 +22,14 @@
 extract($args);
 
 ?>
-<div class="section-timeline__card js-timeline-card <?= $visibleClass ?> ">
+<div class="card-timeline-slide__card js-timeline-card <?= $visibleClass ?> ">
   <div class="max-width-lg grid">
-    <div class="col-12 col-8@md overflow-hidden">
-      <h3 class="text-md color-primary font-bold margin-bottom-xs"><?= $ano ?></h3>
-      <h4 class="text-lg font-bold"><?= $titulo ?></h4>
+    <div class="col-12 col-8@md overflow-hidden padding-top-xxl padding-bottom-xxl">
+      <h3 class="card-timeline-slide__ano"><?= $ano ?></h3>
+      <h4 class="card-timeline-slide__titulo margin-top-md"><?= $titulo ?></h4>
+      <div class="card-timeline-slide__texto margin-top-md"><?= $texto ?></div>
     </div>
-    <div class="col-12 col-4@md overflow-hidden padding-xl" style="background-image:url('<?= empty($foto) ? get_template_directory_uri() . '/assets/imgs/foto-sobre.jpg' : $foto ?>')">
+    <div class="card-timeline-slide__bg col-12 col-4@md overflow-hidden padding-xl radius-md" style="background-image:url('<?= empty($foto) ? get_template_directory_uri() . '/assets/imgs/foto-sobre.jpg' : $foto ?>')">
     </div>
   </div>
 

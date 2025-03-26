@@ -18,8 +18,6 @@
  */
 extract($args);
 ?>
-
-
 <section class="section-timeline padding-y-xl">
 	<div class="container max-width-md">
 		<div class="flex flex-column flex-row@sm justify-between items-center width-100%">
@@ -37,12 +35,12 @@ extract($args);
 			</div>
 		</div>
 	</div>
-	<div class="container max-width-adaptive-lg">
-		<div class="section-timeline__cards position-relative overflow-hidden" style="background-color: white;">
+	<div class="container max-width-lg">
+		<div class="section-timeline__cards position-relative overflow-hidden radius-md" style="background-color: white;">
 			<?= $card ?>
 		</div>
 
-		<div class="timeline__dates flex items-center gap-md border-top padding-top-sm margin-top-md">
+		<div class="timeline__dates flex items-center gap-md margin-top-md">
 			<?= $anos ?>
 		</div>
 
