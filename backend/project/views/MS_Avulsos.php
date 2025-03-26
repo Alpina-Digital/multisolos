@@ -92,7 +92,7 @@ class MS_Avulsos
    */
   public function render_section_timeline(): string
   {
-    $anos_timeline = [];
+    /*    $anos_timeline = [];
 
     $timelines = new WP_Query([
       'post_type' => 'timeline',
@@ -117,8 +117,15 @@ class MS_Avulsos
     }
 
     $args = compact('conteudo', 'anos');
+*/
+    $args = [];
 
+    return $this->html('frontend/views/avulsos/section-timeline', $args);
+  }
 
+  public function render_section_timeline2(): string
+  {
+    $args = [];
     return $this->html('frontend/views/avulsos/section-timeline', $args);
   }
 

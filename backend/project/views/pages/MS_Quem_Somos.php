@@ -73,6 +73,7 @@ class MS_Quem_Somos extends Alp_Page
       ->add_render($this->render_section_equipe())
       ->add_render($avulsos->render_section_quem_ja_confiou())
       // ->add_render($avulsos->render_section_timeline())
+      ->add_render($avulsos->render_section_timeline2())
 
       ->echo_render();
   }
