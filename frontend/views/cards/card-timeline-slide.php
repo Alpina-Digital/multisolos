@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template Part Name: Timeline
  * Template Part Type: CARD
@@ -19,24 +20,16 @@
  * }
  */
 extract($args);
+
 ?>
-<div class="slide">
-  <div class="card-timeline bg-cinza-fundo radius-lg grid">
-    <div class="col-7@lg flex items-center">
-      <div class="padding-x-xl padding-y-md">
-        <div class="text-xxxxxxl font-bold color-azul-escuro margin-bottom-xs"><?= $ano; ?></div>
-        <div class="text-xxl font-bold margin-bottom-sm color-verde-marca"><?= $titulo; ?></div>
-        <div><?= $texto; ?></div>
-      </div>
+<div class="section-timeline__card js-timeline-card <?= $visibleClass ?> ">
+  <div class="max-width-lg grid">
+    <div class="col-12 col-8@md overflow-hidden">
+      <h3 class="text-md color-primary font-bold margin-bottom-xs"><?= $ano ?></h3>
+      <h4 class="text-lg font-bold"><?= $titulo ?></h4>
     </div>
-    <div class="col@lg">
-      <div class="slick timeline-card-slick radius-lg overflow-hidden flex">
-          <div class="slide">
-            <figure class="width-100% radius-lg overflow-hidden bg-cinza-claro">
-              <img class="block width-100% height-100% object-cover" src="<?= $foto; ?>" alt="" />
-            </figure>
-          </div>
-      </div>
+    <div class="col-12 col-4@md overflow-hidden padding-xl" style="background-image:url('<?= empty($foto) ? get_template_directory_uri() . '/assets/imgs/foto-sobre.jpg' : $foto ?>')">
     </div>
   </div>
+
 </div>

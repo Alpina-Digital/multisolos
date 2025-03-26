@@ -92,8 +92,7 @@ class MS_Avulsos
    */
   public function render_section_timeline(): string
   {
-    /*    $anos_timeline = [];
-
+    $anos_timeline = [];
     $timelines = new WP_Query([
       'post_type' => 'timeline',
       'posts_per_page' => -1,
@@ -104,28 +103,24 @@ class MS_Avulsos
 
     if (!$timelines->have_posts()) return false;
 
-    $conteudo = '';
+    $card = '';
+
+    $contador = 1;
 
     while ($timelines->have_posts()) {
       $timelines->the_post();
-      $conteudo .= $this->render_card_timeline(get_the_ID(), $anos_timeline);
+      $card .= $this->render_card_timeline(get_the_ID(), $anos_timeline, $contador);
+      $contador++;
     }
 
     $anos = '';
+    $contador_ano = 1;
     foreach ($anos_timeline as $ano) {
-      $anos .= $this->conteudo_item_ano($ano);
+      $anos .= $this->card_timeline_ano($ano, $contador_ano);
+      $contador_ano++;
     }
 
-    $args = compact('conteudo', 'anos');
-*/
-    $args = [];
-
-    return $this->html('frontend/views/avulsos/section-timeline', $args);
-  }
-
-  public function render_section_timeline2(): string
-  {
-    $args = [];
+    $args = compact('card', 'anos');
     return $this->html('frontend/views/avulsos/section-timeline', $args);
   }
 
@@ -134,7 +129,7 @@ class MS_Avulsos
    * @param mixed $post_id ID do post.
    * @return string HTML.
    */
-  private function render_card_timeline($post_id, array &$anos_timeline): string
+  private function render_card_timeline($post_id, array &$anos_timeline, int $contador): string
   {
 
     $ano = get_post_meta($post_id, 'timeline_data', true);
@@ -147,7 +142,10 @@ class MS_Avulsos
     $texto = get_post_meta($post_id, 'timeline_timeline_texto', true);
     $foto = wp_get_attachment_image_url(get_post_meta($post_id, 'timeline_timeline_foto', true));
 
-    $args = compact('titulo', 'ano', 'texto', 'foto');
+    // class visibilidade
+    $visibleClass = $contador === 1 ? 'is-visible' : '';
+
+    $args = compact('titulo', 'ano', 'texto', 'foto', 'visibleClass', 'contador');
 
     return $this->html('frontend/views/cards/card-timeline-slide', $args);
   }
@@ -157,14 +155,15 @@ class MS_Avulsos
    * @param mixed $ano O ano em questão.
    * @return string HTML do item.
    */
-  private function conteudo_item_ano($ano): string
+  private function card_timeline_ano($ano, int $contador_ano): string
   {
-    $args = compact('ano');
+    // nova lógica para visibilidade
+    $visibleClass = $contador_ano === 1 ? 'active' : '';
+
+    $args = compact('ano', 'visibleClass', 'contador_ano');
 
     return $this->html('frontend/views/cards/card-timeline-ano', $args);
   }
-
-
 
 
   /**
