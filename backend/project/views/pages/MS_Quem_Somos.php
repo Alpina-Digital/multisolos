@@ -81,7 +81,7 @@ class MS_Quem_Somos extends Alp_Page
    * Renderiza a seção Sobre.
    * @return string HTML da seção.
    */
-  private function render_section_sobre(): string
+  private function render_section_sobre($white = true): string
   {
     /**
      * @var array{titulo:string,cards:array<int,array>} $args  Metaboxes da seção.
@@ -92,6 +92,7 @@ class MS_Quem_Somos extends Alp_Page
     }
     $args['cards'] = implode(PHP_EOL, $args['cards']);
     $args['swiper_class'] = 'quem-somos-sobre';
+    $args['white'] = $white;
     return $this->html('frontend/views/pages/quem-somos/section-sobre', $args);
   }
 
@@ -149,6 +150,9 @@ class MS_Quem_Somos extends Alp_Page
   {
     if (empty($card['itens']) || !is_array($card['itens'])) $card['itens'] = [];
     $card['itens'] = array_map(fn($item) => $item['texto'] ?? '', $card['itens']);
+    if (!empty($card['foto'])) {
+      $card['foto'] = wp_get_attachment_image_url($card['foto']);
+  }
     return $this->html('frontend/views/cards/card-equipe', $card);
   }
 }
