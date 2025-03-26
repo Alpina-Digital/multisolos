@@ -32,10 +32,10 @@
   line-height: 100%;
   letter-spacing: -0.4px;
 
-  @include breakpoint(md) {
-    font-size: 22px;
-    letter-spacing: -0.22px;
-  }
+  // @include breakpoint(md) {
+  // font-size: 22px;
+  // letter-spacing: -0.22px;
+  // }
 }
 
 .card-blog-destaque__texto {
