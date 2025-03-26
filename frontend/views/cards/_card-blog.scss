@@ -1,5 +1,9 @@
 @use "cody/base" as *;
 
+.card-blog {
+  background-color: var(--color-white);
+}
+
 .card-blog__div-img {
   position: relative;
   width: 100%;
@@ -29,14 +33,18 @@
 }
 
 .card-blog:hover {
-  .card-blog__div-img {
-    background: linear-gradient(0deg, rgba(10, 67, 123, 0.9) 0%, rgba(10, 67, 123, 0.9) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), var(--card-blog-imagem) lightgray 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background: linear-gradient(
+      0deg,
+      rgba(10, 67, 123, 0.9) 0%,
+      rgba(10, 67, 123, 0.9) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+    var(--card-blog-imagem) lightgray 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    .card-blog__botao {
-      display: flex;
-    }
+  .card-blog__botao {
+    display: flex;
   }
 }
 
