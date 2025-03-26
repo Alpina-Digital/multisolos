@@ -25,7 +25,7 @@ extract($args);
       <div class="js-<?= $swiper_class; ?>-swiper">
         <div class="swiper-wrapper">
           <div class="selo">
-            <img src="http://localhost/multisolos/wp-content/uploads/2025/03/selo.png">
+            <img src="<?= $selo?>">
           </div>
           <?= $cards; ?>
         </div>
@@ -38,7 +38,7 @@ extract($args);
 
     <div class="col-12 col-4@md flex flex-column justify-between gap-md">
 
-      <img src="http://localhost/multisolos/wp-content/uploads/2025/03/foto-sobre.jpg">
+      <img src="<?= $foto_principal?>">
     </div>
 
 
