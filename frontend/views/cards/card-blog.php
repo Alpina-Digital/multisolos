@@ -26,8 +26,9 @@ extract($args);
     <div class="card-blog__botao btn btn--accent padding-y-xs"><?= get_svg_content('arrow-diagonal.svg'); ?></div>
   </div>
 
-  <div class="card-blog__categoria"><?= $categoria ?? ''; ?></div>
+  <div class="flex flex-column">
   <h3 class="card-blog__titulo"><?= $titulo ?? ''; ?></h3>
   <div class="card-blog__texto line-clamp-2"><?= $resumo ?? ''; ?></div>
+  </div>
 
 </a>
