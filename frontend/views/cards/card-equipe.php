@@ -19,14 +19,12 @@
  */
 extract($args);
 
-/**
- * ATENÇÃO!!!!!
- * ALTERAR A CLASS PARA EQUIPE
- */
 ?>
 
-<div class="section-missao-valores__pilar col-12 col-3@md margin-top-xl@md flex flex-column items-center justify-center gap-xs">
-    imagem
-    <h3 class="section-missao-valores__pilar-titulo"><?= $nome ?? ''; ?></h3>
-    <div class="section-missao-valores__pilar-texto"><?= $especialidade ?? ''; ?></div>
-  </div>
+<div class="card-equipe col-12 col-3@md margin-top-xl@md flex flex-column items-center justify-center gap-xs">
+  <img src="<?= $foto; ?>" class="card-equipe__foto">
+  <h3 class="card-equipe__nome"><?= $nome ?? ''; ?></h3>
+  <div class="card-equipe__cargo"><?= $cargo ?? ''; ?></div>
+  <div class="card-equipe__especialidade"><?= $especialidade ?? ''; ?></div>
+  <div class="card-equipe__link"><a href="<?= $link ?? ''; ?>">VER CURRÍCULO <?= get_svg_content('arrow-right-up.svg', "", true); ?></a></div>
+</div>

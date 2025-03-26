@@ -18,15 +18,14 @@
  */
 extract($args);
 ?>
-<section class="section-quem-ja-confiou">
+<section class="section-quem-ja-confiou gap-md padding-y-xl padding-y-xxxl@md">
   <div class="max-width-lg container grid gap-sm gap-xl@md justify-start items-center">
 
-    <div class="col-12 col-3@sm flex flex-column items-start">
-      <h2 class="titulo-secao-mini"> Quem já confiou na nossa experiência</h2>
-    </div>
+      <h1 class="section-quem-ja-confiou__titulo-secao">Clientes</h1>
+      <h2 class="section-quem-ja-confiou__subtitulo-secao"> Quem já confiou na nossa experiência</h2>
 
-    <div class="col-12 col-9@sm hide flex@md justify-between gap-lg items-center">
-      <a href="javascript:;" class="btn btn--swiper padding-x-0 js-confia-prev"><?= get_svg_content('chevron.svg', "", true); ?></a>
+    <div class="col-12 col-12@sm hide flex@md justify-between gap-lg items-center">
+      <!-- <a href="javascript:;" class="btn btn--swiper padding-x-0 js-confia-prev"><?= get_svg_content('chevron.svg', "flip-x", true); ?></a> -->
       <div class="swiper js-confia-swiper">
         <div class="swiper-wrapper">
           <?php foreach ($itens as $item): if (empty($item)) continue; ?>
@@ -38,7 +37,7 @@ extract($args);
           <?php endforeach; ?>
         </div>
       </div>
-      <a href="javascript:;" class="btn btn--swiper padding-x-0 js-confia-next"><?= get_svg_content('chevron.svg', "flip-x", true); ?></a>
+      <!-- <a href="javascript:;" class="btn btn--swiper padding-x-0 js-confia-next"><?= get_svg_content('chevron.svg', "", true); ?></a> -->
     </div>
 
     <div class="ticker js-ticker col-12 hide@md margin-top-sm">

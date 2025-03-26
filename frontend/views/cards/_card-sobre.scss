@@ -3,7 +3,7 @@
 .card-sobre {
   position: relative;
   padding: var(--space-md);
-  background: var(--color-cinza-fundo);
+  background: var(--color-white);
   border-radius: .5rem;
   overflow: hidden;
 
@@ -16,7 +16,7 @@
   }
 
   &__titulo {
-    color: var(--color-cinza-escuro);
+    color: var(--color-primary);
     font-size: 18px;
     font-weight: 600;
     line-height: 110%;

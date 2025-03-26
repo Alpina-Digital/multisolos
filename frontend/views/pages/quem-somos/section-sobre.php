@@ -19,16 +19,20 @@ extract($args);
 <section class="section-sobre">
   <div class="max-width-lg container grid gap-md gap-xl@md">
     <div class="col-12 col-8@md overflow-hidden">
-      <h2 class="titulo-secao titulo-secao--dark"><?= $titulo; ?></h2>
-      <img src="http://localhost/multisolos/wp-content/uploads/2025/03/selo.png">
+      <h1 class="titulo padding-bottom-sm">Sobre</h1>
+      <h2 class="section-sobre__titulo-secao padding-bottom-lg"><?= $titulo; ?></h2>
+
       <div class="js-<?= $swiper_class; ?>-swiper">
         <div class="swiper-wrapper">
+          <div class="selo">
+            <img src="http://localhost/multisolos/wp-content/uploads/2025/03/selo.png">
+          </div>
           <?= $cards; ?>
         </div>
       </div>
       <div class="section-sobre__btns hide flex@md gap-xs items-center justify-end">
-        <a href="javascript:;" class="btn btn--swiper <?= $white ? 'btn--swiper-light' : ''; ?> padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0"><?= get_svg_content('chevron.svg', "", true); ?></a>
-        <a href="javascript:;" class="btn btn--swiper <?= $white ? 'btn--swiper-light' : ''; ?> padding-x-0 js-<?= $swiper_class; ?>-next flex-shrink-0"><?= get_svg_content('chevron.svg', "flip-x", true); ?></a>
+        <a href="javascript:;" class="btn btn--swiper <?= $white ? 'btn--swiper-light' : ''; ?> padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0"><?= get_svg_content('chevron.svg', "flip-x", true); ?></a>
+        <a href="javascript:;" class="btn btn--swiper <?= $white ? 'btn--swiper-light' : ''; ?> padding-x-0 js-<?= $swiper_class; ?>-next flex-shrink-0"><?= get_svg_content('chevron.svg', "", true); ?></a>
       </div>
     </div>
 

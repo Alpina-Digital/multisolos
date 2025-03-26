@@ -16,8 +16,8 @@
  */
 extract($args);
 ?>
-<section class="section-equipe grid items-start gap-md">
-    <h2>Equipe</h2>  
-    <h1>corpo técnico</h1>
+<section class="section-equipe grid  items-center justify-center gap-md padding-y-xl padding-y-xxxl@md">
+    <h1 class="section-equipe__titulo-secao text-md text-uppercase">Nossa equipe</h1>
+    <h2 class="section-equipe__subtitulo-secao text-uppercase">corpo técnico</h2>
     <?= $cards; ?>
 </section>

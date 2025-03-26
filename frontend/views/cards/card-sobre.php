@@ -26,7 +26,6 @@ extract($args);
       <h3 class="card-sobre__titulo"><?= $titulo ?? ''; ?></h3>
       <div class="card-sobre__texto text-component"><?= $texto ?? ''; ?></div>
     </div>
-    <?= get_svg_content('light-card-deco.svg', 'card-sobre__deco'); ?>
 
   </div>
 </div>

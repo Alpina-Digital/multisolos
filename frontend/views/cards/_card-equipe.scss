@@ -1,22 +1,17 @@
 @use 'cody/base' as *;
 
 .card-equipe {
-  position: relative;
-  padding: var(--space-md);
-  background: var(--color-cinza-fundo);
-  border-radius: .5rem;
-  overflow: hidden;
-
-  &__deco {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 0;
-    pointer-events: none;
+  &__foto {
+    border-radius: var(--radius-md);
+    height: 17.5rem; // 280px
+    max-width: 19rem; // 304px
+    width: 100%;
+    object-fit: cover;
   }
 
-  &__titulo {
-    color: var(--color-cinza-escuro);
+  &__nome {
+    color: var(--color-white);
+    text-align: center;
     font-size: 18px;
     font-weight: 600;
     line-height: 110%;
@@ -28,18 +23,32 @@
     }
   }
 
-  &__item {
-    color: var(--color-cinza-escuro);
-    font-size: 1rem;
+  &__especialidade {
+    color: var(--color-white);
+    text-align: center;
+    font-size: 16px;
     font-weight: 400;
     line-height: 130%;
     letter-spacing: -0.16px;
   }
 
-  &__texto {
-    color: var(--color-cinza-medio);
-    font-size: 1rem;
+  &__cargo {
+    color: var(--color-accent);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
     line-height: 130%;
     letter-spacing: -0.16px;
+    text-transform: uppercase;
+  }
+
+  &__link a {
+    color: var(--color-accent);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: -0.16px;
+    text-transform: uppercase;
   }
 }

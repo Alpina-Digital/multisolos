@@ -1,7 +1,32 @@
 @use 'cody/base' as *;
 
 .section-timeline {
-	
+	background-color: #F0F2F4;
+
+	&__titulo-secao {
+		color: var(--color-primary);
+		font-weight: 700;
+		font-size: 1.25rem;
+		line-height: 0.9;
+		letter-spacing: 0;
+		text-transform: uppercase;
+	}
+
+	&__subtitulo-secao {
+		color: var(--color-black);
+		font-weight: 900;
+		font-size: 2.5rem;
+		line-height: 1;
+		letter-spacing: -0.02em;
+		text-transform: uppercase;
+	}
+
+
+	.card-timeline {
+		figure {
+			height: 340px;
+		}
+	}
 
 	.slide-navigation {
 		.slick-track {
@@ -9,6 +34,36 @@
 			width: 100% !important;
 		}
 
-		
+		.slide {
+			position: relative;
+			border-color: #979b98 !important;
+
+			a {
+				color: #979b98;
+			}
+
+			&.slick-current,
+			&.is-active {
+				border-color: var(--color-verde-marca) !important;
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 50%;
+					transform: translate(-50%, -100%);
+					width: 19px;
+					height: 8px;
+					display: block;
+					background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDE5IDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgkJCQkJPHBhdGggZD0iTTkuMzMzNCAwTDE4LjYzODcgOEwwLjAyODA3NjIgOEw5LjMzMzQgMFoiIGZpbGw9IiM3RTgxMzQiIC8+CgkJCQk8L3N2Zz4=");
+					background-repeat: no-repeat;
+				}
+
+				a {
+					@extend .font-semibold;
+					color: var(--color-verde-marca);
+				}
+			}
+		}
 	}
 }
