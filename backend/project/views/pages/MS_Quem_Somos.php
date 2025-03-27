@@ -195,7 +195,7 @@ class MS_Quem_Somos extends Alp_Page
     }
 
     $args = compact('card', 'anos');
-    return $this->html('frontend/views/avulsos/section-timeline', $args);
+    return $this->html('frontend/views/pages/quem-somos/section-timeline', $args);
   }
 
   /**
