@@ -8,7 +8,7 @@
  */
 class MS_Home extends Alp_Page
 {
-  use Alp_Banners_Home, MS_Section_Projetos;
+  use Alp_Banners_Home;
 
   /**
    * Faz o setup da estrutura da página no backend.
@@ -38,8 +38,6 @@ class MS_Home extends Alp_Page
       ->add_metabox_field_text('Texto no botão', 'cta_texto', 4)
       ->add_metabox_field_cpt('Selecione a Página', 'cta_link', 'page', 1, 4)
       ->add_metabox_field_image('Imagem Lateral', 'imagem', 1, 4)
-      //SEÇÂO DE PROJETOS
-      ->chain_from_callable([$this, 'chain_metaboxes_section_projetos'])
 
       ->render();
   }

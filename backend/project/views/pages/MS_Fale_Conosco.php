@@ -62,7 +62,7 @@ class MS_Fale_Conosco extends Alp_Page
     $args['sociais'] = $footer->get_sociais();
     $args['form'] = Alp_Settings::get_form('contato');
 
-    return $this->html('frontend/views/pages/contato/section-principal-contato.php', $args);
+    return $this->html('frontend/views/pages/fale-conosco/section-principal-fale-conosco.php', $args);
   }
 }
 

@@ -81,24 +81,12 @@ require_once get_template_directory() . "/backend/base/walkers/Alp_Walker_Megame
 
 #TRAITS
 require_once get_template_directory() . "/backend/project/traits/MS_Banner_Topo.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Grid_Cards_Cinza.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Apresentacao.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Banner_Energia_Investimento.php";
 require_once get_template_directory() . "/backend/project/traits/MS_Section_FAQ.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Tres_Passos.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Card_Azul_Solucao.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Etapas_Projeto.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Subsecoes_Multiplos_Accordions.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Section_Projetos.php";
 require_once get_template_directory() . "/backend/project/traits/MS_Carrossel.php";
 
 #ENTITIES
 require_once get_template_directory() . "/backend/project/entities/MS_Parceiro.php";
-require_once get_template_directory() . "/backend/project/entities/MS_Associacao.php";
-require_once get_template_directory() . "/backend/project/entities/MS_Reconhecimento.php";
-require_once get_template_directory() . "/backend/project/entities/MS_Projeto.php";
 require_once get_template_directory() . "/backend/project/entities/MS_Depoimento.php";
-require_once get_template_directory() . "/backend/project/entities/MS_Material.php";
 
 #VIEWS
 require_once get_template_directory() . "/backend/project/views/MS_Header.php";
@@ -108,7 +96,6 @@ require_once get_template_directory() . "/backend/project/views/singles/MS_Post.
 
 require_once get_template_directory() . "/backend/project/views/pages/MS_Home.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Quem_Somos.php";
-require_once get_template_directory() . "/backend/project/views/pages/MS_Projetos.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Blog.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Fale_Conosco.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Obras.php";

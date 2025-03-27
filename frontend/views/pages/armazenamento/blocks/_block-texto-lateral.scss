@@ -1,9 +1,0 @@
-@use 'cody/base' as *;
-
-.block-texto-lateral {}
-
-.block-texto-lateral__texto {
-  strong {
-    color: var(--color-accent);
-  }
-}
