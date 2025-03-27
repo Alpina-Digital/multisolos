@@ -2,31 +2,36 @@
 
 .section-sobre {
 
+  .swiper-pagination {
+    bottom: auto !important;
+  }
+
   padding: 4rem 0;
   background-color: #F0F2F4;
 
-  .titulo {
+  &__titulo-secao {
     color: var(--color-primary);
   }
-  &__titulo-secao {
+
+  &__subtitulo-secao {
     text-transform: uppercase;
     color: var(--color-black);
     font-weight: 900;
     font-size: 2.5rem; // 40px
   }
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+  &__foto-principal {
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
   }
 
-  .selo {
+
+
+  &__selo {
     position: absolute;
-    top: -6.2rem;
-    right: -0.5rem;
+    top: 36.8rem;
+    right: 33.5rem;
     z-index: 2;
     height: auto;
   }
