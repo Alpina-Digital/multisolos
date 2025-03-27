@@ -72,8 +72,7 @@ class MS_Quem_Somos extends Alp_Page
       ->add_render($this->render_section_missao_valores())
       ->add_render($this->render_section_equipe())
       ->add_render($avulsos->render_section_quem_ja_confiou())
-      // ->add_render($avulsos->render_section_timeline())
-      ->add_render($avulsos->render_section_timeline())
+      ->add_render($this->render_section_timeline())
 
       ->echo_render();
   }
@@ -155,8 +154,88 @@ class MS_Quem_Somos extends Alp_Page
     $card['itens'] = array_map(fn($item) => $item['texto'] ?? '', $card['itens']);
     if (!empty($card['foto'])) {
       $card['foto'] = wp_get_attachment_image_url($card['foto'], 'full');
-  }
+    }
     return $this->html('frontend/views/cards/card-equipe', $card);
+  }
+
+  /**
+   * Renderiza a seção de Timeline.
+   * @return string HTML renderizado.
+   */
+  public function render_section_timeline(): string
+  {
+    $anos_timeline = [];
+    $timelines = new WP_Query([
+      'post_type' => 'timeline',
+      'posts_per_page' => -1,
+      'orderby' => 'meta_value',
+      'order' => 'ASC',
+      'meta_key' => 'timeline_data'
+    ]);
+
+    if (!$timelines->have_posts()) return false;
+
+    $card = '';
+
+    $contador = 1;
+
+    while ($timelines->have_posts()) {
+      $timelines->the_post();
+      $card .= $this->render_card_timeline(get_the_ID(), $anos_timeline, $contador);
+      $contador++;
+    }
+
+    $anos = '';
+    $contador_ano = 1;
+    foreach ($anos_timeline as $ano) {
+      $anos .= $this->card_timeline_ano($ano, $contador_ano);
+      $contador_ano++;
+    }
+
+    $args = compact('card', 'anos');
+    return $this->html('frontend/views/avulsos/section-timeline', $args);
+  }
+
+  /**
+   * Renderiza um card da timeline
+   * @param mixed $post_id ID do post.
+   * @return string HTML.
+   */
+  private function render_card_timeline($post_id, array &$anos_timeline, int $contador): string
+  {
+
+    $ano = get_post_meta($post_id, 'timeline_data', true);
+
+    if ($ano) $ano = preg_replace("%^(\d+)?-.*%", "$1", $ano);
+
+    $anos_timeline[] = $ano;
+
+    $titulo = get_the_title($post_id);
+    $texto = get_post_meta($post_id, 'timeline_timeline_texto', true);
+    $foto = wp_get_attachment_image_url(get_post_meta($post_id, 'timeline_timeline_foto', true));
+
+    // class para o primeiro elemento
+    $visibleClass = $contador === 1 ? 'is-visible' : '';
+
+    $args = compact('titulo', 'ano', 'texto', 'foto', 'visibleClass', 'contador');
+
+    return $this->html('frontend/views/cards/card-timeline-slide', $args);
+  }
+
+  /**
+   * Conteúdo de um item para as tabs dos anos.
+   * @param mixed $ano O ano em questão.
+   * @return string HTML do item.
+   */
+  private function card_timeline_ano($ano, int $contador_ano): string
+  {
+
+    // class para o primeiro elemento
+    $visibleClass = $contador_ano === 1 ? 'active' : '';
+
+    $args = compact('ano', 'visibleClass', 'contador_ano');
+
+    return $this->html('frontend/views/cards/card-timeline-ano', $args);
   }
 }
 
