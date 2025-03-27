@@ -188,7 +188,7 @@ class MS_Quem_Somos extends Alp_Page
     $anos = '';
     $contador_ano = 1;
     foreach ($anos_timeline as $ano) {
-      $anos .= $this->card_timeline_ano($ano, $contador_ano);
+      $anos .= $this->render_card_timeline_ano($ano, $contador_ano);
       $contador_ano++;
     }
 
@@ -215,9 +215,9 @@ class MS_Quem_Somos extends Alp_Page
     $foto = wp_get_attachment_image_url(get_post_meta($post_id, 'timeline_timeline_foto', true));
 
     // class para o primeiro elemento
-    $visibleClass = $contador === 1 ? 'is-visible' : '';
+    $visible_class = $contador === 1 ? 'is-visible' : '';
 
-    $args = compact('titulo', 'ano', 'texto', 'foto', 'visibleClass', 'contador');
+    $args = compact('titulo', 'ano', 'texto', 'foto', 'visible_class', 'contador');
 
     return $this->html('frontend/views/cards/card-timeline-slide', $args);
   }
@@ -227,13 +227,13 @@ class MS_Quem_Somos extends Alp_Page
    * @param mixed $ano O ano em questão.
    * @return string HTML do item.
    */
-  private function card_timeline_ano($ano, int $contador_ano): string
+  private function render_card_timeline_ano($ano, int $contador_ano): string
   {
 
     // class para o primeiro elemento
-    $visibleClass = $contador_ano === 1 ? 'active' : '';
+    $visible_class = $contador_ano === 1 ? 'active' : '';
 
-    $args = compact('ano', 'visibleClass', 'contador_ano');
+    $args = compact('ano', 'visible_class', 'contador_ano');
 
     return $this->html('frontend/views/cards/card-timeline-ano', $args);
   }

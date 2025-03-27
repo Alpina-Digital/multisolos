@@ -16,4 +16,4 @@
 extract($args);
 
 ?>
-<span class="timeline__date js-timeline-date <?= $visibleClass ?>" data-index="<?= $contador_ano ?>"><?= $ano ?></span>
+<span class="timeline__date js-timeline-date <?= $visible_class ?>" data-index="<?= $contador_ano ?>"><?= $ano ?></span>

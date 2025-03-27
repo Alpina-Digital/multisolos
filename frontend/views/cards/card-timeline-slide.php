@@ -22,7 +22,7 @@
 extract($args);
 
 ?>
-<div class="card-timeline-slide__card js-timeline-card <?= $visibleClass ?> ">
+<div class="card-timeline-slide__card js-timeline-card <?= $visible_class ?> ">
   <div class="max-width-lg grid">
     <div class="col-12 col-8@md overflow-hidden padding-top-xxl padding-bottom-xxl">
       <h3 class="card-timeline-slide__ano"><?= $ano ?></h3>
