@@ -221,7 +221,7 @@ class MS_Quem_Somos extends Alp_Page
 
     $args = compact('titulo', 'ano', 'texto', 'foto', 'visible_class', 'contador');
 
-    return $this->html('frontend/views/cards/card-timeline-slide', $args);
+    return $this->html('frontend/views/pages/quem-somos/item-timeline', $args);
   }
 
 }

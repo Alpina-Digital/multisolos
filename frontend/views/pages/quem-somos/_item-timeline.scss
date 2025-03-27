@@ -1,7 +1,7 @@
 @use 'cody/base' as *;
 
-.card-timeline-slide {
-  &__card {
+.item-timeline {
+  &__item {
     display: none;
     opacity: 0;
     transform: translateX(50px);
@@ -10,7 +10,7 @@
     padding: 0;
   }
 
-  &__card.is-visible {
+  &__item.is-visible {
     display: block;
     opacity: 1;
     // transform: translateX(0);

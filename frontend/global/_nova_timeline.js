@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.js-timeline-card');
+const itens = document.querySelectorAll('.js-timeline-item');
 const dates = document.querySelectorAll('.js-timeline-date');
 const btnNext = document.querySelector('.js-timeline-next');
 const btnPrev = document.querySelector('.js-timeline-prev');
@@ -6,10 +6,10 @@ const btnPrev = document.querySelector('.js-timeline-prev');
 let currentIndex = 0;
 
 function updateTimeline(newIndex) {
-    if (newIndex < 0 || newIndex >= cards.length) return;
+    if (newIndex < 0 || newIndex >= itens.length) return;
 
-    cards.forEach((card, i) => {
-        card.classList.toggle('is-visible', i === newIndex);
+    itens.forEach((item, i) => {
+        item.classList.toggle('is-visible', i === newIndex);
     });
 
     dates.forEach((date, i) => {
