@@ -22,7 +22,7 @@
 	}
 
 
-	.timeline__date {
+	&__date {
 		font-weight: 500;
 		color: var(--color-contrast-medium);
 		cursor: pointer;
@@ -31,15 +31,15 @@
 		padding-top: 12px;
 	}
 
-	.timeline__dates{
+	&__dates{
 		border-top: 2px solid var(--color-contrast-medium);
 	}
 
-	.timeline__date.active {
+	&__date.active {
 		color: var(--color-primary);
 	}
 
-	.timeline__date.active::before {
+	&__date.active::before {
 		content: '';
 		position: absolute;
 		top: -7px;
@@ -53,7 +53,7 @@
 		z-index: 2;
 	}
 
-	.timeline__date.active::after {
+	&__date.active::after {
 		content: '';
 		position: absolute;
 		top: 0;

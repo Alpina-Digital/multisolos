@@ -188,7 +188,9 @@ class MS_Quem_Somos extends Alp_Page
     $anos = '';
     $contador_ano = 1;
     foreach ($anos_timeline as $ano) {
-      $anos .= $this->render_card_timeline_ano($ano, $contador_ano);
+
+      $anos .= '<span class="section-timeline__date js-timeline-date ' . ($contador_ano === 1 ? 'active' : '') . '" data-index="' . $contador_ano . '">' . $ano . '</span>';
+
       $contador_ano++;
     }
 
@@ -222,21 +224,6 @@ class MS_Quem_Somos extends Alp_Page
     return $this->html('frontend/views/cards/card-timeline-slide', $args);
   }
 
-  /**
-   * Conteúdo de um item para as tabs dos anos.
-   * @param mixed $ano O ano em questão.
-   * @return string HTML do item.
-   */
-  private function render_card_timeline_ano($ano, int $contador_ano): string
-  {
-
-    // class para o primeiro elemento
-    $visible_class = $contador_ano === 1 ? 'active' : '';
-
-    $args = compact('ano', 'visible_class', 'contador_ano');
-
-    return $this->html('frontend/views/cards/card-timeline-ano', $args);
-  }
 }
 
 /**

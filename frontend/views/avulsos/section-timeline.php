@@ -40,7 +40,7 @@ extract($args);
 			<?= $card ?>
 		</div>
 
-		<div class="timeline__dates flex items-center gap-md margin-top-md">
+		<div class="section-timeline__dates flex items-center gap-md margin-top-md">
 			<?= $anos ?>
 		</div>
 
