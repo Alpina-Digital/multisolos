@@ -1,0 +1,115 @@
+@use 'cody/base' as *;
+
+.card-servico {
+  border-radius: var(--space-xxs);
+  background: var(--color-primary-darker);
+  position: relative;
+  transition: all .2s ease-in-out;
+
+  &__imagem {
+    border-top-left-radius: var(--space-xxs);
+    border-top-right-radius: var(--space-xxs);
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__tag {
+    text-align: center;
+    // text-transform: uppercase;
+    font-size: .875rem;
+    background: var(--color-accent);
+    color: var(--color-cinza-escuro);
+    line-height: 130%;
+    letter-spacing: -0.14px;
+    font-weight: 700;
+    transition: all .2s ease-in-out;
+    padding: var(--space-xxxs) var(--space-xs);
+    border-radius: 50rem;
+  }
+
+  &__indice {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 90%;
+    letter-spacing: -2%;
+  }
+
+  &__ver-mais {
+    svg {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+    }
+
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+  }
+
+  &__titulo {
+    color: var(--color-white);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -2%;
+
+    @include breakpoint(md) {
+      font-size: 22px;
+      letter-spacing: -0.22px;
+    }
+  }
+
+  &__texto-card {
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -2%;
+  }
+
+  &__icon-link {
+    display: none;
+    width: 48px;
+    height: 48px;
+    padding: var(--space-xxxxs);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: var(--space-xxs);
+    background: var(--color-accent);
+
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    transition: all .2s ease-in-out;
+  }
+
+
+  &:hover {
+    background: var(--color-primary);
+
+    .card-servico__imagem {
+      opacity: .3;
+    }
+
+    .card-servico__icon-link {
+      display: flex;
+    }
+
+
+  }
+
+}

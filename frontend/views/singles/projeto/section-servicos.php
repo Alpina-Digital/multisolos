@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Template Part Name: Ver Mais Projetos
+ * Template Part Name: Serviços
  * Template Part Type: SECTION
- * Template Part Page: Single Projeto
+ * Template Part Page: Serviços
  * Description: 
  * 
  * @author Alpina Digital
@@ -19,7 +19,8 @@ extract($args); ?>
   <div class="section-blog__container grid max-width-lg container gap-lg">
 
     <div class="col-12 flex@md justify-between items-end">
-      <h2 class="titulo-secao"><?= $titulo; ?></h2>
+      <h2 class="titulo-secao">estaqueamento e sondagem</h2>
+      <h2 class="titulo-secao">Nossos serviços</h2>
     </div>
 
     <?= $cards ?? ''; ?>

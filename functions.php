@@ -82,11 +82,16 @@ require_once get_template_directory() . "/backend/base/walkers/Alp_Walker_Megame
 #TRAITS
 require_once get_template_directory() . "/backend/project/traits/MS_Banner_Topo.php";
 require_once get_template_directory() . "/backend/project/traits/MS_Section_FAQ.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Apresentacao.php";
 require_once get_template_directory() . "/backend/project/traits/MS_Carrossel.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Etapas_Projeto.php";
+require_once get_template_directory() . "/backend/project/traits/MS_Section_Projetos.php";
 
 #ENTITIES
 require_once get_template_directory() . "/backend/project/entities/MS_Parceiro.php";
 require_once get_template_directory() . "/backend/project/entities/MS_Depoimento.php";
+// require_once get_template_directory() . "/backend/project/entities/MS_Projeto.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Servico.php";
 
 #VIEWS
 require_once get_template_directory() . "/backend/project/views/MS_Header.php";
@@ -94,6 +99,7 @@ require_once get_template_directory() . "/backend/project/views/MS_Footer.php";
 require_once get_template_directory() . "/backend/project/views/MS_Avulsos.php";
 require_once get_template_directory() . "/backend/project/views/singles/MS_Post.php";
 
+require_once get_template_directory() . "/backend/project/views/pages/MS_Projetos.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Home.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Quem_Somos.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Blog.php";
