@@ -97,7 +97,7 @@ class MS_Home extends Alp_Page
 
     $titulo = get_the_title($id);
     $texto_card = esc_html(get_post_meta($id, 'servico_texto_card', true));
-    $imagem = wp_get_attachment_image_url(get_post_meta($id, 'servico_imagem', true));
+    $imagem = wp_get_attachment_image_url(get_post_meta($id, 'servico_imagem', true), '');
     $link = get_permalink($id);
     $indice = sprintf('%02d', $indice); //adiciona o 0 na frente do numero
 
