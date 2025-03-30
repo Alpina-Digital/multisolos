@@ -30,7 +30,7 @@ class MS_Obras extends Alp_Page
             ->chain_from_callable([$this, 'chain_metaboxes_banner_topo'])
 
             //SEÇÃO DE SOLUÇÕES
-            ->add_metabox_box('solucoes', 'Soluções')
+            ->add_metabox_box('solucoes', 'Obras entregues')
             ->add_metabox_field_biu('Título da Seção', 'titulo', 12)
             ->add_metabox_group('Itens', 'itens', 'Item {#} - {titulo}', 12)
             ->add_metabox_field_text('Título', 'titulo', 4)

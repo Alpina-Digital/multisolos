@@ -26,19 +26,25 @@ class MS_Home extends Alp_Page
   public function create_metaboxes(): void
   {
     $this->template->create_metaboxes()
-      //QUEM SOMOS NA HOME
-      ->add_metabox_box('quem_somos', 'Seção de chamada para Quem Somos')
-      ->add_metabox_field_biu('Título', 'titulo', 6)
-      ->add_metabox_field_biu('Texto', 'texto', 6)
-      ->add_metabox_group('Itens', 'itens', 'Item {#}', 2)
-      ->add_metabox_field_image('Ícone', 'icone', 1, 2)
-      ->add_metabox_field_biu('Título', 'titulo', 5)
-      ->add_metabox_field_biu('Texto', 'texto', 5)
-      ->close_metabox_group()
+      //CONHEÇA
+      ->add_metabox_box('conheca', 'A Multisolos')
+      ->add_metabox_field_text('Título da seção', 'titulo_secao', 12)
+      ->add_metabox_field_text('Subtitulo da seção', 'subtitulo_secao', 12)
+      ->add_metabox_heading('Caixinha 1','')
+      ->add_metabox_field_text('Numero', 'numero_box1', 3)
+      ->add_metabox_field_text('Sinal', 'sinal_box1', 2)
+      ->add_metabox_field_text('Texto', 'texto_box1', 7)
+      ->add_metabox_heading('Caixinha 2','')
+      ->add_metabox_field_text('Numero', 'numero_box2', 3)
+      ->add_metabox_field_text('Sinal', 'sinal_box2', 2)
+      ->add_metabox_field_text('Texto', 'texto_box2', 7)
+      ->add_metabox_heading('Seção texto','')
+      ->add_metabox_field_biu('Título', 'secao_texto_titulo', 4)
+      ->add_metabox_field_biu('Texto', 'secao_texto_texto', 8)
       ->add_metabox_field_text('Texto no botão', 'cta_texto', 4)
       ->add_metabox_field_cpt('Selecione a Página', 'cta_link', 'page', 1, 4)
-      ->add_metabox_field_image('Imagem Lateral', 'imagem', 1, 4)
 
+      
       ->render();
   }
 
@@ -52,12 +58,26 @@ class MS_Home extends Alp_Page
 
     $this
       ->add_render($this->render_section_banners())
-      // ->add_render($avulsos->render_section_blog())
       ->add_render($avulsos->render_section_nossos_servicos())
+      ->add_render($this->render_section_conheca())
+      ->add_render($avulsos->render_section_quem_ja_confiou())
+      ->add_render($avulsos->render_section_blog())
       ->add_render($avulsos->render_section_newsletter())
       ->echo_render();
   }
 
+  
+  /**
+   * Renderiza a seção Conheça.
+   * @return string HTML da seção.
+   */
+  private function render_section_conheca(): string
+  {
+
+    $args = $this->get_post_metas_values('conheca');
+
+    return $this->html('frontend/views/pages/home/section-conheca', $args);
+  }
  
 }
 
