@@ -84,6 +84,14 @@
   }
 
   adicionar_swiper('obras');
+  adicionar_swiper('nossos-servicos',
+    {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      loop: false,
+      breakpoints: {}
+    }
+  );
   adicionar_swiper('quem-somos-sobre',
     {
       slidesPerView: 1,

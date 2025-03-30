@@ -11,17 +11,16 @@
  * @since 4.0
  * 
  * @var $args {
- * 	@var string $categoria Categoria do servico.
+ * 	@var string $indice 01, 02, etc.
  * 	@var string $titulo Título do servico.
- *  @var string $texto Descrição do servico.
- *  @var string $imagem Imagem de fundo do card.
+ * 	@var string $texto_card Pequeno texto no card abaixo do título.
+ *  @var string $imagem Imagem de destaque.
  * 	@var string $css_classes Classes CSS a serem aplicadas.
- * 	@var string $videocase Define se o card é de videocase.
  * }
  */
 extract($args);
 ?>
-<a href="<?= $link; ?>" class="card-servico <?= $css_classes; ?>">
+<a href="<?= $link; ?>" class="card-servico col-12 col-4@md swiper-slide">
   <figure class="card-servico__imagem">
     <img src="<?= $imagem; ?>">
   </figure>

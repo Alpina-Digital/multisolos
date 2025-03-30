@@ -1,12 +1,24 @@
 @use 'cody/base' as *;
 
 .section-nossos-servicos {
-  &__ver-todos {
-    border-radius: var(--space-xxs);
-    padding: var(--space-xs) var(--space-lg);
-    background: var(--color-primary);
-    height: 146px;
-    box-sizing: border-box;
-    width: 100vw;
+
+  &__titulo-secao {
+    color: var(--color-primary-light);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 90%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+
+  }
+
+  &__subtitulo-secao {
+    color: var(--color-primary-darker);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+
   }
 }

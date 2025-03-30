@@ -86,7 +86,53 @@ class MS_Avulsos
     return $this->html('frontend/views/avulsos/section-quem-ja-confiou', compact('itens'));
   }
 
-  
+
+  /**
+   * Renderiza a seção de informações do Serviço.
+   * @return string HTML renderizado.
+   */
+  public function render_section_nossos_servicos(): string
+  {
+    $query = new WP_Query([
+      'post_type' => 'servico',
+      'posts_per_page' => 6,
+    ]);
+
+    if (!$query->have_posts()) return false;
+
+    $cards = '';
+
+    $indice = 0; // para adicionar o 0 na frente de cada número
+    while ($query->have_posts()) {
+      $indice++;
+      $query->the_post();
+      $cards .= $this->render_card_nossos_servicos(get_the_ID(), $indice);
+    }
+
+    $swiper_class = 'nossos-servicos';
+    $args = compact('cards', 'swiper_class');
+
+    return $this->html('frontend/views/avulsos/section-nossos-servicos', $args);
+  }
+
+  /**
+   * Renderiza um card de servico.
+   * @param int $id ID do servico.
+   * @return string HTML renderizado.
+   */
+  public function render_card_nossos_servicos(int $id, int $indice = 0): string
+  {
+
+    $titulo = get_the_title($id);
+    $texto_card = esc_html(get_post_meta($id, 'servico_texto_card', true));
+    $imagem = wp_get_attachment_image_url(get_post_meta($id, 'servico_imagem', true), '');
+    $link = get_permalink($id);
+    $indice = sprintf('%02d', $indice); //adiciona o 0 na frente do numero
+
+    $args = compact('titulo', 'texto_card', 'imagem', 'link', 'indice');
+
+    return $this->html('frontend/views/cards/card-servico', $args);
+  }
 
   /**
    * @param bool $white
