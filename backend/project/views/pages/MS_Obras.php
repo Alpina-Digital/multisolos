@@ -8,7 +8,7 @@
  */
 class MS_Obras extends Alp_Page
 {
-    use MS_Banner_Topo, MS_Carrossel;
+    use MS_Banner_Topo;
 
     /**
      * Faz o setup da estrutura da página no backend.
@@ -28,66 +28,70 @@ class MS_Obras extends Alp_Page
         $this->template->create_metaboxes()
             //BANNER
             ->chain_from_callable([$this, 'chain_metaboxes_banner_topo'])
-
-            //SEÇÃO DE SOLUÇÕES
-            ->add_metabox_box('solucoes', 'Obras entregues')
-            ->add_metabox_field_biu('Título da Seção', 'titulo', 12)
-            ->add_metabox_group('Itens', 'itens', 'Item {#} - {titulo}', 12)
-            ->add_metabox_field_text('Título', 'titulo', 4)
-            ->add_metabox_field_biu('Texto', 'texto', 4)
-            ->add_metabox_field_biu_list('Vantagens', 'vantagens', 4)
-            ->add_metabox_field_image('Galeria', 'galeria', 12)
-            ->close_metabox_group()
-            ->add_metabox_field_text('Texto nos Botões', 'cta_texto', 4)
-            ->add_metabox_field_text('Link nos Botões', 'cta_link', 4)
-            ->add_metabox_field_select_target('Onde abrir o link?', 'cta_target', 4)
-
-            //CARROSSEL
-            ->chain_from_callable([$this, 'chain_metaboxes_section_carrossel'])
+            ->add_metabox_box('', 'Obras entregues')
+            ->add_metabox_heading('As obras estão sendo gerenciadas pelo menu Obras entregues', '')
 
             ->render();
     }
 
     public function render(): void
     {
-
+        $avulsos = new MS_Avulsos();
         $this
             ->add_render($this->render_banner_topo())
-            ->add_render($this->render_section_solucoes())
-            ->add_render($this->render_section_carrossel('obras'))
+            ->add_render($this->render_section_obras_entregues())
+            ->add_render($avulsos->render_section_nossos_servicos())
             ->echo_render();
     }
 
-    /**
-     * 
-     * Retorna o conteúdo da seção superior da página de Serviços
-     * @return string HTML da seção.
-     */
-    public function render_section_solucoes(): string
-    {
-        $args = $this->get_post_metas_values('solucoes', ['metafields' => ['galeria' => 'img'], 'img_class' => 'card-solucao__imagem']);
 
-        foreach ($args['itens'] as $i => &$item) {
-            $item = array_merge($item, [
-                'cta_texto' => $args['cta_texto'],
-                'cta_link' => $args['cta_link'],
-                'cta_target' => $args['cta_target'],
-            ]);
-            $item = $this->render_card_solucao($item, $i);
+    /**
+     * Renderiza a seção de informações do Serviço.
+     * @return string HTML renderizado.
+     */
+    public function render_section_obras_entregues(): string
+    {
+        $query = new WP_Query([
+            'post_type' => 'obras_entregues',
+            'posts_per_page' => -1,
+        ]);
+
+
+        if (!$query->have_posts()) return false;
+
+        $obras = [];
+
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            $id = get_the_ID();
+            $obras[] = [
+                'titulo'      => get_the_title($id),
+                'slogan_obra'  => get_post_meta($id, 'obras_entregues_slogan_obra', true),
+                'texto_obra'  => get_post_meta($id, 'obras_entregues_texto_obra', true),
+                'nome_depoimento'  => get_post_meta($id, 'obras_entregues_nome_depoimento', true),
+                'texto_depoimento'  => get_post_meta($id, 'obras_entregues_texto_depoimento', true),
+                'responsavel_depoimento'  => get_post_meta($id, 'obras_entregues_responsavel_depoimento', true),
+                'foto_depoimento'  => wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_foto_depoimento', true),'full'),
+                // 'link'        => get_permalink($id),
+            ];
         }
 
-        $args['itens'] = implode('', $args['itens']);
+        $args = compact('obras');
 
-        return $this->html('frontend/views/pages/obras/section-solucoes.php', $args);
-    }
 
-    public function render_card_solucao(array $item, int $id): string
-    {
-        $item['id'] = $id;
-        if (!key_exists('galeria', $item)) $item['galeria'] = [];
-        if (!is_array($item['galeria'])) $item['galeria'] = [$item['galeria']];
+        // if ($query->have_posts()) {
+        //     while ($query->have_posts()) {
+        //         $query->the_post();
+        //         $meta = (new MS_Obras_Entregues(get_the_ID()))->get_post_metas_values();
+        //         $obras[] = array_merge($meta, ['titulo' => get_the_title()]);
+        //     }
+        // }
 
-        return $this->html('frontend/views/cards/card-solucao.php', $item);
+        // $args['obras'] = $obras;
+
+
+        return $this->html('frontend/views/pages/obras/section-obras-entregues', $args);
     }
 }
 
