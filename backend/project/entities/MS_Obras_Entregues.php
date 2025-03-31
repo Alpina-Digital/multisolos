@@ -26,17 +26,16 @@ class MS_Obras_Entregues
       ->create_metaboxes()
       
       ->add_metabox_box('', 'Conteúdo')
-      ->add_metabox_field_text('Slogan', 'slogan_obra', 12)
-      ->add_metabox_field_biu('Texto', 'texto_obra', 12)
+      ->add_metabox_field_text('Slogan', 'slogan', 6)
+      ->add_metabox_field_biu('Texto', 'texto', 6)
       
-      ->add_metabox_box('', 'Depoimento')
-      ->add_metabox_field_biu('Texto', 'texto_depoimento', 12)
-      ->add_metabox_field_text('Nome', 'nome_depoimento', 5)
-      ->add_metabox_field_text('Responsável', 'responsavel_depoimento', 4)
-      ->add_metabox_field_image('Foto', 'foto_depoimento', 1, 3)
+      ->add_metabox_heading('', 'Depoimento')
+      ->add_metabox_field_biu('Texto', 'depoimento_texto', 12)
+      ->add_metabox_field_text('Nome', 'depoimento_nome', 5)
+      ->add_metabox_field_text('Responsável', 'depoimento_responsavel', 4)
+      ->add_metabox_field_image('Foto', 'depoimento_foto', 1, 3)
       
-      ->add_metabox_box('', 'Imagens')
-      ->add_metabox_field_image('Galeria', 'galeria', 12)
+      ->add_metabox_field_image('Galeria de imagens', 'galeria', 12)
 
       ->render();
   }

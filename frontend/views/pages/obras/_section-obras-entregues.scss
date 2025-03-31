@@ -1,3 +1,53 @@
 @use 'cody/base' as *;
-      
-  .section-obras-entregues { }
+
+.section-obras-entregues {
+  &__interno {
+    border-radius: .5rem;
+  }
+
+  hr {
+    border: 1px solid #D2D2D2
+  }
+
+  &__titulo {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -3%;
+
+    span {
+      color: var(--color-primary);
+    }
+  }
+
+  &__slogan {
+    color: #4E4F55;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -2%;
+
+  }
+
+  &__texto,
+  &__depoimento_nome,
+  &__depoimento_texto,
+  &__depoimento_responsavel {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -2%;
+
+  }
+
+  &__depoimento_nome {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  &__depoimento_imagem {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+  }
+}

@@ -53,45 +53,51 @@ class MS_Obras extends Alp_Page
     {
         $query = new WP_Query([
             'post_type' => 'obras_entregues',
-            'posts_per_page' => -1,
+            'posts_per_page' => 3,
         ]);
 
+        if (!$query->have_posts()) return '';
 
-        if (!$query->have_posts()) return false;
-
-        $obras = [];
+        $itens = [];
 
         while ($query->have_posts()) {
             $query->the_post();
-
-            $id = get_the_ID();
-            $obras[] = [
-                'titulo'      => get_the_title($id),
-                'slogan_obra'  => get_post_meta($id, 'obras_entregues_slogan_obra', true),
-                'texto_obra'  => get_post_meta($id, 'obras_entregues_texto_obra', true),
-                'nome_depoimento'  => get_post_meta($id, 'obras_entregues_nome_depoimento', true),
-                'texto_depoimento'  => get_post_meta($id, 'obras_entregues_texto_depoimento', true),
-                'responsavel_depoimento'  => get_post_meta($id, 'obras_entregues_responsavel_depoimento', true),
-                'foto_depoimento'  => wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_foto_depoimento', true),'full'),
-                // 'link'        => get_permalink($id),
+            $itens[] = [
+                'titulo' => get_the_title(get_the_ID()),
+                'slogan' => get_post_meta(get_the_ID(), 'obras_entregues_slogan', true),
+                'texto' => get_post_meta(get_the_ID(), 'obras_entregues_texto', true),
+                'depoimento_nome' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_nome', true),
+                'depoimento_texto' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_texto', true),
+                'depoimento_responsavel' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_responsavel', true),
+                'depoimento_imagem' => wp_get_attachment_image_url(get_post_meta(get_the_ID(), 'obras_entregues_depoimento_foto', true), ''),
+        
             ];
         }
+        wp_reset_postdata();
 
-        $args = compact('obras');
-
-
-        // if ($query->have_posts()) {
-        //     while ($query->have_posts()) {
-        //         $query->the_post();
-        //         $meta = (new MS_Obras_Entregues(get_the_ID()))->get_post_metas_values();
-        //         $obras[] = array_merge($meta, ['titulo' => get_the_title()]);
-        //     }
-        // }
-
-        // $args['obras'] = $obras;
-
+        $args = compact('itens');
 
         return $this->html('frontend/views/pages/obras/section-obras-entregues', $args);
+    }
+
+    /**
+     * Renderiza um card de obra.
+     * @param int $id ID da obra.
+     * @return string HTML renderizado.
+     */
+    public function render_item_obras_entregues(int $id): string
+    {
+        $titulo = get_the_title($id);
+        $slogan = get_post_meta($id, 'obras_entregues_slogan', true);
+        $texto = get_post_meta($id, 'obras_entregues_texto', true);
+        $depoimento_nome = get_post_meta($id, 'obras_entregues_depoimento_nome', true);
+        $depoimento_texto = get_post_meta($id, 'obras_entregues_depoimento_texto', true);
+        $depoimento_responsavel = get_post_meta($id, 'obras_entregues_depoimento_responsavel', true);
+        $depoimento_imagem = wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_depoimento_foto', true), '');
+
+        $args = compact('titulo', 'slogan', 'texto', 'depoimento_nome', 'depoimento_texto', 'depoimento_responsavel', 'depoimento_imagem');
+
+        return $this->html('frontend/views/pages/obras/item-obras-entregues', $args);
     }
 }
 
