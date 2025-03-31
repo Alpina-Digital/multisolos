@@ -27,6 +27,7 @@ extract($args); ?>
       </div>
 
       <div class="flex-shrink-0 flex flex-row gap-sm items-center">
+        <a href="<?= home_url()?>/obras" class="btn btn--accent btn--ver-obras padding-y-xs padding-x-lg hide block@md">Ver obras</a>
         <a href="javascript:;" class="btn btn--swiper padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
           <?= get_svg_content('chevron.svg', "flip-x", true); ?>
         </a>
