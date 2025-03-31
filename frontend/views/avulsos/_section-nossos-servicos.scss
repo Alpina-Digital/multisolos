@@ -2,6 +2,18 @@
 
 .section-nossos-servicos {
 
+  .btn--swiper {
+    background-color: var(--color-white);
+  }
+
+  .btn--swiper:hover {
+    background-color: var(--color-accent);
+  }
+
+  .swiper-button-disabled {
+    opacity: 1;
+  }
+
   &__titulo-secao {
     color: var(--color-primary-light);
     font-weight: 700;

@@ -3,6 +3,18 @@
 .section-obras-entregues {
   background-color: var(--color-primary-dark);
 
+  .btn--swiper {
+    background-color: var(--color-white);
+  }
+
+  .btn--swiper:hover {
+    background-color: var(--color-accent);
+  }
+
+  .swiper-button-disabled {
+    opacity: 1;
+  }
+
   &__titulo-secao {
     color: var(--color-accent);
     font-weight: 700;
