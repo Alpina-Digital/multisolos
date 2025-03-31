@@ -10,7 +10,7 @@
  */
 ?>
 <footer class="footer__wrapper">
-	<div class="footer bg-primary overflow-hidden">
+	<div class="footer bg-primary-dark overflow-hidden">
 		<?php (new MS_Footer())->render(); ?>
 	</div>
 </footer>
