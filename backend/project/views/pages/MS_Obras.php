@@ -40,7 +40,7 @@ class MS_Obras extends Alp_Page
         $this
             ->add_render($this->render_banner_topo())
             ->add_render($this->render_section_obras_entregues())
-            ->add_render($avulsos->render_section_nossos_servicos())
+            ->add_render($avulsos->render_section_nossos_servicos('Multisolos + A sua obra', 'Conte com a gente para executar as suas obras com sucesso'))
             ->echo_render();
     }
 

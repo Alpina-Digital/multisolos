@@ -91,7 +91,7 @@ class MS_Avulsos
    * Renderiza a seção de informações do Serviço.
    * @return string HTML renderizado.
    */
-  public function render_section_nossos_servicos(): string
+  public function render_section_nossos_servicos($titulo_secao, $slogan_secao): string
   {
     $query = new WP_Query([
       'post_type' => 'servico',
@@ -110,7 +110,7 @@ class MS_Avulsos
     }
 
     $swiper_class = 'nossos-servicos';
-    $args = compact('cards', 'swiper_class');
+    $args = compact('cards', 'titulo_secao', 'slogan_secao', 'swiper_class');
 
     return $this->html('frontend/views/avulsos/section-nossos-servicos', $args);
   }
@@ -134,7 +134,7 @@ class MS_Avulsos
     return $this->html('frontend/views/cards/card-servico', $args);
   }
 
-   /**
+  /**
    * Renderiza a seção de informações do Serviço.
    * @return string HTML renderizado.
    */

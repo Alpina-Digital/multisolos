@@ -58,7 +58,7 @@ class MS_Home extends Alp_Page
 
     $this
       ->add_render($this->render_section_banners())
-      ->add_render($avulsos->render_section_nossos_servicos())
+      ->add_render($avulsos->render_section_nossos_servicos('estaqueamento e sondagem', ''))
       ->add_render($this->render_section_conheca())
       ->add_render($avulsos->render_section_obras_entregues())
       ->add_render($avulsos->render_section_quem_ja_confiou())

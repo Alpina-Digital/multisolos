@@ -21,8 +21,9 @@ extract($args); ?>
     <div class="flex flex-column flex-row@md justify-center justify-between@md items-center gap-md gap-xl@md">
 
       <div class="flex flex-column items-center items-stretch@md gap-sm">
-        <h2 class="section-nossos-servicos__titulo-secao">estaqueamento e sondagem</h2>
+        <h2 class="section-nossos-servicos__titulo-secao"><?= $titulo_secao?></h2>
         <h3 class="section-nossos-servicos__subtitulo-secao">Nossos serviços</h3>
+        <p class="section-nossos-servicos__slogan-secao"><?= $slogan_secao?></h3>
       </div>
 
       <div class="flex-shrink-0 flex flex-row gap-sm items-center">
