@@ -36,7 +36,9 @@ class MS_Obras_Entregues
       ->add_metabox_field_image('Foto', 'depoimento_foto', 1, 3)
       
       ->add_metabox_field_image('Galeria de imagens', 'galeria', 12)
-
+      
+      ->add_metabox_heading('Imagem destacada', '')
+      ->add_metabox_field_image('', 'imagem_destacada', 1, 3, 'Essa imagem aparece na seção obras entregues na home')
       ->render();
   }
 

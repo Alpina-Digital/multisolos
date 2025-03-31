@@ -30,7 +30,7 @@ extract($args);
                         <p class="texto"><?= $texto_box2 ?></p>
                     </div>
                 </div>
-                <?= get_svg_content('selo.svg', 'section-conheca__selo') ?>
+                <!-- <?= get_svg_content('selo.svg', 'section-conheca__selo') ?> -->
             </div>
             <div class="col-6@md">
                 <h3 class="section-conheca__secao-texto-titulo margin-bottom-xs"><?= $secao_texto_titulo ?></h3>

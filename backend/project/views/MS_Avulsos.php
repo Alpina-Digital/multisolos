@@ -134,6 +134,49 @@ class MS_Avulsos
     return $this->html('frontend/views/cards/card-servico', $args);
   }
 
+   /**
+   * Renderiza a seção de informações do Serviço.
+   * @return string HTML renderizado.
+   */
+  public function render_section_obras_entregues(): string
+  {
+    $query = new WP_Query([
+      'post_type' => 'obras_entregues',
+      'posts_per_page' => -1,
+    ]);
+
+    if (!$query->have_posts()) return false;
+
+    $cards = '';
+
+    while ($query->have_posts()) {
+      $query->the_post();
+      $cards .= $this->render_card_obra_entregue(get_the_ID());
+    }
+
+    $swiper_class = 'obras-entregues';
+    $args = compact('cards', 'swiper_class');
+
+    return $this->html('frontend/views/avulsos/section-obras-entregues', $args);
+  }
+
+  /**
+   * Renderiza um card de obra.
+   * @param int $id ID do obra.
+   * @return string HTML renderizado.
+   */
+  public function render_card_obra_entregue(int $id): string
+  {
+
+    $titulo = get_the_title($id);
+    $imagem = wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_imagem_destacada', true), '');
+    $link = get_permalink($id);
+
+    $args = compact('titulo', 'imagem', 'link');
+
+    return $this->html('frontend/views/cards/card-obra-entregue', $args);
+  }
+
   /**
    * @param bool $white
    * @param string $class
