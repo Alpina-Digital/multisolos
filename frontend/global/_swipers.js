@@ -100,6 +100,30 @@
       breakpoints: {}
     }
   );
+  // adicionar_swiper('galeria-obras-entregues',
+  //   {
+  //     slidesPerView: 1,
+  //     spaceBetween: 24,
+  //     loop: false,
+  //     breakpoints: {}
+  //   }
+  // );
+  // Inicializa todas as galerias de obras entregues dinamicamente
+  document.querySelectorAll('[class*="js-galeria-obras-entregues-"][class*="-swiper"]').forEach(function (swiperEl) {
+    const classes = Array.from(swiperEl.classList);
+    const mioloClass = classes.find(cl => cl.startsWith('js-galeria-obras-entregues-') && cl.endsWith('-swiper'));
+
+    if (mioloClass) {
+      const miolo = mioloClass.replace('js-', '').replace('-swiper', '');
+      adicionar_swiper(miolo, {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: false,
+        breakpoints: {}
+      });
+    }
+  });
+
   adicionar_swiper('quem-somos-sobre',
     {
       slidesPerView: 1,

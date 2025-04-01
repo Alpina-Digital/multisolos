@@ -50,55 +50,55 @@ class MS_Obras extends Alp_Page
      * @return string HTML renderizado.
      */
     public function render_section_obras_entregues(): string
-    {
-        $query = new WP_Query([
-            'post_type' => 'obras_entregues',
-            'posts_per_page' => 3,
-        ]);
+{
+    $query = new WP_Query([
+        'post_type' => 'obras_entregues',
+        'posts_per_page' => 3,
+    ]);
 
-        if (!$query->have_posts()) return '';
+    if (!$query->have_posts()) return '';
 
-        $itens = [];
+    $itens = [];
 
-        while ($query->have_posts()) {
-            $query->the_post();
-            $itens[] = [
-                'titulo' => get_the_title(get_the_ID()),
-                'slogan' => get_post_meta(get_the_ID(), 'obras_entregues_slogan', true),
-                'texto' => get_post_meta(get_the_ID(), 'obras_entregues_texto', true),
-                'depoimento_nome' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_nome', true),
-                'depoimento_texto' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_texto', true),
-                'depoimento_responsavel' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_responsavel', true),
-                'depoimento_imagem' => wp_get_attachment_image_url(get_post_meta(get_the_ID(), 'obras_entregues_depoimento_foto', true), ''),
+    while ($query->have_posts()) {
+        $query->the_post();
+
+        // Recupera os IDs das imagens da galeria
+        $galeria_ids = get_post_meta(get_the_ID(), 'obras_entregues_galeria', false);
+
+        $galeria_urls = [];
         
-            ];
+        if (!empty($galeria_ids) && is_array($galeria_ids)) {
+            foreach ($galeria_ids as $id) {
+                $url = wp_get_attachment_image_url($id, 'full');
+                if ($url) {
+                    $galeria_urls[] = $url;
+                }
+            }
         }
-        wp_reset_postdata();
-
-        $args = compact('itens');
-
-        return $this->html('frontend/views/pages/obras/section-obras-entregues', $args);
+        
+        $itens[] = [
+            'titulo' => get_the_title(get_the_ID()),
+            'slogan' => get_post_meta(get_the_ID(), 'obras_entregues_slogan', true),
+            'texto' => get_post_meta(get_the_ID(), 'obras_entregues_texto', true),
+            'depoimento_nome' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_nome', true),
+            'depoimento_texto' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_texto', true),
+            'depoimento_responsavel' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_responsavel', true),
+            'depoimento_imagem' => wp_get_attachment_image_url(get_post_meta(get_the_ID(), 'obras_entregues_depoimento_foto', true), ''),
+            'galeria' => $galeria_urls, // agora com as imagens da galeria corretamente
+        ];
     }
 
-    /**
-     * Renderiza um card de obra.
-     * @param int $id ID da obra.
-     * @return string HTML renderizado.
-     */
-    public function render_item_obras_entregues(int $id): string
-    {
-        $titulo = get_the_title($id);
-        $slogan = get_post_meta($id, 'obras_entregues_slogan', true);
-        $texto = get_post_meta($id, 'obras_entregues_texto', true);
-        $depoimento_nome = get_post_meta($id, 'obras_entregues_depoimento_nome', true);
-        $depoimento_texto = get_post_meta($id, 'obras_entregues_depoimento_texto', true);
-        $depoimento_responsavel = get_post_meta($id, 'obras_entregues_depoimento_responsavel', true);
-        $depoimento_imagem = wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_depoimento_foto', true), '');
+    wp_reset_postdata();
 
-        $args = compact('titulo', 'slogan', 'texto', 'depoimento_nome', 'depoimento_texto', 'depoimento_responsavel', 'depoimento_imagem');
+    $swiper_class = 'galeria-obras-entregues';
+    $args = compact('itens', 'swiper_class');
 
-        return $this->html('frontend/views/pages/obras/item-obras-entregues', $args);
-    }
+    return $this->html('frontend/views/pages/obras/section-obras-entregues', $args);
+}
+
+
+    
 }
 
 /**
