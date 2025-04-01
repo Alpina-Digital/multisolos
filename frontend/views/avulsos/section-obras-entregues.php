@@ -15,7 +15,7 @@
  * }
  */
 extract($args); ?>
-<section class="section-obras-entregues bg-cinza-escuro-ultra padding-y-xl padding-y-xxxl@md position-relative z-index-1">
+<section class="section-obras-entregues bg-primary-darker padding-y-xl padding-y-xxxl@md position-relative z-index-1" style="background-image:url('<?= get_media_src('grade.png'); ?>')">
   <div class="section-obras-entregues__container grid max-width-lg container gap-lg">
 
     <div class="flex flex-column flex-row@md justify-center justify-between@md items-center gap-md gap-xl@md">

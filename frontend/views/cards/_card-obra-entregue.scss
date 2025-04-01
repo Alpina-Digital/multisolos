@@ -2,7 +2,7 @@
 
 .obra-entregue {
   border-radius: var(--space-xxs);
-  background: var(--color-primary-darker);
+  // background: var(--color-primary-darker);
   position: relative;
   transition: all .2s ease-in-out;
 
@@ -35,7 +35,7 @@
 
   &__titulo {
     color: var(--color-white);
-    background: var(--color-primary-dark);
+    background: transparent;
     font-weight: 700;
     font-size: 20px;
     line-height: 100%;
