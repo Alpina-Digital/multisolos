@@ -12,7 +12,7 @@
     line-height: 100%;
     letter-spacing: -3%;
 
-    span{
+    span {
       color: var(--color-primary);
     }
   }
@@ -28,7 +28,7 @@
     // flex-wrap: nowrap;
 
     input {
-      border: none;
+      border: 1px solid #7A7A7A4D;
       background: var(--color-white);
 
       display: flex;
@@ -40,9 +40,22 @@
       border-radius: var(--space-xxs);
 
       &::placeholder {
-        color: var(--color-cinza-medio);
-        opacity: 0.7;
+        color: #4E4F55;
       }
+    }
+
+    .btn {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
     }
   }
 }
