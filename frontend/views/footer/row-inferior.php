@@ -11,7 +11,7 @@
  * @since 2.0
  */
 ?>
-<div class="max-width-xxl container padding-bottom-xl position-relative">
+<div class="max-width-lg container padding-bottom-xl position-relative">
   <div class="flex flex-column flex-row@sm items-center gap-y-sm justify-between">
 
     <div class="footer__copyright flex flex-column gap-xxxs">

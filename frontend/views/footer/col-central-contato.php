@@ -22,10 +22,6 @@ extract($args);
     <div class="footer__icon flex-shrink-0"><?= $pin; ?></div>
     <div class="flex flex-column gap-xxs">
       <?= $endereco; ?>
-      <div class="flex gap-xxs font-semibold color-accent">
-        <span>Ver no mapa</span>
-        <?= $arrow; ?>
-      </div>
     </div>
   </a>
 
@@ -53,6 +49,13 @@ extract($args);
         <?php endif; ?>
       </div>
     </span>
+  <?php endif; ?>
+
+  <?php if (!empty($email)): ?>
+    <a href="mailto:<?= $email ?>" class="footer__link flex gap-xxs">
+      <div class="footer__icon"><?= $email_icone; ?></div>
+      <div class="footer__text"><?= $email; ?></div>
+    </a>
   <?php endif; ?>
 
 

@@ -65,7 +65,7 @@ class MS_Footer
   private function get_col_logo(): string
   {
     $logo = get_svg_content('logo/logo-footer.svg');
-    $slogan = 'Gestão em Saúde Digital';
+    $slogan = 'Estaqueamento e sondagem Ltda.';
     $cnpj = Alp_Settings::get_option('cnpj');
     $args = compact('logo', 'slogan', 'cnpj');
     return $this->html('frontend/views/footer/col-superior-logo.php', $args);
@@ -87,13 +87,16 @@ class MS_Footer
     $whatsapp2 = Alp_Settings::get_telefone(3);
     $whatsapp_icone = get_svg_content('footer/whatsapp.svg', 'footer__icone color-accent', true);
 
+    $email = apply_filters('the_content', Alp_Settings::get_option('email'));
+    $email_icone = get_svg_content('footer/email.svg', 'footer__icone color-accent', true);
+
     $pin = get_svg_content('footer/pin.svg', 'footer__icone color-accent', true);
     $arrow = get_svg_content('arrow-link.svg', 'footer__icone color-accent', true, [], 'stroke');
 
     $endereco = apply_filters('the_content', Alp_Settings::get_option('endereco'));
     $endereco_url = Alp_Settings::get_maps_url();
 
-    $args = compact('titulo','telefone', 'whatsapp', 'whatsapp2', 'telefone_icone', 'whatsapp_icone', 'endereco', 'pin', 'arrow', 'endereco_url', 'class');
+    $args = compact('titulo','telefone', 'whatsapp', 'whatsapp2', 'telefone_icone', 'whatsapp_icone', 'endereco', 'pin', 'arrow', 'endereco_url', 'email', 'email_icone', 'class');
     return $this->html('frontend/views/footer/col-central-contato.php', $args);
   }
 
@@ -118,6 +121,11 @@ class MS_Footer
         'nome' => 'Facebook',
         'link' => Alp_Settings::get_option('facebook'),
         'icone' => get_svg_content('footer/icon-facebook.svg', 'footer__social-icon', true)
+      ],
+      (object) [
+        'nome' => 'Linkedin',
+        'link' => Alp_Settings::get_option('linkedin'),
+        'icone' => get_svg_content('footer/icon-linkedin.svg', 'footer__social-icon', true)
       ]
     ];
 

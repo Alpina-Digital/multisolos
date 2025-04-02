@@ -17,8 +17,8 @@
  */
 extract($args);
 ?>
-<div class="footer__superior max-width-xxl container padding-top-xl flex flex-column justify-between items-center items-start@md gap-lg gap-sm@md">
+<div class="footer__superior max-width-lg container col-12 padding-top-xl flex@md justify-between items-end ">
   <?= $logo; ?>
   <?= $sociais; ?>
 </div>
-<div class="container max-width-xxl footer__divider margin-y-lg"></div>
+<div class="container max-width-lg footer__divider margin-y-lg"></div>

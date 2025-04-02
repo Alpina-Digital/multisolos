@@ -8,11 +8,12 @@
   &__title {
     color: var(--color-white);
     margin-bottom: var(--space-sm);
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 110%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%;
     /* 19.8px */
-    letter-spacing: -0.18px;
+    letter-spacing: 0%;
+    text-transform: uppercase;
   }
 }
 
@@ -59,6 +60,7 @@
   letter-spacing: -0.16px;
   text-decoration: none;
   transition: all .2s ease-in-out;
+  opacity: .8;
 
   &:hover {
     opacity: .7;

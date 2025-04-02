@@ -16,9 +16,9 @@
  */
 extract($args);
 ?>
-<div class="container max-width-xxl margin-bottom-md">
+<div class="container max-width-lg margin-bottom-md">
   <div class="flex flex-column flex-row@lg justify-between items-center items-stretch@lg gap-lg gap-xxl@lg padding-top-lg padding-top-0@lg">
     <?= $cols; ?>
   </div>
 </div>
-<div class="container max-width-xxl footer__divider margin-y-lg"></div>
+<div class="container max-width-lg footer__divider margin-y-lg"></div>
