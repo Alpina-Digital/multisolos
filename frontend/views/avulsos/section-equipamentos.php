@@ -15,7 +15,7 @@
  * }
  */
 extract($args); ?>
-<section class="section-equipamentos padding-y-xl padding-y-xxxl@md position-relative z-index-1">
+<section class="section-equipamentos bg-white padding-y-xl padding-y-xxxl@md position-relative z-index-1">
   <div class="section-equipamentos__container grid max-width-lg container gap-lg">
 
     <div class="flex flex-column flex-row@md justify-center justify-between@md items-center gap-md gap-xl@md">
