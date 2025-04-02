@@ -13,12 +13,12 @@
  */
 extract($args);
 ?>
-<a href="<?= $link; ?>" class="obra-entregue col-12 col-4@md swiper-slide">
-  <figure class="obra-entregue__imagem">
+<a href="<?= $link; ?>" class="card-obra-entregue col-12 col-4@md swiper-slide">
+  <figure class="card-obra-entregue__imagem">
     <img src="<?= $imagem; ?>">
   </figure>
 
-  <h3 class="obra-entregue__titulo"><?= $titulo; ?></h3>
+  <h3 class="card-obra-entregue__titulo"><?= $titulo; ?></h3>
 
-  <div class="obra-entregue__icon-link"> <?= get_svg_content('arrow-diagonal.svg'); ?> </div>
+  <div class="card-obra-entregue__icon-link"> <?= get_svg_content('arrow-diagonal.svg'); ?> </div>
 </a>
