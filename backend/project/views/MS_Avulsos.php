@@ -178,6 +178,49 @@ class MS_Avulsos
   }
 
   /**
+   * Renderiza a seção de informações do Serviço.
+   * @return string HTML renderizado.
+   */
+  public function render_section_equipamentos(): string
+  {
+    $query = new WP_Query([
+      'post_type' => 'equipamentos',
+      'posts_per_page' => -1,
+    ]);
+
+    if (!$query->have_posts()) return false;
+
+    $cards = '';
+
+    while ($query->have_posts()) {
+      $query->the_post();
+      $cards .= $this->render_card_equipamento(get_the_ID());
+    }
+
+    $swiper_class = 'equipamentos';
+    $args = compact('cards', 'swiper_class');
+
+    return $this->html('frontend/views/avulsos/section-equipamentos', $args);
+  }
+
+  /**
+   * Renderiza um card de obra.
+   * @param int $id ID do obra.
+   * @return string HTML renderizado.
+   */
+  public function render_card_equipamento(int $id): string
+  {
+
+    $titulo = get_the_title($id);
+    $imagem = wp_get_attachment_image_url(get_post_meta($id, 'equipamentos_imagem_destacada', true), '');
+    $texto = get_post_meta($id, 'equipamentos_texto', true);
+    
+    $args = compact('titulo', 'imagem', 'texto');
+
+    return $this->html('frontend/views/cards/card-equipamento', $args);
+  }
+
+  /**
    * @param bool $white
    * @param string $class
    * 

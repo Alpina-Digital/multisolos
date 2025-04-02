@@ -91,6 +91,7 @@ require_once get_template_directory() . "/backend/project/traits/MS_Section_Proj
 #ENTITIES
 require_once get_template_directory() . "/backend/project/entities/MS_Parceiro.php";
 require_once get_template_directory() . "/backend/project/entities/MS_Depoimento.php";
+require_once get_template_directory() . "/backend/project/entities/MS_Equipamentos.php";
 
 #VIEWS
 require_once get_template_directory() . "/backend/project/views/MS_Header.php";

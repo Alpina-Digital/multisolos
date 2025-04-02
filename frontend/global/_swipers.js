@@ -101,6 +101,15 @@
     }
   );
 
+  adicionar_swiper('equipamentos',
+    {
+      slidesPerView: 3,
+      spaceBetween: 24,
+      loop: false,
+      breakpoints: {}
+    }
+  );
+
   adicionar_swiper('slides-sobre-servico',
     {
       slidesPerView: 1,
