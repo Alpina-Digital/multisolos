@@ -9,15 +9,43 @@ extract($args);
             <div class="section-sobre-servico__texto-sobre flex flex-column gap-sm col-6 col-6@md bg-cinza-fundo radius-md padding-md">
                 <h1 class="section-sobre-servico__titulo-sobre">Sobre</h1>
                 <?= $texto ?>
-                <!-- <a href="<?= home_url()?>/fale-conosco" class="section-sobre-servico__cta-link btn btn--accent btn--sm">Solicitar orçamento <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a> -->
-                <a href="<?= $cta_link?>" class="section-sobre-servico__cta-link btn btn--accent btn--sm"><?= $cta_texto?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
+                <a href="<?= $cta_link ?>" class="section-sobre-servico__cta-link btn btn--accent btn--sm"><?= $cta_texto ?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
             </div>
             <div class="flex flex-column gap-sm col-6 col-6@md bg-cinza-fundo radius-md padding-md">
                 <?php
-                foreach ($imagens as $imagem):
-                    echo $imagem;
-                endforeach;
+                // foreach ($imagens as $imagem):
+                //     echo $imagem;
+                // endforeach;
                 ?>
+
+                <!-- inicio swiper -->
+                <div class="galeria-sobre-servico">
+
+                    <div class="galeria-sobre-servico__galeria swiper js-slides-sobre-servico-swiper">
+                        <div class="swiper-wrapper">
+                            <?php foreach ($imagens as $imagem): ?>
+                                <div class="galeria-sobre-servico__imagem swiper-slide" style="--galeria-sobre-servico-imagem: url('<?= $imagem; ?>');">
+                                    <a href="javascript:;" class="galeria-sobre-servico__zoom btn btn--zoom" aria-label="Zoom" aria-controls="lightbox-slides-sobre-servico" data-lightbox-item="lightbox-slides-sobre-servico-item">
+                                        <?= get_svg_content('icon-zoom.svg', '', true, [], 'stroke'); ?>
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+
+                    <div class="galeria-sobre-servico__btns flex gap-xs items-center justify-end">
+                        <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-slides-sobre-servico-prev flex-shrink-0">
+                            <?= get_svg_content('chevron.svg', "flip-x", true); ?>
+                        </a>
+                        <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-slides-sobre-servico-next flex-shrink-0">
+                            <?= get_svg_content('chevron.svg', "", true); ?>
+                        </a>
+
+                    </div>
+
+                </div>
+                <!-- fim swiper -->
+
             </div>
         </div>
     </div>
