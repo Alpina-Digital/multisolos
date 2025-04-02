@@ -6,23 +6,17 @@
   }
 
   &__titulo {
-    color: var(--color-white);
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 95%;
-    letter-spacing: -0.32px;
+    color: var(--color-black);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -3%;
+
+    span{
+      color: var(--color-primary);
+    }
   }
 
-  &__texto {
-    color: var(--color-white);
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: -0.16px;
-    opacity: 0.7;
-  }
 }
 
 .section-newsletter__form-container {

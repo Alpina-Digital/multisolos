@@ -47,8 +47,8 @@
       color: var(--color-black);
       font-size: 20px;
       font-weight: 700;
-      line-height: 130%;
-      letter-spacing: -0.4px;
+      line-height: 100%;
+      letter-spacing: -2%;
       align-self: stretch;
       overflow: hidden;
     }
@@ -67,14 +67,12 @@
   }
 
   &:hover {
-    border-bottom: 3px solid var(--color-azul-escuro);
-
+    // border-bottom: 3px solid var(--color-azul-escuro);
+    border-bottom:0px;
     .card-blog__div-img {
-      background: linear-gradient(
-          0deg,
+      background: linear-gradient(0deg,
           rgba(10, 67, 123, 0.5) 0%,
-          rgba(10, 67, 123, 0.5) 50%
-        ),
+          rgba(10, 67, 123, 0.5) 50%),
         linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
         var(--card-blog-imagem);
       background-repeat: no-repeat;
@@ -85,6 +83,7 @@
         display: flex;
       }
     }
+
     .card-blog__div-texto {
       background: var(--color-azul-escuro);
       border-bottom-left-radius: var(--space-xxs);

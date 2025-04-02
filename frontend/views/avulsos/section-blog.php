@@ -20,10 +20,11 @@ extract($args); ?>
 
     <div class="col-12 flex@md justify-between items-end">
       <div class="flex flex-column gap-sm">
-        <h2 class="subtitulo-secao">Nosso Blog</h2>
-        <h3 class="titulo-secao">Leia mais sobre energia solar</h3>
+        <h2 class="subtitulo-secao">Notícias</h2>
+        <h3 class="titulo-secao">Acompanhe as novidades</h3>
+        <p class="chamada">Saiba tudo o que está acontecendo na Multisolos.</p>
       </div>
-      <a href="/blog" class="btn btn--accent padding-y-xs padding-x-lg hide block@md"> Ver todos </a>
+      <a href="/blog" class="section-blog__btn-ver-tudo btn btn--accent btn--sm"> Ver tudo <?= get_svg_content('arrow__right_up.svg', 'svg', 'true'); ?> </a>
     </div>
 
     <div class="js-<?= $swiper_class; ?>-swiper">
@@ -31,12 +32,6 @@ extract($args); ?>
         <?= $cards ?? ''; ?>
       </div>
     </div>
-
-    <div class="position-relative hide@md">
-      <div class="js-<?= $swiper_class; ?>-pagination section-blog__pagination"></div>
-    </div>
-
-    <a href="/blog" class="btn btn--accent padding-y-xs padding-x-lg hide@md"> Ver todos </a>
 
   </div>
 </section>

@@ -1,5 +1,48 @@
 @use 'cody/base' as *;
 
+.section-blog {
+  .subtitulo-secao {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 90%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  .titulo-secao {
+    color: var(--color-black);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+  }
+
+  .chamada {
+    color: #4E4F55;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -2%;
+
+  }
+
+  &__btn-ver-tudo {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+
+  }
+  &__btn-ver-tudo:hover{
+    background-color: var(--color-accent);
+    color: var(--color-black);
+  }
+}
+
 .section-blog__pagination {
 
 
