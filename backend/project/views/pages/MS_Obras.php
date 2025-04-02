@@ -31,16 +31,30 @@ class MS_Obras extends Alp_Page
             ->add_metabox_box('', 'Obras entregues')
             ->add_metabox_heading('As obras estão sendo gerenciadas pelo menu Obras entregues', '')
 
+            //DADOS PARA O CARROSSEL DE SERVIÇOS
+            ->add_metabox_box('carrossel_servicos', 'Carrossel de serviços')
+            ->add_metabox_field_cpt('Selecione as páginas que aparecerão nos cards', 'pages_id_servicos', 'page', 99, 12)
+            ->add_metabox_field_text('Título da seção', 'titulo_secao', 6)
+            ->add_metabox_field_text('Subtitulo da seção', 'subtitulo_secao', 6)
+
             ->render();
     }
 
     public function render(): void
     {
         $avulsos = new MS_Avulsos();
+
+        //parametros para o carrossel de serviços
+        $carrossel_servicos = $this->carrossel_servicos();
+
         $this
             ->add_render($this->render_banner_topo())
             ->add_render($this->render_section_obras_entregues())
-            ->add_render($avulsos->render_section_nossos_servicos('Multisolos + A sua obra', 'Conte com a gente para executar as suas obras com sucesso'))
+            ->add_render($avulsos->render_section_nossos_servicos(
+                $carrossel_servicos['titulo_secao'],
+                $carrossel_servicos['subtitulo_secao'],
+                $carrossel_servicos['pages_id']
+            ))
             ->echo_render();
     }
 
@@ -50,55 +64,72 @@ class MS_Obras extends Alp_Page
      * @return string HTML renderizado.
      */
     public function render_section_obras_entregues(): string
-{
-    $query = new WP_Query([
-        'post_type' => 'obras_entregues',
-        'posts_per_page' => 3,
-    ]);
+    {
+        $query = new WP_Query([
+            'post_type' => 'obras_entregues',
+            'posts_per_page' => 3,
+        ]);
 
-    if (!$query->have_posts()) return '';
+        if (!$query->have_posts()) return '';
 
-    $itens = [];
+        $itens = [];
 
-    while ($query->have_posts()) {
-        $query->the_post();
+        while ($query->have_posts()) {
+            $query->the_post();
 
-        // Recupera os IDs das imagens da galeria
-        $galeria_ids = get_post_meta(get_the_ID(), 'obras_entregues_galeria', false);
+            // Recupera os IDs das imagens da galeria
+            $galeria_ids = get_post_meta(get_the_ID(), 'obras_entregues_galeria', false);
 
-        $galeria_urls = [];
-        
-        if (!empty($galeria_ids) && is_array($galeria_ids)) {
-            foreach ($galeria_ids as $id) {
-                $url = wp_get_attachment_image_url($id, 'full');
-                if ($url) {
-                    $galeria_urls[] = $url;
+            $galeria_urls = [];
+
+            if (!empty($galeria_ids) && is_array($galeria_ids)) {
+                foreach ($galeria_ids as $id) {
+                    $url = wp_get_attachment_image_url($id, 'full');
+                    if ($url) {
+                        $galeria_urls[] = $url;
+                    }
                 }
             }
+
+            $itens[] = [
+                'titulo' => get_the_title(get_the_ID()),
+                'slogan' => get_post_meta(get_the_ID(), 'obras_entregues_slogan', true),
+                'texto' => get_post_meta(get_the_ID(), 'obras_entregues_texto', true),
+                'depoimento_nome' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_nome', true),
+                'depoimento_texto' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_texto', true),
+                'depoimento_responsavel' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_responsavel', true),
+                'depoimento_imagem' => wp_get_attachment_image_url(get_post_meta(get_the_ID(), 'obras_entregues_depoimento_foto', true), ''),
+                'galeria' => $galeria_urls, // agora com as imagens da galeria corretamente
+            ];
         }
-        
-        $itens[] = [
-            'titulo' => get_the_title(get_the_ID()),
-            'slogan' => get_post_meta(get_the_ID(), 'obras_entregues_slogan', true),
-            'texto' => get_post_meta(get_the_ID(), 'obras_entregues_texto', true),
-            'depoimento_nome' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_nome', true),
-            'depoimento_texto' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_texto', true),
-            'depoimento_responsavel' => get_post_meta(get_the_ID(), 'obras_entregues_depoimento_responsavel', true),
-            'depoimento_imagem' => wp_get_attachment_image_url(get_post_meta(get_the_ID(), 'obras_entregues_depoimento_foto', true), ''),
-            'galeria' => $galeria_urls, // agora com as imagens da galeria corretamente
-        ];
+
+        wp_reset_postdata();
+
+        $swiper_class = 'galeria-obras-entregues';
+        $args = compact('itens', 'swiper_class');
+
+        return $this->html('frontend/views/pages/obras/section-obras-entregues', $args);
     }
 
-    wp_reset_postdata();
+    /**
+     * Recupera os dados do carrosssel.
+     */
+    private function carrossel_servicos(): array
+    {
+        $carrossel_servicos = $this->get_post_metas_values('carrossel_servicos');
 
-    $swiper_class = 'galeria-obras-entregues';
-    $args = compact('itens', 'swiper_class');
+        $pages_id_array = $carrossel_servicos['pages_id_servicos'] ?? [];
+        $pages_id = implode(',', $pages_id_array);
 
-    return $this->html('frontend/views/pages/obras/section-obras-entregues', $args);
-}
+        $titulo_secao = $carrossel_servicos['titulo_secao'] ?? '';
+        $subtitulo_secao = $carrossel_servicos['subtitulo_secao'] ?? '';
 
-
-    
+        return [
+            'titulo_secao' => $titulo_secao,
+            'subtitulo_secao' => $subtitulo_secao,
+            'pages_id' => $pages_id
+        ];
+    }
 }
 
 /**

@@ -30,21 +30,27 @@ class MS_Home extends Alp_Page
       ->add_metabox_box('conheca', 'A Multisolos')
       ->add_metabox_field_text('Título da seção', 'titulo_secao', 12)
       ->add_metabox_field_text('Subtitulo da seção', 'subtitulo_secao', 12)
-      ->add_metabox_heading('Caixinha 1','')
+      ->add_metabox_heading('Caixinha 1', '')
       ->add_metabox_field_text('Numero', 'numero_box1', 3)
       ->add_metabox_field_text('Sinal', 'sinal_box1', 2)
       ->add_metabox_field_text('Texto', 'texto_box1', 7)
-      ->add_metabox_heading('Caixinha 2','')
+      ->add_metabox_heading('Caixinha 2', '')
       ->add_metabox_field_text('Numero', 'numero_box2', 3)
       ->add_metabox_field_text('Sinal', 'sinal_box2', 2)
       ->add_metabox_field_text('Texto', 'texto_box2', 7)
-      ->add_metabox_heading('Seção texto','')
+      ->add_metabox_heading('Seção texto', '')
       ->add_metabox_field_biu('Título', 'secao_texto_titulo', 4)
       ->add_metabox_field_biu('Texto', 'secao_texto_texto', 8)
       ->add_metabox_field_text('Texto no botão', 'cta_texto', 4)
       ->add_metabox_field_cpt('Selecione a Página', 'cta_link', 'page', 1, 4)
 
-      
+      // DADOS PARA O CARROSSEL DE SERVIÇOS
+      ->add_metabox_box('carrossel_servicos', 'Carrossel de serviços')
+      ->add_metabox_field_cpt('Selecione as páginas que aparecerão nos cards', 'pages_id_servicos', 'page', 99, 12)
+      ->add_metabox_field_text('Título da seção', 'titulo_secao', 6)
+      ->add_metabox_field_text('Subtitulo da seção', 'subtitulo_secao', 6)
+
+
       ->render();
   }
 
@@ -56,9 +62,17 @@ class MS_Home extends Alp_Page
   {
     $avulsos = new MS_Avulsos();
 
+    //parametros para o carrossel de serviços
+    $carrossel_servicos = $this->carrossel_servicos();
+
+
     $this
       ->add_render($this->render_section_banners())
-      ->add_render($avulsos->render_section_nossos_servicos('estaqueamento e sondagem', ''))
+      ->add_render($avulsos->render_section_nossos_servicos(
+        $carrossel_servicos['titulo_secao'],
+        $carrossel_servicos['subtitulo_secao'],
+        $carrossel_servicos['pages_id']
+      ))
       ->add_render($this->render_section_conheca())
       ->add_render($avulsos->render_section_obras_entregues())
       ->add_render($avulsos->render_section_quem_ja_confiou())
@@ -67,7 +81,8 @@ class MS_Home extends Alp_Page
       ->echo_render();
   }
 
-  
+
+
   /**
    * Renderiza a seção Conheça.
    * @return string HTML da seção.
@@ -79,8 +94,28 @@ class MS_Home extends Alp_Page
 
     return $this->html('frontend/views/pages/home/section-conheca', $args);
   }
- 
+
+  /**
+   * Recupera os dados do carrosssel.
+   */
+  private function carrossel_servicos(): array
+  {
+    $carrossel_servicos = $this->get_post_metas_values('carrossel_servicos');
+
+    $pages_id_array = $carrossel_servicos['pages_id_servicos'] ?? [];
+    $pages_id = implode(',', $pages_id_array);
+
+    $titulo_secao = $carrossel_servicos['titulo_secao'] ?? '';
+    $subtitulo_secao = $carrossel_servicos['subtitulo_secao'] ?? '';
+
+    return [
+      'titulo_secao' => $titulo_secao,
+      'subtitulo_secao' => $subtitulo_secao,
+      'pages_id' => $pages_id
+    ];
+  }
 }
+
 
 /**
  * Hooks

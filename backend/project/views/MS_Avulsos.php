@@ -91,10 +91,13 @@ class MS_Avulsos
    * Renderiza a seção de informações do Serviço.
    * @return string HTML renderizado.
    */
-  public function render_section_nossos_servicos($titulo_secao, $slogan_secao): string
+  public function render_section_nossos_servicos($titulo_secao, $subtitulo_secao, $pages_id): string
   {
+    $pages_id = array_map('intval', explode(',', $pages_id));
     $query = new WP_Query([
-      'post_type' => 'servico',
+      'post_type'      => 'page',
+      'post__in'       => $pages_id,
+      'orderby'        => 'post__in',
       'posts_per_page' => 6,
     ]);
 
@@ -102,7 +105,7 @@ class MS_Avulsos
 
     $cards = '';
 
-    $indice = 0; // para adicionar o 0 na frente de cada número
+    $indice = 0; // para adicionar o 0 (zero) na frente de cada número. exemplo: 01, 02, 03...
     while ($query->have_posts()) {
       $indice++;
       $query->the_post();
@@ -110,7 +113,7 @@ class MS_Avulsos
     }
 
     $swiper_class = 'nossos-servicos';
-    $args = compact('cards', 'titulo_secao', 'slogan_secao', 'swiper_class');
+    $args = compact('cards', 'titulo_secao', 'subtitulo_secao', 'swiper_class');
 
     return $this->html('frontend/views/avulsos/section-nossos-servicos', $args);
   }
@@ -125,7 +128,7 @@ class MS_Avulsos
 
     $titulo = get_the_title($id);
     $texto_card = esc_html(get_post_meta($id, 'servico_texto_card', true));
-    $imagem = wp_get_attachment_image_url(get_post_meta($id, 'servico_imagem', true), '');
+    $imagem = wp_get_attachment_image_url(get_post_meta($id, 'servico_imagem_card', true), '');
     $link = get_permalink($id);
     $indice = sprintf('%02d', $indice); //adiciona o 0 na frente do numero
 
@@ -214,7 +217,7 @@ class MS_Avulsos
     $titulo = get_the_title($id);
     $imagem = wp_get_attachment_image_url(get_post_meta($id, 'equipamentos_imagem_destacada', true), '');
     $texto = get_post_meta($id, 'equipamentos_texto', true);
-    
+
     $args = compact('titulo', 'imagem', 'texto');
 
     return $this->html('frontend/views/cards/card-equipamento', $args);
