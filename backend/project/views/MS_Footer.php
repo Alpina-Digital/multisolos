@@ -40,7 +40,7 @@ class MS_Footer
     $cols = implode(PHP_EOL, [
       // $this->get_col_logo(),
       $this->get_col_contatos(),
-      $this->get_col_menu('Soluções','footer-1'),
+      $this->get_col_menu('Soluções', 'footer-1'),
       $this->get_col_menu('Institucional', 'footer-2'),
       $this->get_col_accordions_mobile(),
     ]);
@@ -96,7 +96,7 @@ class MS_Footer
     $endereco = apply_filters('the_content', Alp_Settings::get_option('endereco'));
     $endereco_url = Alp_Settings::get_maps_url();
 
-    $args = compact('titulo','telefone', 'whatsapp', 'whatsapp2', 'telefone_icone', 'whatsapp_icone', 'endereco', 'pin', 'arrow', 'endereco_url', 'email', 'email_icone', 'class');
+    $args = compact('titulo', 'telefone', 'whatsapp', 'whatsapp2', 'telefone_icone', 'whatsapp_icone', 'endereco', 'pin', 'arrow', 'endereco_url', 'email', 'email_icone', 'class');
     return $this->html('frontend/views/footer/col-central-contato.php', $args);
   }
 
@@ -133,6 +133,61 @@ class MS_Footer
     return $this->html('frontend/views/footer/col-superior-redes.php', $args);
   }
 
+  public function get_contatos(): array
+  {
+    $telefone = Alp_Settings::get_telefone();
+    $endereco = Alp_Settings::get_option('endereco');
+    $endereco_maps = Alp_Settings::get_maps_url();
+    $email = Alp_Settings::get_email();
+
+    return [
+      (object) [
+        'icone' => get_svg_content('footer/location.svg', 'color-accent flex-shrink-0', true),
+        'link' => '#mapa',
+        'value' => $endereco,
+        'modal'  => $endereco_maps,
+      ],
+      (object) [
+        'icone' => get_svg_content('footer/phone.svg', 'color-accent flex-shrink-0', true),
+        'link' => $telefone->url,
+        'value' => $telefone->texto,
+        'modal' => false
+      ],
+      (object) [
+        'icone' => get_svg_content('footer/email.svg', 'color-accent flex-shrink-0', true),
+        'link' => $email->url,
+        'value' => $email->texto,
+        'modal' => false
+      ],
+    ];
+  }
+
+  public function get_sociais(): array
+  {
+    return [
+      (object) [
+        'nome' => 'Instagram',
+        'link' => Alp_Settings::get_option('instagram'),
+        'icone' => get_svg_content('footer/icon-instagram.svg', 'flex-shrink-0', true)
+      ],
+      (object) [
+        'nome' => 'LinkedIn',
+        'link' => Alp_Settings::get_option('linkedin'),
+        'icone' => get_svg_content('footer/icon-linkedin.svg', 'flex-shrink-0', true)
+      ],
+      (object) [
+        'nome' => 'Facebook',
+        'link' => Alp_Settings::get_option('facebook'),
+        'icone' => get_svg_content('footer/icon-facebook.svg', 'flex-shrink-0', true)
+      ],
+      (object) [
+        'nome' => 'YouTube',
+        'link' => Alp_Settings::get_option('youtube'),
+        'icone' => get_svg_content('footer/icon-youtube.svg', 'flex-shrink-0', true)
+      ]
+    ];
+  }
+
   /**
    * Renderiza uma coluna de menu.
    * @param string $menu_id ID do menu a ser renderizado.
@@ -146,7 +201,7 @@ class MS_Footer
     return $this->html('frontend/views/footer/col-central-menu.php', $args);
   }
 
- 
+
 
   /**
    * Renderiza a coluna de accordion para mobile.

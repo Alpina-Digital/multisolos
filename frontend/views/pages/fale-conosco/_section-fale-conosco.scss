@@ -1,0 +1,60 @@
+@use 'cody/base' as *;
+
+.section-fale-conosco {
+  background-color: #F0F2F4;
+
+  a {
+    color: #4E4F55;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -2%;
+    opacity: 1;
+  }
+
+  .titulo-secao {
+    color: var(--color-black);
+  }
+
+  svg {
+    color: #094183;
+  }
+
+  .titulo-conecte {
+    color: #0F151F;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    margin-bottom: var(--space-sm);
+  }
+
+  .texto-contato {
+    color: #4E4F55;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -2%;
+
+  }
+
+  .col-contatos {
+    border-bottom: 3px solid #E4E21E;
+  }
+
+  .btn-tipo-contato {
+    color: #0F151F;
+    border: 1px solid rgba(122, 122, 122, 0.3);
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .btn-tipo-contato-ativo{
+    background-color: var(--color-accent);
+    border: 0;
+  }
+}

@@ -43,7 +43,7 @@ class MS_Fale_Conosco extends Alp_Page
   {
     $this
       ->add_render($this->render_banner_topo())
-      // ->add_render($this->render_section_principal())
+      ->add_render($this->render_section_principal())
       ->echo_render();
   }
 
@@ -60,9 +60,11 @@ class MS_Fale_Conosco extends Alp_Page
     $args['contatos'] = [$contatos[1], $contatos[2], $contatos[0]];
 
     $args['sociais'] = $footer->get_sociais();
-    $args['form'] = Alp_Settings::get_form('contato');
 
-    return $this->html('frontend/views/pages/fale-conosco/section-principal-fale-conosco.php', $args);
+    $args['form_contato'] = Alp_Settings::get_form('contato');
+    $args['form_orcamento'] = Alp_Settings::get_form('orcamento');
+
+    return $this->html('frontend/views/pages/fale-conosco/section-fale-conosco.php', $args);
   }
 }
 
