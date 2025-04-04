@@ -3,14 +3,16 @@
 .f-header__item--destaque > a {
   @include breakpoint(md) {
     background: var(--color-accent);
-    color: var(--color-cinza-escuro-ultra);
+    color: rgba(15, 21, 31, 1);
     padding: var(--space-xs);
     border-radius: var(--space-xxs);
     transition: all 0.2s ease-in-out;
+    font-size: 16px;
+    font-weight: 600;
 
     &:hover {
-      color: var(--color-cinza-escuro-ultra);
-      opacity: 0.8;
+      color: inherit;
+      opacity: 1;
     }
   }
 }
