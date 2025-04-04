@@ -2,12 +2,21 @@
 
 .section-cabecalho-post {
   position: relative;
-  background: var(--color-cinza-escuro);
+  background: rgba(17, 42, 74, 1);
+
+  &__titulo {
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 95%;
+    letter-spacing: -2%;
+    text-align: center;
+  }
 }
 
 .section-cabecalho-post__gradient {
   // background: var(--color-white);
-  background: linear-gradient(to bottom, var(--color-cinza-escuro) 0%, var(--color-cinza-escuro) 30%, var(--color-white) 30%, var(--color-white) 100%);
+  background: linear-gradient(to bottom, rgba(17, 42, 74, 1) 0%, rgba(17, 42, 74, 1) 30%, var(--color-white) 30%, var(--color-white) 100%);
 }
 
 .section-cabecalho-post__leitura {
@@ -34,12 +43,13 @@
 }
 
 .section-cabecalho-post__voltar {
-  color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 700;
   font-size: 16px;
-  font-weight: 500;
   line-height: 100%;
-  text-decoration: none;
-  transition: all .2s ease-in-out;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
 
   &:hover {
     color: var(--color-accent-lighter);
