@@ -57,7 +57,7 @@ extract($args);
 
     <div class="col-12 col-7@md section-fale-conosco__form-container cf7-form-block order-1 order-2@md">
       <h2 class="titulo-secao hide@md margin-bottom-lg color-primary"><?= $titulo; ?></h2>
-      <div class="flex flex-column flex-row@xs gap-xs">
+      <div class="flex flex-column flex-row@xs gap-xs margin-bottom-md">
 
         <?php
         //DEFINE QUAL FORMULARIO EXIBIR E O CSS DO BOTAO ATIVO
@@ -81,7 +81,6 @@ extract($args);
         $btn_fale_conosco_class = ($tipo == 'fale-conosco') ? 'btn-tipo-contato-ativo' : '';
         $btn_orcamento_class    = ($tipo == 'orcamento') ? 'btn-tipo-contato-ativo' : '';
         ?>
-
 
         <a href="?tipo_contato=fale-conosco" class="btn btn-tipo-contato padding-x-sm <?= $btn_fale_conosco_class ?>" aria-label="<?= $item->nome; ?>">fale conosco</a>
         <a href="?tipo_contato=orcamento" class="btn btn-tipo-contato padding-x-sm <?= $btn_orcamento_class ?>" aria-label="<?= $item->nome; ?>">Solicitar orçamento</a>
