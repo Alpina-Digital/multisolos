@@ -34,17 +34,6 @@ extract($args);
       <aside class="blog-sidebar position-sticky top-sm">
         <div class="flex flex-column gap-lg">
 
-          <?php if ($categorias): ?>
-            <div class="flex flex-column gap-sm">
-              <h3>Navegue por categorias</h3>
-              <ul class="flex flex-column gap-xs">
-                <?php foreach ($categorias as $categoria): ?>
-                  <li><a href="<?= home_url('blog'); ?>/?categoria=<?= $categoria->slug; ?>" class="blog-sidebar__link"><?= $categoria->name; ?></a></li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-          <?php endif; ?>
-
           <div class="flex flex-column gap-sm">
             <h3>Compartilhe</h3>
             <div class="flex gap-xxs">

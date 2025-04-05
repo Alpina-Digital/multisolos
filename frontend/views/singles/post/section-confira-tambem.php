@@ -15,14 +15,14 @@
  * }
  */
 extract($args); ?>
-<section class="section-confira-tambem bg-cinza-escuro padding-y-xl padding-y-xxl@md">
+<section class="section-confira-tambem bg-cinza-claro padding-y-xl padding-y-xxl@md">
   <div class="section-confira-tambem__container max-width-lg container flex flex-column gap-lg overflow-hidden">
 
     <div class="flex gap-xl justify-between items-center">
       <h3 class="titulo-secao"><?= $titulo; ?></h3>
       <div class="section-confira-tambem__btns flex gap-xs items-center">
-        <a href="javascript:;" class="section-confira-tambem__prev js-<?= $swiper_class; ?>-prev"><?= get_svg_content('chevron.svg', "", true); ?></a>
-        <a href="javascript:;" class="section-confira-tambem__next js-<?= $swiper_class; ?>-next"><?= get_svg_content('chevron.svg', "flip-x", true); ?></a>
+        <a href="javascript:;" class="section-confira-tambem__prev js-<?= $swiper_class; ?>-prev"><?= get_svg_content('chevron.svg', "flip-x", true); ?></a>
+        <a href="javascript:;" class="section-confira-tambem__next js-<?= $swiper_class; ?>-next"><?= get_svg_content('chevron.svg', "", true); ?></a>
 
       </div>
     </div>

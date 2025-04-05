@@ -1,6 +1,15 @@
 @use 'cody/base' as *;
 
-.section-confira-tambem {}
+.section-confira-tambem {
+  .titulo-secao {
+    color: rgba(15, 21, 31, 1);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+  }
+}
 
 .section-confira-tambem__prev,
 .section-confira-tambem__next {
