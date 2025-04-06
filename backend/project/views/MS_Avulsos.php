@@ -140,8 +140,9 @@ class MS_Avulsos
   /**
    * Renderiza a seção de informações do Serviço.
    * @return string HTML renderizado.
+   * A v1 é o estilo carrossel (a exemplo da home)
    */
-  public function render_section_obras_entregues(): string
+  public function render_section_obras_entregues_v1(): string
   {
     $query = new WP_Query([
       'post_type' => 'obras_entregues',
@@ -154,13 +155,13 @@ class MS_Avulsos
 
     while ($query->have_posts()) {
       $query->the_post();
-      $cards .= $this->render_card_obra_entregue(get_the_ID());
+      $cards .= $this->render_card_obra_entregue_v1(get_the_ID());
     }
 
-    $swiper_class = 'obras-entregues';
+    $swiper_class = 'obras-entregues-v1';
     $args = compact('cards', 'swiper_class');
 
-    return $this->html('frontend/views/avulsos/section-obras-entregues', $args);
+    return $this->html('frontend/views/avulsos/section-obras-entregues-v1', $args);
   }
 
   /**
@@ -168,7 +169,7 @@ class MS_Avulsos
    * @param int $id ID do obra.
    * @return string HTML renderizado.
    */
-  public function render_card_obra_entregue(int $id): string
+  public function render_card_obra_entregue_v1(int $id): string
   {
 
     $titulo = get_the_title($id);
@@ -177,7 +178,7 @@ class MS_Avulsos
 
     $args = compact('titulo', 'imagem', 'link');
 
-    return $this->html('frontend/views/cards/card-obra-entregue', $args);
+    return $this->html('frontend/views/cards/card-obra-entregue-v1', $args);
   }
 
   /**

@@ -15,15 +15,15 @@
  * }
  */
 extract($args); ?>
-<section class="section-obras-entregues bg-primary-darker padding-y-xl padding-y-xxxl@md position-relative z-index-1" style="background-image:url('<?= get_media_src('grade.png'); ?>')">
-  <div class="section-obras-entregues__container grid max-width-lg container gap-lg">
+<section class="section-obras-entregues-v1 bg-primary-darker padding-y-xl padding-y-xxxl@md position-relative z-index-1" style="background-image:url('<?= get_media_src('grade.png'); ?>')">
+  <div class="section-obras-entregues-v1__container grid max-width-lg container gap-lg">
 
     <div class="flex flex-column flex-row@md justify-center justify-between@md items-center gap-md gap-xl@md">
 
       <div class="flex flex-column items-center items-stretch@md gap-sm">
-        <h2 class="section-obras-entregues__titulo-secao">projetos de sucesso</h2>
-        <h3 class="section-obras-entregues__subtitulo-secao">Obras entregues</h3>
-        <h4 class="section-obras-entregues__slogan-secao">Conheça os projetos de sucesso que já entregamos aos nossos clientes.</h4>
+        <h2 class="section-obras-entregues-v1__titulo-secao">projetos de sucesso</h2>
+        <h3 class="section-obras-entregues-v1__subtitulo-secao">Obras entregues</h3>
+        <h4 class="section-obras-entregues-v1__slogan-secao">Conheça os projetos de sucesso que já entregamos aos nossos clientes.</h4>
       </div>
 
       <div class="flex-shrink-0 flex flex-row gap-sm items-center">

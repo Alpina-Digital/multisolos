@@ -60,7 +60,7 @@ class MS_Servico extends Alp_Page
       ->add_render($this->render_section_banner_topo())
       ->add_render($this->render_section_info_servico())
       ->add_render($avulsos->render_section_equipamentos())
-      ->add_render($avulsos->render_section_obras_entregues())
+      ->add_render($avulsos->render_section_obras_entregues_v1())
       ->add_render($avulsos->render_section_quem_ja_confiou())
       ->echo_render();
   }

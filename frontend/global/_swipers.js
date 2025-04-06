@@ -92,7 +92,7 @@
       breakpoints: {}
     }
   );
-  adicionar_swiper('obras-entregues',
+  adicionar_swiper('obras-entregues-v1',
     {
       slidesPerView: 3,
       spaceBetween: 24,

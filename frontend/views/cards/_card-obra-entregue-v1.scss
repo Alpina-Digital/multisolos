@@ -1,8 +1,7 @@
 @use 'cody/base' as *;
 
-.card-obra-entregue {
+.card-obra-entregue-v1 {
   border-radius: var(--space-xxs);
-  // background: var(--color-primary-darker);
   position: relative;
   transition: all .2s ease-in-out;
 
@@ -72,11 +71,11 @@
   &:hover {
     background: var(--color-primary);
 
-    .card-obra-entregue__imagem {
+    .card-obra-entregue-v1__imagem {
       opacity: .3;
     }
 
-    .card-obra-entregue__icon-link {
+    .card-obra-entregue-v1__icon-link {
       display: flex;
     }
 

@@ -74,7 +74,7 @@ class MS_Home extends Alp_Page
         $carrossel_servicos['pages_id']
       ))
       ->add_render($this->render_section_conheca())
-      ->add_render($avulsos->render_section_obras_entregues())
+      ->add_render($avulsos->render_section_obras_entregues_v1())
       ->add_render($avulsos->render_section_quem_ja_confiou())
       ->add_render($avulsos->render_section_blog())
       ->add_render($avulsos->render_section_newsletter())
