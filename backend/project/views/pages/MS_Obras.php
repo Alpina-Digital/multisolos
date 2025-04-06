@@ -49,7 +49,7 @@ class MS_Obras extends Alp_Page
 
         $this
             ->add_render($this->render_banner_topo())
-            ->add_render($this->render_section_obras_entregues())
+            ->add_render($avulsos->render_section_obras_entregues_v2())
             ->add_render($avulsos->render_section_nossos_servicos(
                 $carrossel_servicos['titulo_secao'],
                 $carrossel_servicos['subtitulo_secao'],
@@ -63,7 +63,7 @@ class MS_Obras extends Alp_Page
      * Renderiza a seção de informações do Serviço.
      * @return string HTML renderizado.
      */
-    public function render_section_obras_entregues(): string
+    /*public function render_section_obras_entregues(): string
     {
         $query = new WP_Query([
             'post_type' => 'obras_entregues',
@@ -109,7 +109,7 @@ class MS_Obras extends Alp_Page
         $args = compact('itens', 'swiper_class');
 
         return $this->html('frontend/views/pages/obras/section-obras-entregues', $args);
-    }
+    }*/
 
     /**
      * Recupera os dados do carrosssel.

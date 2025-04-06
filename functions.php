@@ -107,3 +107,4 @@ require_once get_template_directory() . "/backend/project/views/pages/MS_Fale_Co
 require_once get_template_directory() . "/backend/project/views/pages/MS_Obras.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Servicos.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Servico.php";
+require_once get_template_directory() . "/backend/project/views/pages/MS_Teste.php";

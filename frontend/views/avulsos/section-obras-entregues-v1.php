@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Template Part Name: Obras
+ * Template Part Name: Obras V1
  * Template Part Type: SECTION
- * Template Part Page: Avulsos
- * Description: Seção obras entregues com um swiper de cards.
+ * Template Part Page: -
+ * Description: Seção obras entregues versao 1 carrossel.
  * 
  * @author Alpina Digital
  * @package Alpina V4

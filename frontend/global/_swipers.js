@@ -101,6 +101,7 @@
     }
   );
 
+
   adicionar_swiper('equipamentos',
     {
       slidesPerView: 3,
@@ -119,10 +120,10 @@
     }
   );
 
-  // Inicializa todas as galerias de obras entregues dinamicamente
-  document.querySelectorAll('[class*="js-galeria-obras-entregues-"][class*="-swiper"]').forEach(function (swiperEl) {
+  // Galeria da obras entregues v2
+  document.querySelectorAll('[class*="js-obra-"][class*="-swiper"]').forEach(function (swiperEl) {
     const classes = Array.from(swiperEl.classList);
-    const mioloClass = classes.find(cl => cl.startsWith('js-galeria-obras-entregues-') && cl.endsWith('-swiper'));
+    const mioloClass = classes.find(cl => cl.startsWith('js-obra-') && cl.endsWith('-swiper'));
 
     if (mioloClass) {
       const miolo = mioloClass.replace('js-', '').replace('-swiper', '');

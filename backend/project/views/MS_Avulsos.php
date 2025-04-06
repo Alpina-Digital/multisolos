@@ -184,6 +184,57 @@ class MS_Avulsos
   /**
    * Renderiza a seção de informações do Serviço.
    * @return string HTML renderizado.
+   * A v1 é o estilo carrossel (a exemplo da home)
+   */
+  public function render_section_obras_entregues_v2(): string
+  {
+    $query = new WP_Query([
+      'post_type' => 'obras_entregues',
+      'posts_per_page' => -1,
+    ]);
+
+    if (!$query->have_posts()) return false;
+
+    $cards = '';
+
+    while ($query->have_posts()) {
+      $query->the_post();
+      $cards .= $this->render_card_obra_entregue_v2(get_the_ID());
+    }
+
+    $swiper_class = 'obras-entregues-v2';
+    $args = compact('cards', 'swiper_class');
+
+    return $this->html('frontend/views/avulsos/section-obras-entregues-v2', $args);
+  }
+
+  /**
+   * Renderiza um card de obra.
+   * @param int $id ID do obra.
+   * @return string HTML renderizado.
+   */
+  public function render_card_obra_entregue_v2(int $id): string
+  {
+
+    $titulo = get_the_title($id);
+    $imagem = wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_imagem_destacada', true), '');
+    $link = get_permalink($id);
+    $slogan = get_post_meta($id, 'obras_entregues_slogan', true);
+    $texto = get_post_meta($id, 'obras_entregues_texto', true);
+    $depoimento_texto = get_post_meta($id, 'obras_entregues_depoimento_texto', true);
+    $depoimento_responsavel = get_post_meta($id, 'obras_entregues_depoimento_responsavel', true);
+    $depoimento_foto = wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_depoimento_foto', true), '');
+    $galeria = get_post_meta($id, 'obras_entregues_galeria');
+    $swiper_class = 'obra-'.$id;
+
+    $args = compact('titulo', 'imagem', 'link', 'slogan', 'texto', 'depoimento_texto', 'depoimento_responsavel', 'depoimento_foto', 'galeria', 'swiper_class');
+
+    return $this->html('frontend/views/cards/card-obra-entregue-v2', $args);
+  }
+
+  /**
+   * Renderiza a seção de informações do Serviço.
+   * @return string HTML renderizado.
    */
   public function render_section_equipamentos(): string
   {
