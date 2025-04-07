@@ -93,7 +93,7 @@ extract($args);
             <figure class="lightbox__media" data-media="img">
               <div class="lightbox__media-outer js-lightbox__media-outer">
                 <div class="lightbox__media-inner js-lightbox__media-inner">
-                  <img data-src="<?= wp_get_attachment_image_url($imagem, ''); ?>" data-thumb="<?= wp_get_attachment_image_url($imagem, 'thumbnail'); ?>" src="" alt="">
+                  <img data-src="<?= wp_get_attachment_image_url($imagem, ''); ?>" data-thumb="<?= wp_get_attachment_image_url($imagem, 'thumbnail'); ?>" src="<?= wp_get_attachment_image_url($imagem, ''); ?>" alt="">
                 </div>
               </div>
             </figure>
@@ -103,11 +103,11 @@ extract($args);
 
       <ul id="lightboxControllers">
         <li class="slideshow__control js-slideshow__control">
-          <a href="javascript:;" class="btn btn--swiper"><?= get_svg_content('chevron-left.svg', '', true, [], 'stroke'); ?></a>
+          <a href="javascript:;" class="btn btn--swiper"> <?= get_svg_content('chevron.svg', "flip-x", true); ?></a>
         </li>
 
         <li class="slideshow__control js-slideshow__control">
-          <a href="javascript:;" class="btn btn--swiper"><?= get_svg_content('chevron-left.svg', 'flip-x', true, [], 'stroke'); ?></a>
+          <a href="javascript:;" class="btn btn--swiper"><?= get_svg_content('chevron.svg', '', true, [], 'stroke'); ?></a>
         </li>
       </ul>
 

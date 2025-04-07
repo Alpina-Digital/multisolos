@@ -190,7 +190,9 @@ class MS_Avulsos
   {
     $query = new WP_Query([
       'post_type' => 'obras_entregues',
-      'posts_per_page' => -1,
+      'posts_per_page' => 3,
+      'orderby' => 'date',
+      'order' => 'DESC',
     ]);
 
     if (!$query->have_posts()) return false;
@@ -225,7 +227,7 @@ class MS_Avulsos
     $depoimento_responsavel = get_post_meta($id, 'obras_entregues_depoimento_responsavel', true);
     $depoimento_foto = wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_depoimento_foto', true), '');
     $galeria = get_post_meta($id, 'obras_entregues_galeria');
-    $swiper_class = 'obra-'.$id;
+    $swiper_class = 'obra-' . $id;
 
     $args = compact('titulo', 'imagem', 'link', 'slogan', 'texto', 'depoimento_texto', 'depoimento_responsavel', 'depoimento_foto', 'galeria', 'swiper_class');
 
