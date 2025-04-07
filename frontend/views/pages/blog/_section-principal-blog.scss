@@ -1,9 +1,16 @@
-@use 'cody/base' as *;
+@use "cody/base" as *;
 
 .section-principal-blog {
-  
-}
+  &::before {
+    content: "";
+    display: block;
+    height: 120px;
 
+    @include breakpoint(md) {
+      height: 180px;
+    }
+  }
+}
 
 .section-principal-blog__busca {
   width: 380px;
@@ -15,14 +22,16 @@
   width: 100%;
   border-radius: var(--space-xxs);
   padding: var(--space-xs) var(--space-xl) var(--space-xs) var(--space-sm);
-  border: 1px solid rgba(255, 255, 255, 0.40);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   color: var(--color-white);
 
   &::placeholder {
     color: var(--color-cinza-claro);
   }
 
-  &, &:hover, &:focus {
+  &,
+  &:hover,
+  &:focus {
     background: transparent;
   }
 }
@@ -39,13 +48,9 @@
 }
 
 .section-principal-blog__paginacao {
-  border-radius: var(--space-xxs);
-  background: rgba(10, 67, 123, 0.30);
-  padding: var(--space-md);
+  background: var(--color-cinza-claro);
+  padding: var(--space-xxl), 0px;
 }
-
-.section-principal-blog__notfound {}
-
 
 .section-principal-blog__tabs {
   overflow-x: auto;
@@ -62,7 +67,7 @@
   box-sizing: border-box;
 }
 
-.section-principal-blog__tab>.tabs__control {
+.section-principal-blog__tab > .tabs__control {
   box-sizing: border-box;
   padding: 0 var(--space-sm) var(--space-sm) var(--space-sm);
 
@@ -73,7 +78,7 @@
   letter-spacing: -0.14px;
 
   color: var(--color-white);
-  border-bottom: 2px solid rgba(154, 164, 172, 0.40);
+  border-bottom: 2px solid rgba(154, 164, 172, 0.4);
 
   &:focus {
     outline: none;
@@ -94,24 +99,5 @@
     text-decoration: none;
     border-bottom: 2px solid var(--color-accent);
     pointer-events: none;
-  }
-}
-
-.section-principal-blog__categoria {
-  font-size: 14px;
-  color: var(--color-white);
-  padding: var(--space-xxs) var(--space-xs);
-  border-radius: 100px;
-  background-color: rgba(255, 255, 255, 0.15);
-  font-weight: 600;
-  letter-spacing: -0.14px;
-
-  &-li {
-    margin-bottom: var(--space-xxs);
-  }
-
-  &[aria-selected=true] {
-    background: var(--color-accent);
-    color: var(--color-black);
   }
 }
