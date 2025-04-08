@@ -44,7 +44,10 @@ class MS_Obras extends Alp_Page
     {
         $avulsos = new MS_Avulsos();
 
-        //parametros para o carrossel de serviços
+        /**
+         * @var $carrossel_servicos contem os parametros para o carrossel de serviços vindos da function carrossel_servicos()
+         */
+
         $carrossel_servicos = $this->carrossel_servicos();
 
         $this
@@ -59,9 +62,9 @@ class MS_Obras extends Alp_Page
     }
 
 
-
     /**
      * Recupera os dados do carrosssel.
+     * São passados os parametros no render_section_nossos_servicos
      */
     private function carrossel_servicos(): array
     {
