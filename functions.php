@@ -85,8 +85,6 @@ require_once get_template_directory() . "/backend/project/traits/MS_Banner_Topo.
 require_once get_template_directory() . "/backend/project/traits/MS_Section_FAQ.php";
 require_once get_template_directory() . "/backend/project/traits/MS_Apresentacao.php";
 require_once get_template_directory() . "/backend/project/traits/MS_Carrossel.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Etapas_Projeto.php";
-require_once get_template_directory() . "/backend/project/traits/MS_Section_Projetos.php";
 
 #ENTITIES
 require_once get_template_directory() . "/backend/project/entities/MS_Parceiro.php";
