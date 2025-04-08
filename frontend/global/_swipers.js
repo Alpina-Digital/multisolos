@@ -84,14 +84,7 @@
   }
 
   adicionar_swiper('obras');
-  adicionar_swiper('nossos-servicos',
-    {
-      slidesPerView: 3,
-      spaceBetween: 24,
-      loop: false,
-      breakpoints: {}
-    }
-  );
+  adicionar_swiper('nossos-servicos');
   adicionar_swiper('obras-entregues-v1',
     {
       slidesPerView: 3,
