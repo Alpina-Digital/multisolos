@@ -99,7 +99,6 @@ require_once get_template_directory() . "/backend/project/views/MS_Footer.php";
 require_once get_template_directory() . "/backend/project/views/MS_Avulsos.php";
 require_once get_template_directory() . "/backend/project/views/singles/MS_Post.php";
 
-require_once get_template_directory() . "/backend/project/views/pages/MS_Projetos.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Home.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Quem_Somos.php";
 require_once get_template_directory() . "/backend/project/views/pages/MS_Blog.php";
