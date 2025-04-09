@@ -38,10 +38,10 @@ extract($args);
                 <?= get_svg_content('selo.svg', '') ?>
             </div>
 
-            <div class="col-6@md flex flex-column gap-md">
+            <div class="col-6@md flex flex-column gap-xl">
                 <h3 class="section-conheca__secao-texto-titulo"><?= $secao_texto_titulo ?></h3>
                 <div class="section-conheca__secao-texto-texto"><?= $secao_texto_texto ?></div>
-                <a href="<?= $cta_link ?>" class="section-conheca__cta-link btn btn--accent btn--sm"><?= $cta_texto ?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
+                <a href="<?= $cta_link ?>" class="section-conheca__cta-link btn btn--accent btn--sm max-width-xxxxxs"><?= $cta_texto ?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
             </div>
         </div>
 
