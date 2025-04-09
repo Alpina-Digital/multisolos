@@ -14,13 +14,15 @@
 extract($args);
 
 ?>
-<section class="secao-conheca padding-y-xl bg-light">
+<section class="secao-conheca padding-y-xl bg-white">
     <div class="container max-width-lg">
-        <div class="grid gap-md items-center">
+
+        <div class="grid gap-md items-center position-relative">
             <div class="col-6@md">
                 <p class="section-conheca__titulo-secao margin-bottom-xxs"><?= $titulo_secao ?></p>
                 <h2 class="section-conheca__subtitulo-secao margin-bottom-sm"><?= $subtitulo_secao ?></h2>
-                <div class="flex gap-md margin-bottom-md">
+
+                <div class="flex gap-md margin-bottom-md flex-column flex-row@sm">
                     <div class="section-conheca__box-numeros bg-contrast-higher padding-md radius-md">
                         <p class="numero"><?= $numero_box1 ?><sup><?= $sinal_box1 ?></sup></p>
                         <p class="texto"><?= $texto_box1 ?></p>
@@ -30,13 +32,18 @@ extract($args);
                         <p class="texto"><?= $texto_box2 ?></p>
                     </div>
                 </div>
-                <!-- <?= get_svg_content('selo.svg', 'section-conheca__selo') ?> -->
             </div>
-            <div class="col-6@md">
-                <h3 class="section-conheca__secao-texto-titulo margin-bottom-xs"><?= $secao_texto_titulo ?></h3>
-                <div class="section-conheca__secao-texto-texto margin-bottom-sm"><?= $secao_texto_texto ?></div>
-                <a href="<?= $cta_link?>" class="section-conheca__cta-link btn btn--accent btn--sm"><?= $cta_texto?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
+
+            <div class="section-conheca__selo-wrapper">
+                <?= get_svg_content('selo.svg', '') ?>
+            </div>
+
+            <div class="col-6@md flex flex-column gap-md">
+                <h3 class="section-conheca__secao-texto-titulo"><?= $secao_texto_titulo ?></h3>
+                <div class="section-conheca__secao-texto-texto"><?= $secao_texto_texto ?></div>
+                <a href="<?= $cta_link ?>" class="section-conheca__cta-link btn btn--accent btn--sm"><?= $cta_texto ?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
             </div>
         </div>
+
     </div>
 </section>
