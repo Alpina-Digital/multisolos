@@ -5,6 +5,43 @@
   position: relative;
   z-index: 2;
 
+  &__box {
+    padding: var(--space-xl) var(--space-md) var(--space-xl) var(--space-md);
+    gap: var(--space-xs);
+    border-radius: var(--space-xxs);
+    background-color: var(--color-white);
+    border-bottom: 6px solid var(--color-accent);
+    margin-bottom: -3rem;
+
+    svg {
+      color: var(--color-primary);
+    }
+
+    &__titulo {
+      color: var(--color-black);
+      font-weight: 700;
+      font-size: 2rem; // 32px
+      line-height: 1; // 100%
+      letter-spacing: -0.03em; // -3%
+
+      @include breakpoint(md) {
+        font-size: 22px;
+        letter-spacing: -0.22px;
+      }
+    }
+
+    &__texto {
+      color: var(--color-contrast-high);
+      font-weight: 400;
+      font-size: 1rem; // 16px
+      line-height: 1.2; // 120%
+      letter-spacing: -0.02em; // -2%
+
+
+    }
+  }
+
+
   &__card {
     padding: var(--space-xl) var(--space-md) var(--space-xl) var(--space-md);
     gap: var(--space-xs);

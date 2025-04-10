@@ -41,8 +41,8 @@ class MS_Quem_Somos extends Alp_Page
 
       //SEÇÃO MISSAO VALORES
       ->add_metabox_box('missao_visao', 'Missão Valores')
-      ->add_metabox_field_biu('Missão', 'missao', 6)
-      ->add_metabox_field_biu_list('Valores', 'valores', 6)
+      ->add_metabox_field_biu('Missão', 'texto_missao', 6)
+      ->add_metabox_field_biu_list('Valores', 'texto_valores', 6)
 
       //SEÇÃO NOSSA EQUIPE
       ->add_metabox_box('equipe', 'Nossa equipe')
