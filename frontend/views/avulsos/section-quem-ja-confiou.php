@@ -22,9 +22,9 @@ extract($args);
   <div class="max-width-lg container gap-sm gap-xl@md justify-start items-center">
 
     <h1 class="section-quem-ja-confiou__titulo-secao">Clientes</h1>
-    <h2 class="section-quem-ja-confiou__subtitulo-secao"> Quem já confiou na nossa experiência</h2>
+    <h2 class="section-quem-ja-confiou__subtitulo-secao padding-xl"> Quem já confiou na nossa experiência</h2>
 
-    <div class="col-12 col-12@sm hide flex@md justify-between gap-lg items-center">
+    <div class="col-12 col-12@sm flex@md justify-between gap-lg items-center">
       <a href="javascript:;" class="btn btn--swiper padding-x-0 js-confia-prev"><?= get_svg_content('chevron.svg', "flip-x", true); ?></a>
       <div class="swiper js-confia-swiper">
         <div class="swiper-wrapper">
