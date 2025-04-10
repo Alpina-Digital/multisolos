@@ -19,7 +19,7 @@
 extract($args);
 ?>
 <section class="section-quem-ja-confiou gap-md padding-y-xl padding-y-xxxl@md">
-  <div class="max-width-lg container grid gap-sm gap-xl@md justify-start items-center">
+  <div class="max-width-lg container gap-sm gap-xl@md justify-start items-center">
 
     <h1 class="section-quem-ja-confiou__titulo-secao">Clientes</h1>
     <h2 class="section-quem-ja-confiou__subtitulo-secao"> Quem já confiou na nossa experiência</h2>
