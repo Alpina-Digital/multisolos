@@ -15,13 +15,16 @@
  * }
  */
 extract($args);
+
 ?>
 <section class="section-sobre">
+
   <div class="max-width-lg container grid gap-xl@md">
+
     <div class="col-12 col-7@md overflow-hidden">
+
       <h1 class="section-sobre__titulo-secao padding-bottom-sm">Sobre</h1>
       <h2 class="section-sobre__subtitulo-secao padding-bottom-lg"><?= $titulo; ?></h2>
-
       <div class="js-<?= $swiper_class; ?>-swiper">
         <div class="swiper-wrapper">
           <?= $cards; ?>
@@ -41,12 +44,14 @@ extract($args);
           </div>
         </div>
 
+
       </div>
 
+      <!-- <img src="<?= $selo ?>" class="section-sobre__selo"> -->
     </div>
-    
+
     <div class="section-sobre__foto-principal col-12 col-5@md flex flex-column justify-between padding-xxxl" style="background-image: url('<?= !empty($foto_principal) ? $foto_principal : get_template_directory_uri() . '/assets/imgs/foto-sobre.jpg' ?>')"></div>
 
-
   </div>
+
 </section>

@@ -18,6 +18,7 @@
  * }
  */
 extract($args);
+
 ?>
 <div class="card-sobre swiper-slide">
   <div class="flex flex-column gap-sm">
@@ -26,6 +27,5 @@ extract($args);
       <h3 class="card-sobre__titulo"><?= $titulo ?? ''; ?></h3>
       <div class="card-sobre__texto text-component"><?= $texto ?? ''; ?></div>
     </div>
-
   </div>
 </div>

@@ -17,5 +17,7 @@
 extract($args);
 ?>
 <section class="section-obras-entregues-v2 position-relative">
+    <div class="grid gap-xl padding-top-xxxl padding-bottom-xxxl">
     <?= $cards ?>
+</div>
 </section>

@@ -2,7 +2,7 @@
 
 .card-obra-entregue-v2 {
   &__interno {
-    border-radius: .5rem;
+    border-radius: var(--space-xxs);
   }
 
   hr {
@@ -80,6 +80,7 @@
     background: var(--galeria-obras-entregues-v2-imagem);
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: var(--space-xxs);
   }
 
   &__zoom.btn.btn--zoom {
