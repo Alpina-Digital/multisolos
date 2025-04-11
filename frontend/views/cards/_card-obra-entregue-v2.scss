@@ -1,9 +1,9 @@
 @use 'cody/base' as *;
 
 .card-obra-entregue-v2 {
-  &__interno {
-    border-radius: var(--space-xxs);
-  }
+  border-right: 3px solid var(--color-accent);
+
+  border-radius: 8px;
 
   hr {
     border: 1px solid #D2D2D2
