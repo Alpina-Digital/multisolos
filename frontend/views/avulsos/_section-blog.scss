@@ -35,9 +35,11 @@
     letter-spacing: 0%;
     text-align: center;
     text-transform: uppercase;
-
+    display: flex;
+    gap: var(--space-xs);
   }
-  &__btn-ver-tudo:hover{
+
+  &__btn-ver-tudo:hover {
     background-color: var(--color-accent);
     color: var(--color-black);
   }

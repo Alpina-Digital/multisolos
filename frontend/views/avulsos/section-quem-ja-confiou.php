@@ -24,20 +24,12 @@ extract($args);
     <h1 class="section-quem-ja-confiou__titulo-secao">Clientes</h1>
     <h2 class="section-quem-ja-confiou__subtitulo-secao padding-xl"> Quem já confiou na nossa experiência</h2>
 
-    <div class="col-12 col-12@sm flex@md justify-between gap-lg items-center">
-      <a href="javascript:;" class="btn btn--swiper padding-x-0 js-confia-prev"><?= get_svg_content('chevron.svg', "flip-x", true); ?></a>
-      <div class="swiper js-confia-swiper">
-        <div class="swiper-wrapper">
-          <?php foreach ($itens as $item): if (empty($item)) continue; ?>
-            <div class="swiper-slide">
-              <figure class="section-quem-ja-confiou__logo" aria-label="">
-                <?= $item; ?>
-              </figure>
-            </div>
-          <?php endforeach; ?>
+    <div class="grid gap-lg items-center">
+      <?php foreach ($itens as $item): if (empty($item)) continue; ?>
+        <div class="col-3 col-3@sm flex@md">
+          <?= $item; ?>
         </div>
-      </div>
-      <a href="javascript:;" class="btn btn--swiper padding-x-0 js-confia-next"><?= get_svg_content('chevron.svg', "", true); ?></a>
+      <?php endforeach; ?>
     </div>
 
     <div class="ticker js-ticker col-12 hide@md margin-top-sm">

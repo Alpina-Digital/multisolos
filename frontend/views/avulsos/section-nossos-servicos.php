@@ -27,10 +27,10 @@ extract($args); ?>
       </div>
 
       <div class="flex-shrink-0 flex flex-row gap-sm items-center">
-        <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-x<?= $swiper_class; ?>-prev flex-shrink-0">
+        <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
           <?= get_svg_content('chevron.svg', "flip-x", true); ?>
         </a>
-        <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-x<?= $swiper_class; ?>-next flex-shrink-0">
+        <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-<?= $swiper_class; ?>-next flex-shrink-0">
           <?= get_svg_content('chevron.svg', "", true); ?>
         </a>
       </div>
