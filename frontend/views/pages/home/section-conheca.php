@@ -14,33 +14,41 @@
 extract($args);
 
 ?>
-<section class="secao-conheca bg-white">
+<section class="section-conheca bg-white">
 
-    <div class="container max-width-lg padding-y-xl">
+    <div class="container max-width-lg padding-y-xxl gap-xxl">
         <div class="grid gap-lg items-center">
 
-            <?php //Coluna esquerda  ?>
+            <?php //Coluna esquerda  
+            ?>
             <div class="col-12 col-6@md">
-                <p class="section-conheca__titulo-secao margin-bottom-xxs"><?= $titulo_secao ?></p>
-                <h2 class="section-conheca__subtitulo-secao margin-bottom-sm"><?= $subtitulo_secao ?></h2>
 
-                <div class="grid gap-sm">
+                <div class="flex flex-column gap-xs">
+                    <p class="section-conheca__titulo-secao margin-bottom-xxs"><?= $titulo_secao ?></p>
+                    <h2 class="section-conheca__subtitulo-secao margin-bottom-sm"><?= $subtitulo_secao ?></h2>
+                </div>
 
-                    <?php //CARD 1 ?>
-                    <div class="section-conheca__box-numeros col-6 bg-contrast-higher padding-md radius-md">
+                <div class="grid gap-sm position-relative">
+
+                    <?php //CARD 1 
+                    ?>
+                    <div class="section-conheca__box-numeros col-6 padding-top-xl padding-right-md padding-bottom-md padding-left-md gap-xxs radius-md">
                         <p class="numero"><?= $numero_box1 ?><sup><?= $sinal_box1 ?></sup></p>
                         <p class="texto"><?= $texto_box1 ?></p>
                     </div>
 
-                    <?php //CARD 2 ?>
-                    <div class="section-conheca__box-numeros col-6 padding-md radius-md">
+                    <?php //CARD 2 
+                    ?>
+                    <div class="section-conheca__box-numeros col-6 padding-top-xl padding-right-md padding-bottom-md padding-left-md gap-xxs radius-md">
                         <p class="numero"><?= $numero_box2 ?><sup><?= $sinal_box2 ?></sup></p>
                         <p class="texto"><?= $texto_box2 ?></p>
                     </div>
+                    <div class="section-conheca__selo" style="background-image:url(<?= get_media_src('/selo.png')?>)"></div>
                 </div>
             </div>
 
-            <?php //Coluna direita ?>
+            <?php //Coluna direita 
+            ?>
             <div class="col-12 col-6@md position-relative flex flex-column gap-md">
 
                 <h3 class="section-conheca__secao-texto-titulo"><?= $secao_texto_titulo ?></h3>

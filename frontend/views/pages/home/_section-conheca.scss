@@ -2,6 +2,30 @@
 
 .section-conheca {
 
+  &__selo {
+    @include breakpoint(md) {
+      position: absolute;
+      z-index: 2;
+      width: 166px;
+      height: 166px;
+      top: 10%;
+      left: 90%;
+      transform: translateY(-50%) translateX(-50%);
+      border-radius: 50%
+    }
+  }
+
+  // &__selo {
+  //   max-width: 106px;
+  //   max-height: 106px;
+
+  //   @include breakpoint(md) {
+  //     max-width: 166px;
+  //     max-height: 166px;
+  //     position: absolute;
+  //   }
+  // }
+
   &__selo-wrapper {
     position: absolute;
     left: 30%;
@@ -63,8 +87,12 @@
   &__box-numeros {
     position: relative;
     overflow: hidden;
-    border-top: 8px solid var(--color-accent);
+    border-top: 10px solid var(--color-accent);
     background-color: var(--color-primary-darker);
+
+    @include breakpoint(xs) {
+      padding-left: var(--space-xs);
+    }
 
     .numero {
       color: var(--color-white);
@@ -83,9 +111,13 @@
     .texto {
       color: var(--color-white);
       font-weight: 400;
-      font-size: 16px;
+      font-size: 15px;
       line-height: 120%;
       letter-spacing: -2%;
+
+      @include breakpoint(md) {
+        font-size: 16px;
+      }
     }
   }
 
