@@ -19,15 +19,15 @@ extract($args); ?>
 <section class="section-nossos-servicos bg-cinza-escuro-ultra padding-y-xl padding-y-xxxl@md" id="servicos">
   <div class="max-width-lg container gap-lg">
 
-    <div class="flex flex-column flex-row@md justify-center margin-bottom-md justify-between@md items-end">
+    <div class="flex flex-column flex-row@md justify-center margin-bottom-md justify-between@md items-end@md">
 
-      <div class="flex flex-column items-center items-stretch@md gap-sm">
+      <div class="flex flex-column items-stretch@md gap-sm">
         <h2 class="section-nossos-servicos__titulo-secao"><?= $titulo_secao ?></h2>
         <h3 class="section-nossos-servicos__subtitulo-secao">Nossos serviços</h3>
         <h4 class="section-nossos-servicos__frase-secao"><?= $subtitulo_secao ?></h4>
       </div>
 
-      <div class="flex-shrink-0 flex flex-row gap-sm items-center ">
+      <div class="flex-shrink-0 flex flex-row gap-sm items-center hide block@md">
         <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
           <?= get_svg_content('chevron.svg', "flip-x", true); ?>
         </a>
