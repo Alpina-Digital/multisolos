@@ -26,21 +26,28 @@ extract($args); ?>
         <h4 class="section-obras-entregues-v1__frase-secao">Conheça os projetos de sucesso que já entregamos aos nossos clientes.</h4>
       </div>
 
-      <div class="flex-shrink-0 flex flex-row gap-sm items-center">
-        <a href="<?= home_url() ?>/obras" class="btn btn--accent btn--ver-obras bg-transparent padding-y-xs padding-x-md block@md">Ver obras <?= get_svg_content('arrow-right-up-white.svg', '', true) ?></a>
-        <a href="javascript:;" class="btn btn--swiper padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
-          <?= get_svg_content('chevron.svg', "flip-x", true); ?>
-        </a>
-        <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-<?= $swiper_class; ?>-next flex-shrink-0">
-          <?= get_svg_content('chevron.svg', "", true); ?>
-        </a>
+      <div class="hide block@md">
+        <div class="flex-shrink-0 flex flex-row gap-sm items-center">
+          <a href="<?= home_url() ?>/obras" class="btn btn--accent btn--ver-obras bg-transparent padding-y-xs padding-x-md block@md">Ver obras <?= get_svg_content('arrow-right-up-white.svg', '', true) ?></a>
+          <a href="javascript:;" class="btn btn--swiper padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
+            <?= get_svg_content('chevron.svg', "flip-x", true); ?>
+          </a>
+          <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-<?= $swiper_class; ?>-next flex-shrink-0">
+            <?= get_svg_content('chevron.svg', "", true); ?>
+          </a>
+        </div>
       </div>
+
     </div>
 
     <div class="js-<?= $swiper_class; ?>-swiper">
       <div class="swiper-wrapper">
         <?= $cards ?? ''; ?>
       </div>
+    </div>
+
+    <div class="hide@md margin-top-lg">
+      <a href="<?= home_url() ?>/obras" class="btn btn--accent btn--ver-obras bg-transparent padding-y-xs padding-x-md block@md">Ver obras <?= get_svg_content('arrow-right-up-white.svg', '', true) ?></a>
     </div>
 
   </div>

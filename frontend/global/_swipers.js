@@ -95,7 +95,16 @@
     {
       slidesPerView: 3,
       loop: false,
-      breakpoints: {}
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 6
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 16
+        }
+      }
     }
   );
 
