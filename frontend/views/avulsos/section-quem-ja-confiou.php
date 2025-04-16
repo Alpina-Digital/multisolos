@@ -26,7 +26,7 @@ extract($args);
 
       <div class="grid gap-lg items-center">
         <?php foreach ($itens as $item): if (empty($item)) continue; ?>
-          <div class="col-2 col-3@md flex@md">
+          <div class="col-6 col-3@md flex@md">
             <?= $item; ?>
           </div>
         <?php endforeach; ?>
