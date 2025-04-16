@@ -25,13 +25,13 @@ extract($args);
     <img src="<?= $imagem; ?>">
   </figure>
 
-  <div class="padding-md flex flex-column gap-xs items-center">
-    <div class="flex flex-column gap-xxs">
+  <div class="card-servico__card padding-md@md padding-sm@xxs flex flex-column">
+    <div class="flex flex-column gap-xs">
       <h3 class="card-servico__indice"><?= $indice; ?></h3>
       <h3 class="card-servico__titulo"><?= $titulo; ?></h3>
       <p class="card-servico__texto-card"><?= $texto_card; ?></p>
-      <p class="card-servico__ver-mais">Ver mais <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></p>
     </div>
+    <p class="card-servico__ver-mais gap-xxs margin-top-lg">Ver mais <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></p>
   </div>
 
   <div class="card-servico__icon-link"> <?= get_svg_content('arrow-diagonal.svg'); ?> </div>

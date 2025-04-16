@@ -24,12 +24,14 @@ extract($args);
     <h1 class="section-quem-ja-confiou__titulo-secao">Clientes</h1>
     <h2 class="section-quem-ja-confiou__subtitulo-secao padding-xl"> Quem já confiou na nossa experiência</h2>
 
-    <div class="grid gap-lg items-center">
-      <?php foreach ($itens as $item): if (empty($item)) continue; ?>
-        <div class="col-3 col-3@sm flex@md">
-          <?= $item; ?>
-        </div>
-      <?php endforeach; ?>
+    <div class="hide block@md">
+      <div class="grid gap-lg items-center">
+        <?php foreach ($itens as $item): if (empty($item)) continue; ?>
+          <div class="col-3 col-3@sm flex@md">
+            <?= $item; ?>
+          </div>
+        <?php endforeach; ?>
+      </div>
     </div>
 
     <div class="ticker js-ticker col-12 hide@md margin-top-sm">

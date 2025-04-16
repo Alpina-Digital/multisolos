@@ -1,6 +1,7 @@
 @use 'cody/base' as *;
 
 .card-servico {
+
   border-radius: var(--space-xxs);
   background: var(--color-white);
   position: relative;
@@ -122,6 +123,16 @@
     }
 
 
+  }
+
+  @media (max-width: 32rem) {
+   &__card{
+    padding: var(--space-sm);
+    gap: var(--space-md);
+    background-color: var(--color-white);
+    border-bottom: 3px solid #E4E21E;
+   }
+   
   }
 
 }

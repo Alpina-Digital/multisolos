@@ -15,10 +15,11 @@
  * }
  */
 extract($args); ?>
-<section class="section-nossos-servicos bg-cinza-escuro-ultra padding-y-xl padding-y-xxxl@md">
-  <div class="section-nossos-servicos__container flex flex-column max-width-lg container gap-lg">
 
-    <div class="flex flex-column flex-row@md justify-center justify-between@md items-center gap-md gap-xl@md">
+<section class="section-nossos-servicos bg-cinza-escuro-ultra padding-y-xl padding-y-xxxl@md" id="servicos">
+  <div class="max-width-lg container gap-lg">
+
+    <div class="flex flex-column flex-row@md justify-center margin-bottom-md justify-between@md items-end">
 
       <div class="flex flex-column items-center items-stretch@md gap-sm">
         <h2 class="section-nossos-servicos__titulo-secao"><?= $titulo_secao ?></h2>
@@ -26,7 +27,7 @@ extract($args); ?>
         <h4 class="section-nossos-servicos__frase-secao"><?= $subtitulo_secao ?></h4>
       </div>
 
-      <div class="flex-shrink-0 flex flex-row gap-sm items-center">
+      <div class="flex-shrink-0 flex flex-row gap-sm items-center ">
         <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
           <?= get_svg_content('chevron.svg', "flip-x", true); ?>
         </a>
@@ -37,11 +38,15 @@ extract($args); ?>
 
     </div>
 
-
-    <div class="js-<?= $swiper_class; ?>-swiper">
+    <div class="js-<?= $swiper_class; ?>-swiper hide block@md">
       <div class="swiper-wrapper">
         <?= $cards ?? ''; ?>
       </div>
     </div>
+
+    <div class="hide@md flex flex-column gap-md">
+      <?= $cards ?? ''; ?>
+    </div>
+
   </div>
 </section>

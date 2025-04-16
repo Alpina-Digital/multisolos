@@ -87,7 +87,6 @@
   adicionar_swiper('nossos-servicos',
     {
       slidesPerView: 3,
-      spaceBetween: 24,
       loop: false,
       breakpoints: {}
     }

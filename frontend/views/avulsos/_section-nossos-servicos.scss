@@ -25,7 +25,7 @@
   }
 
   &__subtitulo-secao {
-    color: var(--color-primary-darker);
+    color: var(--color-black);
     font-weight: 900;
     font-size: 40px;
     line-height: 100%;
@@ -41,4 +41,9 @@
     letter-spacing: 0%;
     color: #4E4F55;
   }
+
+
+  // @media (max-width: 32rem) {
+  //   padding: var(--space-md);
+  // }
 }
