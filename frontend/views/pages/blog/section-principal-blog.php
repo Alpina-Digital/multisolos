@@ -18,7 +18,7 @@
  */
 extract($args);
 ?>
-<section class="section-principal-blog bg-cinza-claro padding-top-xxl@md padding-bottom-lg">
+<section class="section-principal-blog bg-cinza-claro padding-bottom-lg margin-top-xxl">
   <div class="max-width-lg container flex flex-column gap-md gap-xl@md">
 
     <?php if ($cards): ?>

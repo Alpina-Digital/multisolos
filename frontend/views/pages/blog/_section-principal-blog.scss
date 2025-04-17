@@ -4,11 +4,6 @@
   &::before {
     content: "";
     display: block;
-    height: 120px;
-
-    @include breakpoint(md) {
-      height: 180px;
-    }
   }
 }
 
