@@ -38,7 +38,7 @@ extract($args);
         </div>
     </div>
 
-    <div class="max-width-lg container flex flex-column gap-xl">
+    <div class="max-width-lg container flex flex-column gap-sm padding-bottom-xxl">
         <div class="grid gap-sm">
             <?php
             $i = 1;
