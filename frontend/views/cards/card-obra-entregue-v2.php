@@ -56,7 +56,7 @@ extract($args);
           <p class="card-obra-entregue-v2__depoimento_responsavel"><?= $depoimento_responsavel ?? ''; ?></p>
         </div>
         <div>
-          <img class="card-obra-entregue-v2__depoimento_imagem" src="<?= $depoimento_foto ?? ''; ?>" alt="Foto do responsável">
+          <img class="card-obra-entregue-v2__depoimento_imagem" src="<?= $depoimento_foto ?: get_media_src('placeholders/silhueta.jpg'); ?>" alt="Foto do responsável">
         </div>
       </div>
     </div>

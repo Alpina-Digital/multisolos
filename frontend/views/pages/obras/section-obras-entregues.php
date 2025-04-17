@@ -65,7 +65,7 @@ foreach ($itens as $index => $obra): ?>
                         <p class="section-obras-entregues__depoimento_responsavel"><?= $obra['depoimento_responsavel'] ?? ''; ?></p>
                     </div>
                     <div>
-                        <img class="section-obras-entregues__depoimento_imagem" src="<?= $obra['depoimento_imagem'] ?? ''; ?>" alt="Foto do responsável">
+                        <img class="section-obras-entregues__depoimento_imagem" src="<?= $obra['depoimento_imagem'] ?: get_media_src('placeholders/silhueta.jpg'); ?>" alt="Foto do responsável">
                     </div>
                 </div>
             </div>
