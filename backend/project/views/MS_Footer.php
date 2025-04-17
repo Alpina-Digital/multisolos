@@ -213,12 +213,10 @@ class MS_Footer
   {
     $contatos = $this->get_col_contatos('flex');
 
-    $menus = Alp_Menus::linear('footer-1', 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
     $menu_footer1 = Alp_Menus::linear('footer-1', 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
-    $menus .= Alp_Menus::linear('footer-2', 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
     $menu_footer2 = Alp_Menus::linear('footer-2', 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
 
-    $args = compact('contatos', 'menus', 'menu_footer1', 'menu_footer2');
+    $args = compact('contatos', 'menu_footer1', 'menu_footer2');
     return $this->html('frontend/views/footer/col-accordions-mobile.php', $args);
   }
 }
