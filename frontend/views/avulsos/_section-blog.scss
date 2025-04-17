@@ -28,7 +28,8 @@
 
   }
 
-  &__btn-ver-tudo {
+  &__btn-ver-tudo,
+  &__btn-ver-tudo-m {
     font-weight: 700;
     font-size: 16px;
     line-height: 100%;
@@ -37,12 +38,27 @@
     text-transform: uppercase;
     display: flex;
     gap: var(--space-xs);
+
   }
 
-  &__btn-ver-tudo:hover {
+  &__btn-ver-tudo:hover,
+  &__btn-ver-tudo-m:hover {
     background-color: var(--color-accent);
     color: var(--color-black);
   }
+
+  @media (max-width: 768px) {
+    &__btn-ver-tudo {
+      display: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    &__btn-ver-tudo-m {
+      display: none;
+    }
+  }
+
 }
 
 .section-blog__pagination {

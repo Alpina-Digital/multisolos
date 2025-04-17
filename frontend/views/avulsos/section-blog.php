@@ -26,12 +26,13 @@ extract($args); ?>
       </div>
       <a href="<?= home_url()?>/blog" class="section-blog__btn-ver-tudo btn btn--accent btn--sm"> Ver tudo <?= get_svg_content('arrow__right_up.svg', 'svg', 'true'); ?> </a>
     </div>
-
+    
     <div class="js-<?= $swiper_class; ?>-swiper">
       <div class="swiper-wrapper">
         <?= $cards ?? ''; ?>
       </div>
     </div>
-
+    
+    <a href="<?= home_url()?>/blog" class="section-blog__btn-ver-tudo-m btn btn--accent btn--sm"> Ver tudo <?= get_svg_content('arrow__right_up.svg', 'svg', 'true'); ?> </a>
   </div>
 </section>

@@ -8,4 +8,11 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    .footer__title {
+      display: none;
+    }
+  }
+
 }

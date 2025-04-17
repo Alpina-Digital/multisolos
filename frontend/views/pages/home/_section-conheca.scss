@@ -3,9 +3,11 @@
 .section-conheca {
 
   &__selo {
+    z-index: 2;
+    position: absolute;
+    background-size: cover;
+
     @media (min-width: 64rem) {
-      position: absolute;
-      z-index: 2;
       width: 166px;
       height: 166px;
       top: 10%;
@@ -14,13 +16,10 @@
     }
 
     @media (max-width: 768px) {
-      z-index: 2;
       width: 106px;
       height: 106px;
-      background-size: cover;
-      position: absolute;
-      top: -20%;
-      left: 80%;
+      top: -30%;
+      left: 76%;
     }
   }
 
@@ -111,6 +110,11 @@
     line-height: 100%;
     text-align: center;
     text-transform: uppercase;
+    width: 100%;
+
+    @include breakpoint(md) {
+      width: 173px;
+    }
   }
 
 }
