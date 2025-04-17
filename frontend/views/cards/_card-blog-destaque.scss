@@ -7,6 +7,12 @@
   background: var(--color-white);
   box-shadow: 0px 5px 12px 0px rgba(78, 79, 85, 0.15);
   overflow: hidden;
+
+  .btn:hover {
+    svg {
+      color: var(--color-white);
+    }
+  }
 }
 
 .card-blog-destaque__imagem {

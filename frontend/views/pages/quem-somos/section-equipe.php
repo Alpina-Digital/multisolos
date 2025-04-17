@@ -16,8 +16,10 @@
  */
 extract($args);
 ?>
-<section class="section-equipe grid bg-azul-escuro items-center justify-center gap-lg padding-y-xl padding-y-xxxl@md">
-    <h1 class="section-equipe__titulo-secao text-md text-uppercase">Nossa equipe</h1>
-    <h2 class="section-equipe__subtitulo-secao text-uppercase">corpo técnico</h2>
+<section class="section-equipe grid bg-azul-escuro items-center justify-center padding-y-xl padding-y-xxxl@md">
+    <div class="flex flex-column gap-xs">
+        <h1 class="section-equipe__titulo-secao text-md text-uppercase">Nossa equipe</h1>
+        <h2 class="section-equipe__subtitulo-secao text-uppercase">corpo técnico</h2>
+    </div>
     <?= $cards; ?>
 </section>

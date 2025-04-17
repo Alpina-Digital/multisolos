@@ -28,7 +28,7 @@ extract($args); ?>
 
       <div class="hide block@md">
         <div class="flex-shrink-0 flex flex-row gap-xs items-center">
-          <a href="<?= home_url() ?>/obras" class="btn btn--accent btn--ver-obras bg-transparent padding-y-xs padding-x-md block@md">Ver obras <?= get_svg_content('arrow-right-up-white.svg', '', true) ?></a>
+          <a href="<?= home_url() ?>/obras" class="btn btn--accent btn--ver-obras bg-transparent padding-y-xs padding-x-md block@md">Ver obras <?= get_svg_content('arrow-diagonal.svg', 'svg', true) ?></a>
           <a href="javascript:;" class="btn btn--swiper padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
             <?= get_svg_content('chevron.svg', "flip-x", true); ?>
           </a>

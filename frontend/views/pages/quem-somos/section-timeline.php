@@ -26,10 +26,10 @@ extract($args);
 				<h2 class="section-timeline__subtitulo-secao padding-y-md">Nossa história</h2>
 			</div>
 			<div>
-				<button class="btn btn--swiper padding-x-0 js-timeline-prev" aria-label="Anterior">
+				<button class="btn btn--swiper btn--swiper-light padding-x-0 js-timeline-prev" aria-label="Anterior">
 					<?= get_svg_content('chevron.svg', "flip-x", true); ?>
 				</button>
-				<button class="btn btn--swiper padding-x-0 js-timeline-next" aria-label="Próximo">
+				<button class="btn btn--swiper btn--swiper-light padding-x-0 js-timeline-next" aria-label="Próximo">
 					<?= get_svg_content('chevron.svg', "", true); ?>
 				</button>
 			</div>

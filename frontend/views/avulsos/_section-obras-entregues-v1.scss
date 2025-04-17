@@ -31,7 +31,12 @@
   }
 
   .btn--ver-obras:hover {
-    background-color: var(--color-azul-escuro);
+    background-color: var(--color-accent);
+    color: var(--color-black);
+
+    svg {
+      color: var(--color-black);
+    }
   }
 
   &__titulo-secao {
