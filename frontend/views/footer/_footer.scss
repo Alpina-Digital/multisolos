@@ -45,6 +45,10 @@
 .footer__social {
   color: var(--color-accent);
   transition: all .2s ease-in-out;
+  display: flex;
+  align-items: end;
+  width: 24px;
+  height: 24px;
 
   &:hover {
     // background: var(--color-primary-lighter);

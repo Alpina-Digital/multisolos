@@ -110,7 +110,7 @@ class MS_Footer
       (object) [
         'nome' => 'Instagram',
         'link' => Alp_Settings::get_option('instagram'),
-        'icone' => get_svg_content('footer/icon-instagram.svg', 'footer__social-icon', true)
+        'icone' => get_svg_content('footer/icon-instagram.svg', 'footer__social-icon', true, [21,21])
       ],
       (object) [
         'nome' => 'YouTube',
@@ -120,12 +120,12 @@ class MS_Footer
       (object) [
         'nome' => 'Facebook',
         'link' => Alp_Settings::get_option('facebook'),
-        'icone' => get_svg_content('footer/icon-facebook.svg', 'footer__social-icon', true)
+        'icone' => get_svg_content('footer/icon-facebook.svg', 'footer__social-icon', true, [23,23])
       ],
       (object) [
         'nome' => 'Linkedin',
         'link' => Alp_Settings::get_option('linkedin'),
-        'icone' => get_svg_content('footer/icon-linkedin.svg', 'footer__social-icon', true)
+        'icone' => get_svg_content('footer/icon-linkedin.svg', 'footer__social-icon', true, [24,24])
       ]
     ];
 
@@ -214,9 +214,11 @@ class MS_Footer
     $contatos = $this->get_col_contatos('flex');
 
     $menus = Alp_Menus::linear('footer-1', 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
+    $menu_footer1 = Alp_Menus::linear('footer-1', 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
     $menus .= Alp_Menus::linear('footer-2', 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
+    $menu_footer2 = Alp_Menus::linear('footer-2', 'footer__menu flex flex-column gap-xs', 'footer__menu-item', 'footer__link');
 
-    $args = compact('contatos', 'menus');
+    $args = compact('contatos', 'menus', 'menu_footer1', 'menu_footer2');
     return $this->html('frontend/views/footer/col-accordions-mobile.php', $args);
   }
 }
