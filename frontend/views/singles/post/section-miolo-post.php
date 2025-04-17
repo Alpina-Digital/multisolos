@@ -31,7 +31,7 @@ extract($args);
     </div>
 
     <div class="col-12 col-4@md position-relative">
-      <aside class="blog-sidebar position-sticky top-sm">
+      <aside class="blog-sidebar position-sticky top-sm bg-cinza-claro">
         <div class="flex flex-column gap-lg">
 
           <div class="flex flex-column gap-sm">

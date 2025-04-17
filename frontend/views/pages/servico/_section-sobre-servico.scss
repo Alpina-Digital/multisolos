@@ -1,7 +1,6 @@
 @use 'cody/base' as *;
 
 .section-sobre-servico {
-  background-color: #F0F2F4;
 
   &__titulo-sobre {
     color: var(--color-black);
@@ -28,6 +27,7 @@
     letter-spacing: 0%;
     text-align: center;
     text-transform: uppercase;
+    width: 60%;
   }
 
   &__item {

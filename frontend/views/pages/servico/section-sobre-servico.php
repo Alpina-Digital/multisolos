@@ -2,20 +2,20 @@
 extract($args);
 ?>
 
-<section class="section-sobre-servico grid items-center justify-center gap-md">
+<section class="section-sobre-servico grid items-center justify-center gap-md bg-cinza-claro">
 
-    <div class="max-width-lg container flex flex-column gap-xl">
-        <div class="grid gap-sm">
-            <div class="section-sobre-servico__texto-sobre flex flex-column gap-sm col-6 col-6@md bg-cinza-fundo radius-md padding-md">
+    <div class="max-width-lg container flex flex-column padding-top-xxl padding-bottom-xl">
+
+        <div class="grid gap-xxl">
+
+            <div class="section-sobre-servico__texto-sobre flex flex-column col-6 col-6@md bg-cinza-fundo gap-lg padding-y-xl">
                 <h1 class="section-sobre-servico__titulo-sobre">Sobre</h1>
                 <?= $texto ?>
                 <a href="<?= $cta_link ?>" class="section-sobre-servico__cta-link btn btn--accent btn--sm"><?= $cta_texto ?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
             </div>
-            <div class="col-1@md"></div>
-            <div class="flex flex-column gap-sm col-5 col-5@md bg-cinza-fundo radius-md padding-md">
-
+            
+            <div class="flex flex-column gap-sm col-6 col-6@md bg-cinza-fundo radius-md padding-md">
                 <div class="galeria-sobre-servico">
-
                     <div class="galeria-sobre-servico__galeria swiper js-slides-sobre-servico-swiper">
                         <div class="swiper-wrapper">
                             <?php foreach ($imagens as $imagem): ?>
@@ -31,11 +31,10 @@ extract($args);
                         <a href="javascript:;" class="btn btn--swiper  padding-x-0 js-slides-sobre-servico-next flex-shrink-0">
                             <?= get_svg_content('chevron.svg', "", true); ?>
                         </a>
-
                     </div>
                 </div>
-
             </div>
+        
         </div>
     </div>
 

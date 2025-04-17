@@ -31,7 +31,7 @@ class MS_Fale_Conosco extends Alp_Page
       ->chain_from_callable([$this, 'chain_metaboxes_banner_topo'])
 
       ->add_metabox_box('', 'Informações da Página')
-      ->add_metabox_field_biu('Título', 'titulo', 12)
+      ->add_metabox_field_text('Título', 'titulo', 12)
       ->render();
   }
 

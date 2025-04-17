@@ -20,7 +20,7 @@ extract($args);
   <div class="max-width-lg container grid gap-lg gap-xxxl@md padding-y-xl padding-top-xxxl@md padding-bottom-xxl@md">
 
     <div class="col-12 col-5@md position-relative order-2 order-1@md">
-      <div class="flex flex-column gap-xl position-sticky top-sm">
+      <div class="flex flex-column gap-md position-sticky top-sm">
         <h2 class="titulo-secao hide block@md color-primary"><?= $titulo; ?></h2>
         <p class="texto-contato">Envie dúvidas, reclamações, sugestões de melhorias ou feedbacks sobre os nossos serviços.</p>
 
