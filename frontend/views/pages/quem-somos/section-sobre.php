@@ -23,7 +23,7 @@ extract($args);
 
     <div class="col-12 col-7@md overflow-hidden">
 
-      <h1 class="section-sobre__titulo-secao padding-bottom-sm">Sobre</h1>
+      <h1 class="section-sobre__titulo-secao padding-bottom-sm text-uppercase">Sobre</h1>
       <h2 class="section-sobre__subtitulo-secao padding-bottom-lg"><?= $titulo; ?></h2>
       <div class="js-<?= $swiper_class; ?>-swiper">
         <div class="swiper-wrapper">
