@@ -62,6 +62,8 @@ class MS_Blog extends Alp_Page
     $this
       ->add_render($this->render_banner_topo())
       ->add_render($this->render_section_principal())
+      ->add_render($avulsos->render_section_redes_sociais())
+      ->add_render($avulsos->render_section_newsletter())
       ->echo_render();
   }
 

@@ -434,6 +434,31 @@ class MS_Avulsos
   }
 
   /**
+   * Renderiza a seção redes sociais.
+   * @return string HTML renderizado.
+   */
+  public function render_section_redes_sociais(): string
+  {
+    $args = [];
+    return $this->html('frontend/views/avulsos/section-redes-sociais', $args);
+  }
+
+   /**
+   * Renderiza um card de redes sociais.
+   * @param int $id ID do post.
+   * @param string $classes Classes CSS adicionais.
+   * @return string HTML renderizado.
+   */
+  public function render_card_redes_sociais(int $id, string $classes = 'col-12 col-4@md'): string
+  {
+
+    $args = [];
+
+    return $this->html('frontend/views/cards/card-redes-sociais', $args);
+  }
+
+
+  /**
    * Renderiza a seção de Big Numbers + Associações.
    * @return string HTML renderizado.
    */
@@ -482,6 +507,7 @@ class MS_Avulsos
 
     return $this->html('frontend/views/cards/card-blog', $args);
   }
+  
 
   /**
    * Renderiza a seção de Newsletter.

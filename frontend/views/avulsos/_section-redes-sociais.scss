@@ -1,0 +1,77 @@
+@use 'cody/base' as *;
+
+.section-redes-sociais {
+  .subtitulo-secao {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 90%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+  }
+
+  .titulo-secao {
+    color: var(--color-black);
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: -2%;
+    text-transform: uppercase;
+  }
+
+
+  &__btn-ver-tudo,
+  &__btn-ver-tudo-m {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    gap: var(--space-xs);
+
+  }
+
+  &__btn-ver-tudo:hover,
+  &__btn-ver-tudo-m:hover {
+    background-color: var(--color-accent);
+    color: var(--color-black);
+  }
+
+  @media (max-width: 768px) {
+    &__btn-ver-tudo {
+      display: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    &__btn-ver-tudo-m {
+      display: none;
+    }
+  }
+
+  .swiper-wrapper{
+    gap: var(--space-sm);
+  }
+
+}
+
+.section-redes-sociais__pagination {
+
+  .swiper-pagination-bullet {
+    background: var(--color-cinza-fundo);
+
+    &.swiper-pagination-bullet-active {
+      background: var(--color-accent);
+    }
+  }
+}
+
+
+.card_redes_sociais {
+  border-radius: var(--space-xxs);
+  height: 355px;
+  width: 368px;
+  background-size: cover;
+}

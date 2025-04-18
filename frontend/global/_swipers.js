@@ -91,6 +91,13 @@
       breakpoints: {}
     }
   );
+  adicionar_swiper('redes-sociais',
+    {
+      slidesPerView: 3,
+      loop: false,
+      breakpoints: {}
+    }
+  );
   adicionar_swiper('obras-entregues-v1',
     {
       slidesPerView: 3,
