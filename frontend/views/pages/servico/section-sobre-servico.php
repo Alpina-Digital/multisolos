@@ -11,7 +11,8 @@ extract($args);
             <div class="section-sobre-servico__texto-sobre flex flex-column col-6 col-6@md bg-cinza-fundo gap-lg padding-y-xl">
                 <h1 class="section-sobre-servico__titulo-sobre">Sobre</h1>
                 <?= $texto ?>
-                <a href="<?= get_permalink($cta_link) ?>" class="section-sobre-servico__cta-link btn btn--accent btn--sm"><?= $cta_texto ?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
+                <?php /* <a href="<?= get_permalink($cta_link) ?>" class="section-sobre-servico__cta-link btn btn--accent btn--sm"><?= $cta_texto ?> <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a> */ ?>
+                <a href="<?= home_url() ?>/?tipo_contato=orcamento" class="section-sobre-servico__cta-link btn btn--accent btn--sm">Solicitar orçamento <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
             </div>
             
             <div class="flex flex-column gap-sm col-6 col-6@md bg-cinza-fundo radius-md padding-md">
@@ -46,7 +47,7 @@ extract($args);
                 $indice = str_pad($i, 2, '0', STR_PAD_LEFT);
 
             ?>
-                <div class="section-sobre-servico__item flex flex-column gap-sm col-12 col-6@md bg-cinza-fundo radius-md padding-md">
+                <div class="section-sobre-servico__item flex flex-column gap-sm col-12 col-4@md bg-cinza-fundo radius-md padding-md">
                     <div class="flex flex-column gap-xs">
                         <h3 class="section-sobre-servico__indice"><?= $indice ?></h3>
                     </div>

@@ -2,6 +2,18 @@
 
 .section-sobre {
 
+  &__selo {
+    z-index: 2;
+    position: absolute;
+    background-size: cover;
+
+    @include breakpoint(md) {
+      width: 166px;
+      height: 166px;
+      bottom: 123px;
+      right: -79px;
+    }
+  }
   .swiper-pagination {
     bottom: auto !important;
   }
@@ -27,12 +39,12 @@
   }
 
 
-  &__selo {
-    position: absolute;
-    top: -30%;
-    right: -3%;
-    max-width: 145px;
-    max-height: 145px;
-  }
+  // &__selo {
+  //   position: absolute;
+  //   top: -30%;
+  //   right: -3%;
+  //   max-width: 145px;
+  //   max-height: 145px;
+  // }
 
 }

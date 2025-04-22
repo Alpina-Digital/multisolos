@@ -38,7 +38,7 @@ extract($args);
     <div class="flex flex-column col-6@md section-missao-valores__box">
 
       <div class="flex flex-row@sm justify-between items-center">
-        <h2 class="section-missao-valores__box__titulo">Visão</h2>
+        <h2 class="section-missao-valores__box__titulo">Valores</h2>
         <?= get_svg_content('sobre/valores.svg', 'svg', true, '', 'stroke'); ?>
       </div>
 

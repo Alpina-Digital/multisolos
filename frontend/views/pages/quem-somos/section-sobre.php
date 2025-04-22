@@ -19,9 +19,9 @@ extract($args);
 ?>
 <section class="section-sobre">
 
-  <div class="max-width-lg container grid gap-xl@md">
+  <div class="max-width-lg container grid gap-xxl@md">
 
-    <div class="col-12 col-7@md overflow-hidden">
+    <div class="col-12 col-7@md overflow-hidden position-relative">
 
       <h1 class="section-sobre__titulo-secao padding-bottom-sm text-uppercase">Sobre</h1>
       <h2 class="section-sobre__subtitulo-secao padding-bottom-lg"><?= $titulo; ?></h2>
@@ -34,7 +34,7 @@ extract($args);
           <div>
             <div class="js-<?= $swiper_class; ?>-pagination"></div>
           </div>
-          <div>
+          <div class="flex gap-xs">
             <a href="javascript:;" class="btn btn--swiper <?= $white ? 'btn--swiper-light' : ''; ?> padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
               <?= get_svg_content('chevron.svg', "flip-x", true); ?>
             </a>
@@ -44,10 +44,10 @@ extract($args);
           </div>
         </div>
 
+        <!-- <div class="section-conheca__selo" style="background-image:url(<?= get_media_src('/selo.png') ?>)"></div> -->
 
       </div>
 
-      <!-- <img src="<?= $selo ?>" class="section-sobre__selo"> -->
     </div>
 
     <div class="section-sobre__foto-principal col-12 col-5@md flex flex-column justify-between padding-xxxl" style="background-image: url('<?= !empty($foto_principal) ? $foto_principal : get_template_directory_uri() . '/assets/imgs/foto-sobre.jpg' ?>')"></div>

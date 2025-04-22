@@ -32,15 +32,20 @@
     display: flex;
     gap: 12px;
     justify-content: center;
+    align-items: center;
 
     .swiper-pagination-bullet {
-        width: 10px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         border-radius: 32px;
+        background-color: var(--color-primary);
+        opacity: 1;
 
         &.swiper-pagination-bullet-active {
-            width: 24px;
-            background: var(--color-primary);
+            width: 16px;
+            height: 16px;
+            background-color: transparent;
+            border: 1px solid var(--color-primary);
         }
     }
 }

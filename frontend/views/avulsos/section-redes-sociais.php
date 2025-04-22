@@ -13,7 +13,11 @@
  * @var $args {
  * }
  */
-extract($args); ?>
+extract($args);
+// foreach ($posts_instagram as $link) {
+//     echo $link . "<br>";
+// }
+?>
 <section class="section-redes-sociais bg-cinza-escuro-ultra padding-top-xl padding-top-xxxl@md padding-bottom-xl padding-bottom-xxl@md position-relative z-index-1">
     <div class="section-redes-sociais__container max-width-lg container gap-lg overflow-hidden">
 
@@ -27,12 +31,33 @@ extract($args); ?>
 
         <div class="js-redes-sociais-swiper">
             <div class="swiper-wrapper">
-                <a href="https://www.instagram.com/p/C8VI68DRamP/?img_index=1" target="_blank" class="card_redes_sociais flex flex-column items-start bg-white" style="background-image:url('https://multisolos.alpdev.com.br/wp-content/uploads/2025/04/post-insta1.jpg')"></a>
-                <a href="https://www.instagram.com/p/CqJtymqsAkT/?img_index=1" target="_blank" class="card_redes_sociais flex flex-column items-start bg-white" style="background-image:url('https://multisolos.alpdev.com.br/wp-content/uploads/2025/04/post-insta2.jpg')"></a>
-                <a href="https://www.instagram.com/p/Cb_COFmJEBD/?img_index=1" target="_blank" class="card_redes_sociais flex flex-column items-start bg-white" style="background-image:url('https://multisolos.alpdev.com.br/wp-content/uploads/2025/04/post-insta3.jpg')"></a>
+
+
+                <?php
+                foreach ($posts_instagram as $post_url) :
+
+                    // cURL para pegar o HTML da página do Instagram
+                    $ch = curl_init($post_url);
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0'); // necessário pro Instagram não bloquear
+                    $html = curl_exec($ch);
+                    curl_close($ch);
+
+                    // Busca pela meta tag og:image
+                    if (preg_match('/<meta property="og:image" content="([^"]+)"/', $html, $matches)) :
+                        $imagem_url = $matches[1];
+
+                ?>
+                        <a href="<?= $post_url ?>" target="_blank" class="card_redes_sociais flex flex-column items-start col-12 col-4@md" style="background-image:url('<?= $imagem_url ?>')"></a>
+                <?php
+                    endif;
+                endforeach;
+
+                ?>
+
             </div>
         </div>
 
-        <!-- <a href="https://www.instagram.com/multisolos/" target="_blank" class="section-redes-sociais__btn-ver-tudo-m btn btn--accent btn--sm"> Ver tudo <?= get_svg_content('arrow__right_up.svg', 'svg', 'true'); ?> </a> -->
+        
     </div>
 </section>

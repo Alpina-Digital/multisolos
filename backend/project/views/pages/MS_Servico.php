@@ -37,8 +37,8 @@ class MS_Servico extends Alp_Page
       //CONTEUDO DE DENTRO DA PÁGINA
       ->add_metabox_box('sobre', 'Sobre o serviço')
       ->add_metabox_field_biu('Texto', 'texto', 12, ['options' => ['textarea_rows' => 10]])
-      ->add_metabox_field_text('Texto no botão', 'cta_texto', 4)
-      ->add_metabox_field_cpt('Selecione a Página', 'cta_link', 'page', 1, 4)
+      // ->add_metabox_field_text('Texto no botão', 'cta_texto', 4)
+      // ->add_metabox_field_cpt('Selecione a Página', 'cta_link', 'page', 1, 4)
       ->add_metabox_group('Itens', 'itens')
       ->add_metabox_field_text('Texto', 'texto')
       ->close_metabox_group()

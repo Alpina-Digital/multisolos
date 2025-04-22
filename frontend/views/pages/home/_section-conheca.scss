@@ -7,19 +7,11 @@
     position: absolute;
     background-size: cover;
 
-    @media (min-width: 64rem) {
+    @include breakpoint(md) {
       width: 166px;
       height: 166px;
-      top: 10%;
-      left: 90%;
-      transform: translateY(-50%) translateX(-50%);
-    }
-
-    @media (max-width: 768px) {
-      width: 106px;
-      height: 106px;
-      top: -30%;
-      left: 76%;
+      bottom: 123px;
+      right: -79px;
     }
   }
 
@@ -114,6 +106,20 @@
 
     @include breakpoint(md) {
       width: 173px;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 32px;
+    background-color: var(--color-primary);
+
+    &.swiper-pagination-bullet-active {
+      width: 16px;
+      height: 16px;
+      background-color: transparent;
+      border: 1px solid var(--color-primary);
     }
   }
 

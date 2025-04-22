@@ -31,7 +31,7 @@ extract($args);
       <div class="flex flex-column gap-md">
         <!-- <div class="card-blog-destaque__categoria"><?= $categoria ?? ''; ?></div> -->
         <h3 class="card-blog-destaque__titulo"><?= $titulo ?? ''; ?></h3>
-        <div class="card-blog-destaque__texto"><?= $resumo ?? ''; ?></div>
+        <div class="card-blog-destaque__texto line-clamp-4"><?= $resumo ?? ''; ?></div>
       </div>
       <a href="<?= $url; ?>" class="btn btn--accent">LER MAIS <?= get_svg_content('arrow-diagonal.svg', 'margin-left-xs svg', true); ?></a>
     </div>

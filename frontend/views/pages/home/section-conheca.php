@@ -17,18 +17,18 @@ extract($args);
 <section class="section-conheca bg-white">
 
     <div class="container max-width-lg padding-y-xxl gap-xxl">
-        <div class="grid gap-lg items-center">
+        <div class="grid gap-xxxl items-center">
 
             <?php //Coluna esquerda  
             ?>
-            <div class="col-12 col-6@md">
+            <div class="col-12 col-6@md position-relative">
 
                 <div class="flex flex-column gap-xs">
                     <p class="section-conheca__titulo-secao margin-bottom-xxs"><?= $titulo_secao ?></p>
                     <h2 class="section-conheca__subtitulo-secao margin-bottom-sm"><?= $subtitulo_secao ?></h2>
                 </div>
 
-                <div class="grid gap-sm position-relative">
+                <div class="grid gap-sm">
 
                     <?php //CARD 1 
                     ?>
@@ -43,8 +43,9 @@ extract($args);
                         <p class="numero"><?= $numero_box2 ?><sup><?= $sinal_box2 ?></sup></p>
                         <p class="texto"><?= $texto_box2 ?></p>
                     </div>
-                    <div class="section-conheca__selo" style="background-image:url(<?= get_media_src('/selo.png')?>)"></div>
+
                 </div>
+                <div class="section-conheca__selo" style="background-image:url(<?= get_media_src('/selo.png') ?>)"></div>
             </div>
 
             <?php //Coluna direita 

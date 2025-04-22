@@ -45,7 +45,7 @@ extract($args);
 
   </div>
 
-  <div class="col-12 col-6@md flex flex-column gap-md padding-xl@md">
+  <div class="col-12 col-6@md flex flex-column gap-md padding-xl@md bg-white">
     <h3 class="card-obra-entregue-v2__titulo">Multisolos <span>+ <?= $titulo; ?></span></h3>
     <h2 class="card-obra-entregue-v2__slogan"><?= $slogan ?? ''; ?></h2>
     <hr>

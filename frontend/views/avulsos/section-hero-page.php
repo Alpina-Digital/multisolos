@@ -20,7 +20,7 @@
 extract($args);
 ?>
 <section class="section-hero-page" style="--section-hero-page-imagem:url('<?= $imagem; ?>')">
-  <div class="max-width-md container flex flex-column gap-sm padding-top-xxl padding-top-xxxxl@md padding-bottom-xxl padding-bottom-xxxl@md">
+  <div class="max-width-lg container flex flex-column gap-sm padding-top-xxl padding-top-xxxxl@md padding-bottom-xxl padding-bottom-xxxl@md">
     <?php if (!empty($subtitulo)): ?>
       <h2 class="section-hero-page__subtitulo"><?= $subtitulo; ?></h2>
     <?php endif; ?>

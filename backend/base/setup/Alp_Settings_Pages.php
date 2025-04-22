@@ -119,6 +119,13 @@ class Alp_Settings_Pages extends Alp_Settings
       'redes-sociais'
     );
 
+    add_settings_section(
+      'posts_instagram_section',
+      'Posts Instagram',
+      '__return_false',
+      'redes-sociais'
+    );
+
     self::exibir_campo_texto('Telefone 1', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'telefone1', false, 'tel');
     self::exibir_campo_texto('Telefone 1 é WhatsApp?', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'telefone1_whats', false, 'checkbox');
     self::exibir_campo_texto('Telefone 2', 'redes-sociais', 'contatos_section', 'redes_sociais_options', self::$prefixo . 'telefone2', false, 'tel');
@@ -139,6 +146,10 @@ class Alp_Settings_Pages extends Alp_Settings
     self::exibir_campo_texto('YouTube', 'redes-sociais', 'redes_sociais_section', 'redes_sociais_options', self::$prefixo . 'youtube');
     // self::exibir_campo_texto('X', 'redes-sociais', 'redes_sociais_section', 'redes_sociais_options', self::$prefixo . 'twitter');
     // self::exibir_campo_texto('Pinterest', 'redes-sociais', 'redes_sociais_section', 'redes_sociais_options', self::$prefixo . 'pinterest');
+    
+    self::exibir_campo_texto('Post 1', 'redes-sociais', 'posts_instagram_section', 'redes_sociais_options', self::$prefixo . 'post_instagram_1');
+    self::exibir_campo_texto('Post 2', 'redes-sociais', 'posts_instagram_section', 'redes_sociais_options', self::$prefixo . 'post_instagram_2');
+    self::exibir_campo_texto('Post 3', 'redes-sociais', 'posts_instagram_section', 'redes_sociais_options', self::$prefixo . 'post_instagram_3');
   }
 
   /**

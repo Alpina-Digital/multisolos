@@ -224,12 +224,13 @@ class MS_Avulsos
     $slogan = get_post_meta($id, 'obras_entregues_slogan', true);
     $texto = get_post_meta($id, 'obras_entregues_texto', true);
     $depoimento_texto = get_post_meta($id, 'obras_entregues_depoimento_texto', true);
+    $depoimento_nome = get_post_meta($id, 'obras_entregues_depoimento_nome', true);
     $depoimento_responsavel = get_post_meta($id, 'obras_entregues_depoimento_responsavel', true);
     $depoimento_foto = wp_get_attachment_image_url(get_post_meta($id, 'obras_entregues_depoimento_foto', true), '');
     $galeria = get_post_meta($id, 'obras_entregues_galeria');
     $swiper_class = 'obra-' . $id;
 
-    $args = compact('titulo', 'imagem', 'link', 'slogan', 'texto', 'depoimento_texto', 'depoimento_responsavel', 'depoimento_foto', 'galeria', 'swiper_class');
+    $args = compact('titulo', 'imagem', 'link', 'slogan', 'texto', 'depoimento_texto', 'depoimento_nome', 'depoimento_responsavel', 'depoimento_foto', 'galeria', 'swiper_class');
 
     return $this->html('frontend/views/cards/card-obra-entregue-v2', $args);
   }
@@ -439,11 +440,19 @@ class MS_Avulsos
    */
   public function render_section_redes_sociais(): string
   {
-    $args = [];
+
+    $posts_instagram = [
+      Alp_Settings::get_option('post_instagram_1'),
+      Alp_Settings::get_option('post_instagram_2'),
+      Alp_Settings::get_option('post_instagram_3'),
+    ];
+
+    $args = compact('posts_instagram');
+
     return $this->html('frontend/views/avulsos/section-redes-sociais', $args);
   }
 
-   /**
+  /**
    * Renderiza um card de redes sociais.
    * @param int $id ID do post.
    * @param string $classes Classes CSS adicionais.
@@ -507,7 +516,7 @@ class MS_Avulsos
 
     return $this->html('frontend/views/cards/card-blog', $args);
   }
-  
+
 
   /**
    * Renderiza a seção de Newsletter.

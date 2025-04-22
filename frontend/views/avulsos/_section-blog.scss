@@ -37,15 +37,11 @@
     text-align: center;
     text-transform: uppercase;
     display: flex;
-    gap: var(--space-xs);
+    // gap: var(--space-xs);
 
   }
 
-  &__btn-ver-tudo:hover,
-  &__btn-ver-tudo-m:hover {
-    background-color: var(--color-accent);
-    color: var(--color-black);
-  }
+  
 
   @media (max-width: 768px) {
     &__btn-ver-tudo {

@@ -25,7 +25,7 @@ extract($args);
 ?>
 <li class="item-banner-home swiper-slide" data-swiper-autoplay="<?= $tempo; ?>">
 
-  <div class="item-banner-home__conteudo max-width-md container flex flex-column gap-lg items-start">
+  <div class="item-banner-home__conteudo max-width-lg container flex flex-column gap-lg items-start">
     <?php if ($texto || $titulo) : ?>
       <div class="flex flex-column gap-sm">
         <h2 class="item-banner-home__titulo"><?= $titulo; ?></h2>

@@ -24,7 +24,7 @@ extract($args); ?>
         <h3 class="titulo-secao">Acompanhe as novidades</h3>
         <p class="chamada">Saiba tudo o que está acontecendo na Multisolos.</p>
       </div>
-      <a href="<?= home_url()?>/blog" class="section-blog__btn-ver-tudo btn btn--accent btn--sm"> Ver tudo <?= get_svg_content('arrow__right_up.svg', 'svg', 'true'); ?> </a>
+      <a href="<?= home_url()?>/blog" class="section-blog__btn-ver-tudo btn btn--accent btn--sm padding-y-xs@md padding-x-md@md flex gap-xs@md">Ver tudo <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
     </div>
     
     <div class="js-<?= $swiper_class; ?>-swiper">
@@ -33,6 +33,6 @@ extract($args); ?>
       </div>
     </div>
     
-    <a href="<?= home_url()?>/blog" class="section-blog__btn-ver-tudo-m btn btn--accent btn--sm"> Ver tudo <?= get_svg_content('arrow__right_up.svg', 'svg', 'true'); ?> </a>
+    <a href="<?= home_url()?>/blog" class="section-blog__btn-ver-tudo-m btn btn--accent btn--sm padding-y-xs@md padding-x-md@md flex gap-xs@md">Ver tudo <?= get_svg_content('arrow-diagonal.svg', 'svg', 'true'); ?></a>
   </div>
 </section>
