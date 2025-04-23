@@ -17,7 +17,7 @@ extract($args);
 <section class="section-conheca bg-white">
 
     <div class="container max-width-lg padding-y-xxl gap-xxl">
-        <div class="grid gap-xxxl items-center">
+        <div class="grid gap-lg gap-xxxl@md items-center">
 
             <?php //Coluna esquerda  
             ?>

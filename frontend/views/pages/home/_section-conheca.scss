@@ -6,6 +6,10 @@
     z-index: 2;
     position: absolute;
     background-size: cover;
+    bottom: 103px;
+    right: -8px;
+    width: 106px;
+    height: 106px;
 
     @include breakpoint(md) {
       width: 166px;
@@ -42,9 +46,13 @@
 
   &__secao-texto-titulo {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 24px;
     line-height: 100%;
     letter-spacing: -3%;
+
+    @include breakpoint(md) {
+      font-size: 32px;
+    }
 
     & strong {
       color: var(--color-primary);
