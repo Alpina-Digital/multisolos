@@ -64,10 +64,10 @@
   letter-spacing: -0.16px;
   text-decoration: none;
   transition: all .2s ease-in-out;
-  opacity: .8;
+  // opacity: .8;
 
   &:hover {
-    opacity: .7;
+    // opacity: .7;
     color: var(--color-accent);
   }
 
@@ -165,9 +165,9 @@
   right: 0;
   pointer-events: none;
 
-  @include breakpoint(md) {
-    display: none;
-  }
+  // @include breakpoint(md) {
+  //   display: none;
+  // }
 }
 
 .footer__icone {

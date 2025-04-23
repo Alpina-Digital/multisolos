@@ -15,7 +15,7 @@
  * }
  */
 extract($args); ?>
-<section class="section-obras-entregues-v1 bg-azul-escuro padding-y-xl padding-y-xxxl@md">
+<section class="section-obras-entregues-v1 bg-azul-escuro padding-y-xl padding-y-xxxl@md overflow-hidden">
   <div class="max-width-lg container gap-lg">
 
     <div class="flex flex-column flex-row@md justify-center margin-bottom-md justify-between@md items-end">
