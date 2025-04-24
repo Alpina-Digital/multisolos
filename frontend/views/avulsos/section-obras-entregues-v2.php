@@ -22,9 +22,3 @@ extract($args);
     </div>
 
 </section>
-
-<?php /* <section class="section-obras-entregues-v2 position-relative">
-    <div class="container flex flex-column gap-xl padding-y-xxxl max-width-lg">
-        <?= $cards ?>
-    </div>
-</section> */ ?>
