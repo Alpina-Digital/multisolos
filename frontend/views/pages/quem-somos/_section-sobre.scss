@@ -6,14 +6,19 @@
     z-index: 2;
     position: absolute;
     background-size: cover;
+    width: 100px;
+    height: 100px;
+    bottom: 450px;
+    right: -25px;
 
     @include breakpoint(md) {
-      width: 166px;
-      height: 166px;
-      bottom: 123px;
-      right: -79px;
+      width: 145px;
+      height: 145px;
+      bottom: 289px;
+      right: -32px;
     }
   }
+
   .swiper-pagination {
     bottom: auto !important;
   }
@@ -38,13 +43,5 @@
     border-radius: 8px;
   }
 
-
-  // &__selo {
-  //   position: absolute;
-  //   top: -30%;
-  //   right: -3%;
-  //   max-width: 145px;
-  //   max-height: 145px;
-  // }
 
 }
