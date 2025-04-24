@@ -10,13 +10,17 @@
  * 'depoimento_responsavel'
  * 'depoimento_foto'
  * 'galeria'
+ * 
+ * NO MOBILE A ORDEM DAS SEÇÕES ESTA INVERTIDA (PRIMEIRO VEM O TEXTO DEPOIS AS FOTOS)
  */
+
+ 
 extract($args);
 
 ?>
 <div class="card-obra-entregue-v2 border-radius-lg max-width-lg grid container@md">
 
-  <div class="col-12 col-6@md flex flex-column">
+  <div class="col-12 col-6@md flex flex-column order-2 order-1@md">
     <div class="galeria-obras-entregues-v2__galeria swiper js-<?= $swiper_class; ?>-swiper">
 
       <div class="swiper-wrapper">
@@ -42,7 +46,7 @@ extract($args);
     </div>
   </div>
 
-  <div class="card-obra-entregue-v2__col-esquerda col-12 col-6@md flex flex-column padding-md padding-xl@md gap-md bg-white">
+  <div class="card-obra-entregue-v2__col-esquerda col-12 col-6@md flex flex-column padding-md padding-xl@md gap-md bg-white order-1 order-2@md">
     <h3 class="card-obra-entregue-v2__titulo">Multisolos <span>+ <?= $titulo; ?></span></h3>
     <h2 class="card-obra-entregue-v2__slogan"><?= $slogan ?? ''; ?></h2>
     <hr>
