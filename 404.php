@@ -14,9 +14,9 @@ get_header(); ?>
 	<section class="fof padding-y-xxl">
 		<div class="container max-width-sm">
 			<div class="text-component text-center margin-bottom-lg">
-				<h1 class="color-white">Página não encontrada</h1>
-				<p class="color-white">Desculpe, mas a página que você procura não foi encontrada.</p>
-				<p class="color-white"><a class="color-accent font-bold link-404" href="<?php echo esc_url(home_url('/')); ?>">Ir para home</a> ou <a class="color-accent font-bold link-404" href="<?php echo esc_url(home_url('/contato')); ?>">entre em contato</a>.</p>
+				<h1 class="color-primary">Página não encontrada</h1>
+				<p class="color-primary">Desculpe, mas a página que você procura não foi encontrada.</p>
+				<p class="color-primary"><a class="color-primary font-bold link-404" href="<?php echo esc_url(home_url('/')); ?>">Ir para home</a> ou <a class="color-primary font-bold link-404" href="<?php echo esc_url(home_url('/contato')); ?>">entre em contato</a>.</p>
 			</div>
 
 			<div class="fof__animation" aria-lable="404 animation">

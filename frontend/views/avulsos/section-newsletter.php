@@ -17,8 +17,8 @@
 extract($args);
 ?>
 
-<section class="section-newsletter max-width-lg bg-cinza-escuro-ultra padding-bottom-lg padding-bottom-xxl@md">
-  <div class="section-newsletter__container max-width-lg container padding-md padding-xl@md grid gap-md items-start">
+<section class="section-newsletter bg-cinza-escuro-ultra padding-bottom-lg padding-bottom-xxl@md">
+  <div class="section-newsletter__container max-width-lg container padding-md grid gap-md items-start">
 
     <div class="col-12 col-5@sm flex flex-column gap-sm">
       <h3 class="section-newsletter__titulo">Fique por dentro das <br><span>nossas novidades</span></h3>

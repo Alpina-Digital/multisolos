@@ -11,6 +11,13 @@ Usage: codyhouse.co/license
 
 .fof {}
 
+.error404 {
+  .f-header__nav {
+    background-color: var(--color-primary-dark);
+  }
+
+}
+
 .fof__animation {
   svg {
     display: block;
@@ -31,7 +38,9 @@ Usage: codyhouse.co/license
 }
 
 @keyframes i-fof-browser {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0) scale(1);
   }
 
@@ -41,7 +50,9 @@ Usage: codyhouse.co/license
 }
 
 @keyframes i-fof-shadow {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
   }
 
