@@ -26,7 +26,7 @@ extract($args); ?>
         <h4 class="section-equipamentos__slogan-secao">Possuímos uma linha completa e moderna de equipamentos para oferecer a melhor precisão na execução dos serviços</h4>
       </div>
 
-      <div class="flex-shrink-0 flex flex-row gap-sm items-center">
+      <div class="flex-shrink-0 flex flex-row gap-sm items-center hide block@md">
         <a href="javascript:;" class="btn btn--swiper padding-x-0 js-<?= $swiper_class; ?>-prev flex-shrink-0">
           <?= get_svg_content('chevron.svg', "flip-x", true); ?>
         </a>

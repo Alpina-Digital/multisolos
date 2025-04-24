@@ -128,9 +128,17 @@
   adicionar_swiper('equipamentos',
     {
       slidesPerView: 3,
-      spaceBetween: 24,
       loop: false,
-      breakpoints: {}
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 6
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 16
+        }
+      }
     }
   );
 

@@ -19,7 +19,7 @@
 extract($args);
 ?>
 <section class="section-quem-ja-confiou padding-y-xl padding-y-xxxl@md">
-  <div class="flex flex-column max-width-lg container gap-sm gap-xl@md justify-start items-center">
+  <div class="flex flex-column max-width-lg container gap-md gap-xl@md justify-start items-center">
 
     <div class="flex flex-column gap-xs">
       <h1 class="section-quem-ja-confiou__titulo-secao">Clientes</h1>
