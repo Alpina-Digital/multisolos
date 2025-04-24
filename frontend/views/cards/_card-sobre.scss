@@ -21,8 +21,10 @@
     font-weight: 600;
     line-height: 110%;
     letter-spacing: -0.18px;
+    width: 220px;
 
     @include breakpoint(md) {
+      width: 432px;
       font-size: 22px;
       letter-spacing: -0.22px;
     }
