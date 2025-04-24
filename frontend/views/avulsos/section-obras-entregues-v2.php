@@ -16,8 +16,15 @@
  */
 extract($args);
 ?>
-<section class="section-obras-entregues-v2 position-relative">
+<section class="section-obras-entregues-v2 gap-xl@md padding-y-xxxl">
+    <div class="max-width-lg flex flex-column container gap-md gap-xl@md">
+        <?= $cards ?>
+    </div>
+
+</section>
+
+<?php /* <section class="section-obras-entregues-v2 position-relative">
     <div class="container flex flex-column gap-xl padding-y-xxxl max-width-lg">
         <?= $cards ?>
     </div>
-</section>
+</section> */ ?>

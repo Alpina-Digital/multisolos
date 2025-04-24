@@ -1,9 +1,11 @@
 @use 'cody/base' as *;
 
 .card-obra-entregue-v2 {
-  border-right: 3px solid var(--color-accent);
 
-  border-radius: 8px;
+  &__col-esquerda {
+    border-right: 3px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
 
   hr {
     border: 1px solid #D2D2D2
@@ -57,17 +59,11 @@
   overflow: hidden;
   position: relative;
   border-radius: var(--space-xs);
-  width: 100%;
   height: 100%;
+  width: 100%;
   z-index: 0;
   border: solid 1px rgba(0, 0, 0, .05);
 
-
-  @media not all and (min-width:64rem) {
-    .galeria-obras-entregues-v2 {
-      min-height: 320px;
-    }
-  }
 
   &__galeria,
   &__imagem,
@@ -75,6 +71,11 @@
     width: 100%;
     height: 100%;
   }
+
+  &__galeria {
+    min-height: 551px;
+  }
+
 
   &__imagem {
     background: var(--galeria-obras-entregues-v2-imagem);
