@@ -34,13 +34,12 @@ extract($args);
 				</button>
 			</div>
 		</div>
-	</div>
-	<div class="container max-width-lg">
+
 		<div class="section-timeline__cards position-relative overflow-hidden radius-md" style="background-color: white;">
 			<?= $card ?>
 		</div>
 
-		<div class="section-timeline__dates flex items-center gap-md margin-top-md">
+		<div class="section-timeline__dates flex items-center justify-between gap-md margin-top-md">
 			<?= $anos ?>
 		</div>
 
