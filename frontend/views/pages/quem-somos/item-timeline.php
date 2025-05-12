@@ -23,12 +23,12 @@ extract($args);
 ?>
 <div class="item-timeline__item js-timeline-item <?= $visible_class ?> ">
   <div class="max-width-lg grid">
-    <div class="col-12 col-8@md overflow-hidden padding-top-xxl padding-bottom-xxl">
+    <div class="col-12 col-6@md overflow-hidden padding-top-xxl padding-bottom-xxl">
       <h3 class="item-timeline__ano"><?= $ano ?></h3>
       <h4 class="item-timeline__titulo margin-top-md"><?= $titulo ?></h4>
       <div class="item-timeline__texto margin-top-md"><?= $texto ?></div>
     </div>
-    <div class="item-timeline__bg col-12 col-4@md overflow-hidden padding-xl radius-md" style="background-image:url('<?= empty($foto) ? get_template_directory_uri() . '/assets/imgs/foto-sobre.jpg' : $foto ?>')">
+    <div class="item-timeline__bg col-12 col-6@md overflow-hidden padding-xl radius-md" style="background-image:url('<?= empty($foto) ? get_template_directory_uri() . '/assets/imgs/foto-sobre.jpg' : $foto ?>')">
     </div>
   </div>
 

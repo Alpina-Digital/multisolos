@@ -214,7 +214,7 @@ class MS_Quem_Somos extends Alp_Page
 
     $titulo = get_the_title($post_id);
     $texto = get_post_meta($post_id, 'timeline_timeline_texto', true);
-    $foto = wp_get_attachment_image_url(get_post_meta($post_id, 'timeline_timeline_foto', true));
+    $foto = wp_get_attachment_image_url(get_post_meta($post_id, 'timeline_timeline_foto', true), 'full');
 
     // class para o primeiro elemento
     $visible_class = $contador === 1 ? 'is-visible' : '';
