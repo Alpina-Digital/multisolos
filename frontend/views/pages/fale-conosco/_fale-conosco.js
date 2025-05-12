@@ -1,7 +1,7 @@
 (function ($) {
 
-
-    carregar_ibge();
-    // atualizar_localizacao();
+  carregar_ibge();
   
-  })(jQuery);
+  atualizar_localizacao();
+
+})(jQuery);
